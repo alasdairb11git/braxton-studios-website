@@ -42,6 +42,22 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
+// ── HAMBURGER MENU ──
+const hamburger = document.getElementById('navHamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+}
+
 // ── NAV SCROLL ──
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
