@@ -234,7 +234,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 /* Colour placeholders for YouTube projects */
 .yt-1 .project-card-bg { background: url('/images/bba-podcast.jpg') center/cover no-repeat; }
 .yt-2 .project-card-bg { background: url('/images/adum.png') center/cover no-repeat; }
-.yt-3 .project-card-bg { background: linear-gradient(135deg, #1b1b2f 0%, #2c2c54 100%); }
+.yt-3 .project-card-bg { background: url('/images/ab-easdale.jpg') center/cover no-repeat; }
 .yt-4 .project-card-bg { background: linear-gradient(135deg, #162447 0%, #1f4068 100%); }
 
 /* Film placeholders */
