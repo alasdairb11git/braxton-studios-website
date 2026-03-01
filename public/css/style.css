@@ -238,7 +238,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 .yt-4 .project-card-bg { background: linear-gradient(135deg, #162447 0%, #1f4068 100%); }
 
 /* Film placeholders */
-.film-1 .project-card-bg { background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 100%); }
+.film-1 .project-card-bg { background: url('/images/the-flatwarming.png') center 15%/cover no-repeat; }
 .film-2 .project-card-bg { background: linear-gradient(135deg, #0a1a0a 0%, #152d15 100%); }
 
 .project-card-overlay {
