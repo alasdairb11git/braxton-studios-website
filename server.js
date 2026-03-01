@@ -21,7 +21,7 @@ app.use('/api', require('./routes/api'));
 // 404 fallback — serve homepage
 app.use((req, res) => {
   res.status(404).render('index', {
-    contactEmail: process.env.CONTACT_EMAIL || 'hello@braxtonstudios.co.uk',
+    contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',
     year: new Date().getFullYear()
   });
 });
