@@ -304,6 +304,50 @@ nav.scrolled .nav-bg { opacity: 1; }
   color: var(--white);
 }
 
+/* ── PARTNERS ── */
+#partners {
+  background: var(--black);
+  color: var(--white);
+  min-height: auto;
+}
+#partners .section-header {
+  border-color: rgba(240,237,232,0.1);
+}
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex: 1;
+}
+.partner-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border-right: 1px solid rgba(240,237,232,0.08);
+  border-bottom: 1px solid rgba(240,237,232,0.08);
+}
+.partner-cell:nth-child(3n) {
+  border-right: none;
+}
+.partner-cell:nth-child(n+4) {
+  border-bottom: none;
+}
+.partner-logo {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(20px, 2.5vw, 32px);
+  letter-spacing: 0.08em;
+  color: rgba(240,237,232,0.35);
+  text-transform: uppercase;
+  user-select: none;
+  transition: color 0.3s;
+}
+.partner-cell:hover .partner-logo {
+  color: rgba(240,237,232,0.55);
+}
+/* When you have real logos, use: */
+/* .partner-logo img { max-width: 160px; height: auto; opacity: 0.4; filter: grayscale(1); transition: opacity 0.3s; } */
+/* .partner-cell:hover .partner-logo img { opacity: 0.65; } */
+
 /* ── ABOUT ── */
 #about {
   background: var(--teal);
@@ -529,6 +573,15 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .project-card.wide { grid-column: span 1; min-height: 280px; }
   .project-card { aspect-ratio: 16/9; }
 
+  /* Partners */
+  .partners-grid { grid-template-columns: 1fr 1fr; }
+  .partner-cell { min-height: 140px; }
+  .partner-cell:nth-child(3n) { border-right: 1px solid rgba(240,237,232,0.08); }
+  .partner-cell:nth-child(odd) { border-right: 1px solid rgba(240,237,232,0.08); }
+  .partner-cell:nth-child(even) { border-right: none; }
+  .partner-cell:nth-child(n+4) { border-bottom: 1px solid rgba(240,237,232,0.08); }
+  .partner-cell:nth-child(n+5) { border-bottom: none; }
+
   /* About */
   .about-inner { padding: 80px 24px; }
   .about-body { grid-template-columns: 1fr; gap: 40px; }
@@ -570,6 +623,11 @@ body.light #films .section-heading { color: #0a0a0a !important; }
 body.light #films .project-grid { border-color: rgba(0,0,0,0.08); }
 body.light #films .project-card:not(:nth-child(3n)) { border-right-color: rgba(0,0,0,0.08); }
 body.light #films .project-card:nth-child(n+4) { border-top-color: rgba(0,0,0,0.08); }
+body.light #partners { background: #f5f2ed; color: #0a0a0a; }
+body.light #partners .section-header { border-color: rgba(0,0,0,0.1); }
+body.light .partner-cell { border-color: rgba(0,0,0,0.08) !important; }
+body.light .partner-logo { color: rgba(0,0,0,0.3); }
+body.light .partner-cell:hover .partner-logo { color: rgba(0,0,0,0.5); }
 body.light #about { background: var(--teal); }
 body.light footer { background: #0a0a0a; border-color: rgba(240,237,232,0.08); }
 body.light footer .footer-copy { color: #666; }
