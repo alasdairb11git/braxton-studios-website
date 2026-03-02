@@ -340,6 +340,8 @@ nav.scrolled .nav-bg { opacity: 1; }
   text-transform: uppercase;
   user-select: none;
   transition: color 0.3s;
+  text-align: center;
+  display: inline-block;
 }
 .partner-cell:hover .partner-logo {
   color: rgba(240,237,232,0.55);
