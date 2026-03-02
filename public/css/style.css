@@ -456,6 +456,11 @@ nav.scrolled .nav-bg { opacity: 1; }
   border-radius: 8px;
   overflow: hidden;
 }
+.cs-media-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 .cs-media-placeholder {
   width: 100%;
   height: 100%;
