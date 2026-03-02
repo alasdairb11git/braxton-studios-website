@@ -512,6 +512,10 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 
 /* ── CREW CALL ── */
+.cc-casting-label {
+  padding: 40px 48px 0;
+}
+
 .cc-hero {
   position: relative;
   height: 60vh;
@@ -912,6 +916,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .project-card-link { cursor: auto; }
 
   /* Crew Call */
+  .cc-casting-label { padding: 32px 24px 0; }
   .cc-hero { height: 45vh; min-height: 320px; }
   .cc-hero-content { padding: 40px 24px; }
   .cc-narrative-inner { padding: 60px 24px; }
