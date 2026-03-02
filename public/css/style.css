@@ -371,7 +371,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   background: url('/images/bba-podcast.jpg') center/cover no-repeat;
 }
 .cs-hero-adum .cs-hero-bg {
-  background: url('/images/adum.png') center/cover no-repeat;
+  background: url('/images/adum.png') center top/cover no-repeat;
 }
 .cs-artist-links {
   display: flex;
