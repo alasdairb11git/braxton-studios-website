@@ -15,6 +15,13 @@ router.get('/campaigns/building-brand-advocacy', (req, res) => {
   });
 });
 
+router.get('/campaigns/adum', (req, res) => {
+  res.render('case-study-adum', {
+    contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',
+    year: new Date().getFullYear()
+  });
+});
+
 router.get('/films/tedrad', (req, res) => {
   res.render('crew-call-tedrad', {
     contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',

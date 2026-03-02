@@ -370,6 +370,41 @@ nav.scrolled .nav-bg { opacity: 1; }
   inset: 0;
   background: url('/images/bba-podcast.jpg') center/cover no-repeat;
 }
+.cs-hero-adum .cs-hero-bg {
+  background: url('/images/adum.png') center/cover no-repeat;
+}
+.cs-artist-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 48px;
+  background: #f0ede8;
+}
+.cs-artist-label {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.4;
+}
+.cs-artist-link {
+  color: var(--black);
+  text-decoration: none;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+  cursor: none;
+  display: flex;
+  align-items: center;
+}
+.cs-artist-link svg {
+  width: 20px;
+  height: 20px;
+}
+.cs-artist-link:hover {
+  opacity: 1;
+}
 .cs-hero-overlay {
   position: absolute;
   inset: 0;
