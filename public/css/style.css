@@ -759,6 +759,11 @@ nav.scrolled .nav-bg { opacity: 1; }
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+  animation: fn-image-in 1.2s ease-out both;
+}
+@keyframes fn-image-in {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
 }
 .fn-hero-text {
   display: flex;
