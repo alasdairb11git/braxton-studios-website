@@ -8,4 +8,11 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/campaigns/building-brand-advocacy', (req, res) => {
+  res.render('case-study-bba', {
+    contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',
+    year: new Date().getFullYear()
+  });
+});
+
 module.exports = router;

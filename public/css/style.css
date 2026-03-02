@@ -348,6 +348,169 @@ nav.scrolled .nav-bg { opacity: 1; }
 /* .partner-logo img { max-width: 160px; height: auto; opacity: 0.4; filter: grayscale(1); transition: opacity 0.3s; } */
 /* .partner-cell:hover .partner-logo img { opacity: 0.65; } */
 
+/* ── PROJECT CARD LINK ── */
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: none;
+  display: contents;
+}
+
+/* ── CASE STUDY ── */
+.cs-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.cs-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('/images/bba-podcast.jpg') center/cover no-repeat;
+}
+.cs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 50%, rgba(10,10,10,0.1) 100%);
+}
+.cs-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 48px;
+  animation: heroFadeIn 1s 0.2s both;
+}
+.cs-hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+  display: block;
+}
+.cs-hero-title {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 6vw, 80px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--white);
+}
+.cs-hero-sub {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--light-grey);
+  margin-top: 16px;
+}
+
+/* Stats */
+.cs-stats {
+  background: var(--white);
+  color: var(--black);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.cs-stats-inner {
+  display: flex;
+  padding: 0;
+}
+.cs-stat {
+  flex: 1;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px solid rgba(0,0,0,0.08);
+}
+.cs-stat:last-child {
+  border-right: none;
+}
+.cs-stat-num {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1;
+  color: var(--black);
+}
+.cs-stat-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-top: 4px;
+}
+
+/* Media Grid */
+.cs-media {
+  background: var(--black);
+  padding: 80px 48px;
+}
+.cs-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.cs-media-item {
+  aspect-ratio: 9/16;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.cs-media-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+  border: 1px solid rgba(240,237,232,0.08);
+  border-radius: 8px;
+}
+
+/* Content Section */
+.cs-content {
+  background: var(--white);
+  color: var(--black);
+}
+.cs-content-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 100px 48px;
+  max-width: 1200px;
+}
+.cs-content-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.cs-content-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: rgba(0,0,0,0.3);
+}
+.cs-content-heading {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+}
+.cs-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+}
+.cs-content-right p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(0,0,0,0.7);
+}
+
 /* ── ABOUT ── */
 #about {
   background: var(--teal);
@@ -582,6 +745,18 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .partner-cell:nth-child(n+4) { border-bottom: 1px solid rgba(240,237,232,0.08); }
   .partner-cell:nth-child(n+5) { border-bottom: none; }
 
+  /* Case Study */
+  .cs-hero { height: 50vh; min-height: 360px; }
+  .cs-hero-content { padding: 40px 24px; }
+  .cs-stats-inner { flex-direction: column; }
+  .cs-stat { padding: 32px 24px; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .cs-stat:last-child { border-bottom: none; }
+  .cs-media { padding: 48px 24px; }
+  .cs-media-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+  .cs-content-inner { grid-template-columns: 1fr; gap: 32px; padding: 60px 24px; }
+  .cs-content-right { padding-top: 24px; }
+  .project-card-link { cursor: auto; }
+
   /* About */
   .about-inner { padding: 80px 24px; }
   .about-body { grid-template-columns: 1fr; gap: 40px; }
@@ -628,6 +803,18 @@ body.light #partners .section-header { border-color: rgba(0,0,0,0.1); }
 body.light .partner-cell { border-color: rgba(0,0,0,0.08) !important; }
 body.light .partner-logo { color: rgba(0,0,0,0.3); }
 body.light .partner-cell:hover .partner-logo { color: rgba(0,0,0,0.5); }
+body.light .cs-stats { background: #0a0a0a; color: #f0ede8; }
+body.light .cs-stat { border-color: rgba(240,237,232,0.08); }
+body.light .cs-stat-num { color: #f0ede8; }
+body.light .cs-stat-label { color: rgba(240,237,232,0.4); }
+body.light .cs-media { background: #f5f2ed; }
+body.light .cs-media-placeholder { background: linear-gradient(135deg, #e8e5e0 0%, #ddd 100%); border-color: rgba(0,0,0,0.08); }
+body.light .cs-content { background: #0a0a0a; color: #f0ede8; }
+body.light .cs-content-heading { color: #f0ede8; }
+body.light .cs-content-eyebrow { color: rgba(240,237,232,0.4); }
+body.light .cs-content-eyebrow::before { background: rgba(240,237,232,0.3); }
+body.light .cs-content-right { border-color: rgba(240,237,232,0.15); }
+body.light .cs-content-right p { color: rgba(240,237,232,0.65); }
 body.light #about { background: var(--teal); }
 body.light footer { background: #0a0a0a; border-color: rgba(240,237,232,0.08); }
 body.light footer .footer-copy { color: #666; }

@@ -31,7 +31,7 @@ document.addEventListener('mousemove', e => {
 })();
 
 // ── CURSOR HOVER ON PROJECT CARDS ──
-document.querySelectorAll('.project-card').forEach(card => {
+document.querySelectorAll('.project-card, .project-card-link').forEach(card => {
   card.addEventListener('mouseenter', () => {
     ring.classList.add('hover-active');
     cursor.style.opacity = '0';
