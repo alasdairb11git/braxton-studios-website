@@ -15,4 +15,11 @@ router.get('/campaigns/building-brand-advocacy', (req, res) => {
   });
 });
 
+router.get('/films/tedrad', (req, res) => {
+  res.render('crew-call-tedrad', {
+    contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',
+    year: new Date().getFullYear()
+  });
+});
+
 module.exports = router;

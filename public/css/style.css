@@ -511,6 +511,159 @@ nav.scrolled .nav-bg { opacity: 1; }
   color: rgba(0,0,0,0.7);
 }
 
+/* ── CREW CALL ── */
+.cc-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.cc-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0a1a0a 0%, #152d15 50%, #0a0a0a 100%);
+}
+.cc-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 48px;
+  animation: heroFadeIn 1s 0.2s both;
+}
+
+/* Narrative */
+.cc-narrative {
+  background: var(--black);
+  color: var(--white);
+}
+.cc-narrative-inner {
+  max-width: 800px;
+  padding: 100px 48px;
+}
+.cc-narrative-inner p {
+  font-size: 18px;
+  line-height: 1.85;
+  color: rgba(240,237,232,0.65);
+  margin-bottom: 20px;
+}
+.cc-narrative-inner p:last-child { margin-bottom: 0; }
+
+/* Roles */
+.cc-roles {
+  background: var(--black);
+  color: var(--white);
+  padding-bottom: 80px;
+}
+.cc-roles-inner {
+  padding: 0 48px;
+}
+.cc-roles-header {
+  padding: 80px 0 48px;
+  border-bottom: 1px solid rgba(240,237,232,0.1);
+  margin-bottom: 40px;
+}
+.cc-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.cc-role-card {
+  border: 1px solid rgba(240,237,232,0.1);
+  border-radius: 8px;
+  padding: 32px;
+  transition: border-color 0.3s;
+}
+.cc-role-card:hover {
+  border-color: rgba(240,237,232,0.25);
+}
+.cc-role-title {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.cc-role-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(240,237,232,0.5);
+}
+
+/* Benefits */
+.cc-benefit {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.cc-benefit:last-child { border-bottom: none; padding-bottom: 0; }
+.cc-benefit-title {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.cc-benefit p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(0,0,0,0.6);
+}
+
+/* Apply */
+.cc-apply {
+  background: var(--teal);
+  color: var(--black);
+}
+.cc-apply-inner {
+  padding: 100px 48px;
+  max-width: 700px;
+}
+.cc-apply-text {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(0,0,0,0.7);
+  margin-bottom: 16px;
+}
+.cc-apply-text strong { color: var(--black); font-weight: 500; }
+.cc-apply-btn {
+  display: inline-block;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  background: var(--black);
+  color: var(--teal);
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 16px;
+  margin-bottom: 48px;
+  transition: opacity 0.3s;
+  cursor: none;
+}
+.cc-apply-btn:hover { opacity: 0.85; }
+.cc-apply-details {
+  display: flex;
+  gap: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
+.cc-apply-detail-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.5);
+  display: block;
+  margin-bottom: 4px;
+}
+.cc-apply-detail-value {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: var(--black);
+}
+
 /* ── ABOUT ── */
 #about {
   background: var(--teal);
@@ -758,6 +911,18 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .cs-content-right { padding-top: 24px; }
   .project-card-link { cursor: auto; }
 
+  /* Crew Call */
+  .cc-hero { height: 45vh; min-height: 320px; }
+  .cc-hero-content { padding: 40px 24px; }
+  .cc-narrative-inner { padding: 60px 24px; }
+  .cc-roles-inner { padding: 0 24px; }
+  .cc-roles-header { padding: 60px 0 32px; }
+  .cc-roles-grid { grid-template-columns: 1fr; }
+  .cc-roles { padding-bottom: 48px; }
+  .cc-apply-inner { padding: 60px 24px; }
+  .cc-apply-btn { cursor: auto; }
+  .cc-apply-details { flex-direction: column; gap: 24px; }
+
   /* About */
   .about-inner { padding: 80px 24px; }
   .about-body { grid-template-columns: 1fr; gap: 40px; }
@@ -816,6 +981,17 @@ body.light .cs-content-eyebrow { color: rgba(240,237,232,0.4); }
 body.light .cs-content-eyebrow::before { background: rgba(240,237,232,0.3); }
 body.light .cs-content-right { border-color: rgba(240,237,232,0.15); }
 body.light .cs-content-right p { color: rgba(240,237,232,0.65); }
+body.light .cc-narrative { background: #f5f2ed; }
+body.light .cc-narrative-inner p { color: rgba(0,0,0,0.6); }
+body.light .cc-roles { background: #f5f2ed; color: #0a0a0a; }
+body.light .cc-roles-header { border-color: rgba(0,0,0,0.1); }
+body.light .cc-role-card { border-color: rgba(0,0,0,0.1); }
+body.light .cc-role-card:hover { border-color: rgba(0,0,0,0.25); }
+body.light .cc-role-title { color: #0a0a0a; }
+body.light .cc-role-desc { color: rgba(0,0,0,0.5); }
+body.light .cc-benefit { border-color: rgba(240,237,232,0.1); }
+body.light .cc-benefit-title { color: #f0ede8; }
+body.light .cc-benefit p { color: rgba(240,237,232,0.55); }
 body.light #about { background: var(--teal); }
 body.light footer { background: #0a0a0a; border-color: rgba(240,237,232,0.08); }
 body.light footer .footer-copy { color: #666; }
