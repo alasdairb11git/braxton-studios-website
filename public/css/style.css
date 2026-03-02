@@ -738,7 +738,8 @@ body.light .nav-hamburger span { background: #0a0a0a; }
 
   /* Partners */
   .partners-grid { grid-template-columns: 1fr 1fr; }
-  .partner-cell { min-height: 140px; }
+  .partner-cell { min-height: 140px; padding: 16px; }
+  .partner-logo { font-size: 14px; text-align: center; }
   .partner-cell:nth-child(3n) { border-right: 1px solid rgba(240,237,232,0.08); }
   .partner-cell:nth-child(odd) { border-right: 1px solid rgba(240,237,232,0.08); }
   .partner-cell:nth-child(even) { border-right: none; }
