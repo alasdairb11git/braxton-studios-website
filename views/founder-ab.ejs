@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <!-- Hero: Split Layout -->
+  <section class="fn-hero">
+    <div class="fn-hero-image">
+      <img src="/images/ab-marbella.JPG" alt="Alasdair Braxton">
+    </div>
+    <div class="fn-hero-text">
+      <span class="fn-hero-label reveal">Founder</span>
+      <h1 class="fn-hero-name reveal">Alasdair<br>Braxton</h1>
+      <p class="fn-hero-role reveal reveal-delay-1">Filmmaker & Producer</p>
+      <div class="fn-hero-scroll reveal reveal-delay-2">
+        <span>Scroll</span>
+        <div class="fn-scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Statement -->
+  <section class="fn-statement">
+    <div class="fn-statement-inner reveal">
+      <span class="fn-statement-mark">&ldquo;</span>
+      <blockquote class="fn-statement-text">
+        We are building a Creator-Led Media Network that bridges cinematic excellence and digital-first distribution. We combine high-end filmmaking with data-driven YouTube strategy to solve the attention problem for brands and audiences alike.
+      </blockquote>
+      <blockquote class="fn-statement-text fn-statement-accent">
+        We aren't here to play the algorithm game. We're here to set the new standard for what a Scottish media company looks like.
+      </blockquote>
+      <cite class="fn-statement-cite">Alasdair Braxton, Founder</cite>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="fn-stats">
+    <div class="fn-stats-inner">
+      <div class="fn-stat reveal">
+        <span class="fn-stat-num">1.5M+</span>
+        <span class="fn-stat-label">Views</span>
+      </div>
+      <div class="fn-stat-divider"></div>
+      <div class="fn-stat reveal reveal-delay-1">
+        <span class="fn-stat-num">50+</span>
+        <span class="fn-stat-label">Hours YouTube Watch Time</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="fn-vision">
+    <div class="fn-vision-inner reveal">
+      <div class="fn-vision-left">
+        <span class="fn-vision-eyebrow">The Vision</span>
+        <h2 class="fn-vision-heading">Why We<br>Do This</h2>
+      </div>
+      <div class="fn-vision-right">
+        <p>My goal is to build a space where creativity is respected, where stories are told with heart, and where we prove that the most powerful thing you can do with a camera is share a piece of the world that only you can see.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fn-cta">
+    <div class="fn-cta-inner reveal">
+      <span class="fn-cta-eyebrow">Connect</span>
+      <h2 class="fn-cta-heading">Work With<br>Braxton Studios</h2>
+      <p class="fn-cta-text">Interested in collaborating or want to learn more about what we're building?</p>
+      <a href="mailto:<%= contactEmail %>" class="fn-cta-btn"><%= contactEmail %></a>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

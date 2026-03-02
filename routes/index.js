@@ -22,6 +22,13 @@ router.get('/campaigns/adum', (req, res) => {
   });
 });
 
+router.get('/about/alasdair-braxton', (req, res) => {
+  res.render('founder-ab', {
+    contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',
+    year: new Date().getFullYear()
+  });
+});
+
 router.get('/films/tedrad', (req, res) => {
   res.render('crew-call-tedrad', {
     contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',

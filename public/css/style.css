@@ -738,6 +738,276 @@ nav.scrolled .nav-bg { opacity: 1; }
   color: var(--black);
 }
 
+/* ── FOUNDER ── */
+.fn-hero {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.fn-hero-image {
+  overflow: hidden;
+}
+.fn-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fn-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 64px;
+  background: var(--black);
+}
+.fn-hero-label {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+.fn-hero-name {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6vw, 80px);
+  line-height: 0.95;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.fn-hero-role {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.4);
+}
+.fn-hero-scroll {
+  position: absolute;
+  bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.fn-hero-scroll span {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.3);
+}
+.fn-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: rgba(240,237,232,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.fn-scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--teal);
+  animation: fn-scroll 2s ease-in-out infinite;
+}
+@keyframes fn-scroll {
+  0% { top: -100%; }
+  50% { top: 100%; }
+  100% { top: 100%; }
+}
+
+/* Founder Statement */
+.fn-statement {
+  background: var(--black);
+  padding: 120px 48px;
+  text-align: center;
+}
+.fn-statement-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.fn-statement-mark {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  color: var(--teal);
+  line-height: 0.5;
+  display: block;
+  margin-bottom: 40px;
+}
+.fn-statement-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(18px, 2.2vw, 26px);
+  line-height: 1.8;
+  color: rgba(240,237,232,0.6);
+  font-weight: 300;
+  margin: 0 0 24px 0;
+  border: none;
+  padding: 0;
+  font-style: normal;
+}
+.fn-statement-accent {
+  color: var(--white);
+  font-weight: 400;
+}
+.fn-statement-cite {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-top: 48px;
+  display: block;
+  font-style: normal;
+}
+
+/* Founder Stats */
+.fn-stats {
+  background: var(--white);
+  color: var(--black);
+  padding: 100px 48px;
+}
+.fn-stats-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.fn-stat {
+  text-align: center;
+}
+.fn-stat-num {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 1;
+  display: block;
+  color: var(--black);
+}
+.fn-stat-label {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(10,10,10,0.4);
+  margin-top: 12px;
+  display: block;
+}
+.fn-stat-divider {
+  width: 1px;
+  height: 80px;
+  background: rgba(10,10,10,0.15);
+  flex-shrink: 0;
+}
+
+/* Founder Vision */
+.fn-vision {
+  background: var(--black);
+  color: var(--white);
+  padding: 120px 48px;
+}
+.fn-vision-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+.fn-vision-eyebrow {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.4);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.fn-vision-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: rgba(240,237,232,0.3);
+}
+.fn-vision-heading {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.fn-vision-right p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1.85;
+  color: rgba(240,237,232,0.7);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Founder CTA */
+.fn-cta {
+  background: var(--teal);
+  color: var(--black);
+  padding: 120px 48px;
+}
+.fn-cta-inner {
+  max-width: 700px;
+}
+.fn-cta-eyebrow {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(10,10,10,0.5);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.fn-cta-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: rgba(10,10,10,0.3);
+}
+.fn-cta-heading {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.fn-cta-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(10,10,10,0.7);
+  margin-bottom: 32px;
+}
+.fn-cta-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--black);
+  color: var(--teal);
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: opacity 0.3s;
+  cursor: none;
+}
+.fn-cta-btn:hover {
+  opacity: 0.85;
+}
+
 /* ── ABOUT ── */
 #about {
   background: var(--teal);
@@ -998,6 +1268,21 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .cc-apply-btn { cursor: auto; }
   .cc-apply-details { flex-direction: column; gap: 24px; }
 
+  /* Founder */
+  .fn-hero { grid-template-columns: 1fr; height: auto; }
+  .fn-hero-image { height: 50vh; }
+  .fn-hero-text { padding: 48px 24px; min-height: 50vh; }
+  .fn-hero-scroll { display: none; }
+  .fn-statement { padding: 60px 24px; }
+  .fn-statement-mark { font-size: 48px; }
+  .fn-stats { padding: 60px 24px; }
+  .fn-stats-inner { flex-direction: column; gap: 40px; }
+  .fn-stat-divider { width: 60px; height: 1px; }
+  .fn-vision { padding: 60px 24px; }
+  .fn-vision-inner { grid-template-columns: 1fr; gap: 32px; }
+  .fn-cta { padding: 60px 24px; }
+  .fn-cta-btn { font-size: 12px; word-break: break-all; }
+
   /* About */
   .about-inner { padding: 80px 24px; }
   .about-body { grid-template-columns: 1fr; gap: 40px; }
@@ -1067,6 +1352,23 @@ body.light .cc-role-desc { color: rgba(0,0,0,0.5); }
 body.light .cc-benefit { border-color: rgba(240,237,232,0.1); }
 body.light .cc-benefit-title { color: #f0ede8; }
 body.light .cc-benefit p { color: rgba(240,237,232,0.55); }
+body.light .fn-hero-text { background: #f5f2ed; }
+body.light .fn-hero-name { color: #0a0a0a; }
+body.light .fn-hero-role { color: rgba(0,0,0,0.35); }
+body.light .fn-hero-scroll span { color: rgba(0,0,0,0.25); }
+body.light .fn-scroll-line { background: rgba(0,0,0,0.1); }
+body.light .fn-statement { background: #f5f2ed; }
+body.light .fn-statement-text { color: rgba(0,0,0,0.5); }
+body.light .fn-statement-accent { color: #0a0a0a; }
+body.light .fn-stats { background: #0a0a0a; color: #f0ede8; }
+body.light .fn-stat-num { color: #f0ede8; }
+body.light .fn-stat-label { color: rgba(240,237,232,0.4); }
+body.light .fn-stat-divider { background: rgba(240,237,232,0.15); }
+body.light .fn-vision { background: #f5f2ed; color: #0a0a0a; }
+body.light .fn-vision-heading { color: #0a0a0a; }
+body.light .fn-vision-eyebrow { color: rgba(0,0,0,0.4); }
+body.light .fn-vision-eyebrow::before { background: rgba(0,0,0,0.3); }
+body.light .fn-vision-right p { color: rgba(0,0,0,0.55); }
 body.light #about { background: var(--teal); }
 body.light footer { background: #0a0a0a; border-color: rgba(240,237,232,0.08); }
 body.light footer .footer-copy { color: #666; }
