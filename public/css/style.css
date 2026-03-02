@@ -746,11 +746,19 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 .fn-hero-image {
   overflow: hidden;
+  position: relative;
+}
+.fn-hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.25);
+  pointer-events: none;
 }
 .fn-hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
 }
 .fn-hero-text {
   display: flex;
