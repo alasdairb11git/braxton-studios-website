@@ -496,6 +496,34 @@ nav.scrolled .nav-bg { opacity: 1; }
   height: 100%;
   border: none;
 }
+.cs-media-link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: none;
+}
+.cs-media-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.cs-media-link:hover img {
+  transform: scale(1.03);
+}
+.cs-media-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.cs-media-link:hover .cs-media-play {
+  opacity: 1;
+}
 .cs-media-placeholder {
   width: 100%;
   height: 100%;
