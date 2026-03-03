@@ -379,13 +379,13 @@ nav.scrolled .nav-bg { opacity: 1; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 24px 48px;
+  gap: 28px;
+  padding: 32px 48px;
   background: #f0ede8;
 }
 .cs-artist-label {
   font-family: 'Graphik', 'DM Sans', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--black);
@@ -401,8 +401,8 @@ nav.scrolled .nav-bg { opacity: 1; }
   align-items: center;
 }
 .cs-artist-link svg {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
 }
 .cs-artist-link:hover {
   opacity: 1;
