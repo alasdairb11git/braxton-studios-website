@@ -549,6 +549,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   gap: 60px;
   padding: 100px 48px;
   max-width: 1200px;
+  margin: 0 auto;
 }
 .cs-content-eyebrow {
   font-size: 11px;
@@ -558,6 +559,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   margin-bottom: 24px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
 }
 .cs-content-eyebrow::before {
@@ -607,6 +609,8 @@ nav.scrolled .nav-bg { opacity: 1; }
   position: relative;
   z-index: 2;
   padding: 60px 48px;
+  text-align: center;
+  width: 100%;
   animation: heroFadeIn 1s 0.2s both;
 }
 
@@ -618,6 +622,8 @@ nav.scrolled .nav-bg { opacity: 1; }
 .cc-narrative-inner {
   max-width: 800px;
   padding: 100px 48px;
+  margin: 0 auto;
+  text-align: center;
 }
 .cc-narrative-inner p {
   font-size: 18px;
@@ -635,11 +641,14 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 .cc-roles-inner {
   padding: 0 48px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .cc-roles-header {
   padding: 80px 0 48px;
   border-bottom: 1px solid rgba(240,237,232,0.1);
   margin-bottom: 40px;
+  text-align: center;
 }
 .cc-roles-grid {
   display: grid;
@@ -697,6 +706,8 @@ nav.scrolled .nav-bg { opacity: 1; }
 .cc-apply-inner {
   padding: 100px 48px;
   max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 .cc-apply-text {
   font-size: 17px;
@@ -727,6 +738,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   gap: 48px;
   padding-top: 32px;
   border-top: 1px solid rgba(0,0,0,0.2);
+  justify-content: center;
 }
 .cc-apply-detail-label {
   font-size: 11px;
