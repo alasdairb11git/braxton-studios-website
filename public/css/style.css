@@ -1621,7 +1621,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
 
   /* Film Ticket */
   .ft-hero { height: 80vh; }
-  .ft-hero-title { font-size: clamp(36px, 12vw, 80px); }
+  .ft-hero-title { font-size: clamp(28px, 9vw, 60px); }
   .ft-hero-scroll { display: none; }
   .ft-ticket::before,
   .ft-ticket::after { display: none; }
@@ -1632,7 +1632,6 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .ft-gallery { padding: 0 24px 48px; }
   .ft-gallery-header { padding: 48px 0 32px; }
   .ft-gallery-grid { grid-template-columns: 1fr 1fr; }
-  .ft-gallery-item-tall { grid-row: span 1; aspect-ratio: 4/3; }
   .ft-bts-inner { grid-template-columns: 1fr; gap: 32px; padding: 60px 24px; }
   .ft-bts-right { padding-top: 24px; }
 
