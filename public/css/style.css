@@ -281,6 +281,20 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 .project-card:hover .project-label { opacity: 0; }
 
+.project-card-tag {
+  position: absolute; top: 16px; right: 16px;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: rgba(103,205,195,0.1);
+  border: 1px solid rgba(103,205,195,0.25);
+  padding: 6px 14px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
 /* Grid border lines */
 .project-card:not(:nth-child(3n)) {
   border-right: 1px solid rgba(0,0,0,0.08);
