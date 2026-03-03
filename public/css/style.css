@@ -1146,53 +1146,34 @@ nav.scrolled .nav-bg { opacity: 1; }
 
 /* Ticket Stub */
 .ft-ticket {
-  background: #f0ede8;
-  border-top: 2px dashed rgba(10,10,10,0.15);
-  border-bottom: 2px dashed rgba(10,10,10,0.15);
-  position: relative;
-  overflow: hidden;
-}
-.ft-ticket::before,
-.ft-ticket::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 20px;
-  height: 20px;
   background: var(--black);
-  border-radius: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
+  padding: 0 48px;
 }
-.ft-ticket::before { left: -10px; }
-.ft-ticket::after { right: -10px; }
 .ft-ticket-inner {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   max-width: 1000px;
   margin: 0 auto;
+  border-top: 1px solid rgba(240,237,232,0.1);
 }
 .ft-ticket-item {
-  flex: 1;
-  padding: 36px 40px;
+  padding: 48px 24px;
   text-align: center;
-  border-right: 1px solid rgba(10,10,10,0.1);
 }
-.ft-ticket-item:last-child { border-right: none; }
 .ft-ticket-label {
   font-family: 'Graphik', 'DM Sans', sans-serif;
   font-size: 10px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(10,10,10,0.4);
+  color: rgba(240,237,232,0.35);
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 .ft-ticket-value {
   font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: 0.04em;
-  color: #0a0a0a;
+  color: #f0ede8;
   display: block;
 }
 
@@ -1675,11 +1656,9 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .ft-hero { height: 80vh; }
   .ft-hero-title { font-size: clamp(28px, 9vw, 60px); }
   .ft-hero-scroll { display: none; }
-  .ft-ticket::before,
-  .ft-ticket::after { display: none; }
-  .ft-ticket-inner { flex-direction: column; }
-  .ft-ticket-item { padding: 24px; border-right: none; border-bottom: 1px solid rgba(10,10,10,0.1); }
-  .ft-ticket-item:last-child { border-bottom: none; }
+  .ft-ticket { padding: 0 24px; }
+  .ft-ticket-inner { grid-template-columns: 1fr 1fr; }
+  .ft-ticket-item { padding: 32px 16px; }
   .ft-watch { padding: 60px 24px; }
   .ft-gallery { padding: 0 24px 48px; }
   .ft-gallery-header { padding: 48px 0 32px; }
@@ -1775,12 +1754,10 @@ body.light .fn-vision-eyebrow { color: rgba(0,0,0,0.4); }
 body.light .fn-vision-eyebrow::before { background: rgba(0,0,0,0.3); }
 body.light .fn-vision-right p { color: rgba(0,0,0,0.55); }
 body.light .ft-hero-bg { filter: brightness(0.35) saturate(0.6); }
-body.light .ft-ticket { background: #0a0a0a; border-color: rgba(240,237,232,0.15); }
-body.light .ft-ticket::before,
-body.light .ft-ticket::after { background: #f5f2ed; }
-body.light .ft-ticket-label { color: rgba(240,237,232,0.4); }
-body.light .ft-ticket-value { color: #f0ede8; }
-body.light .ft-ticket-item { border-color: rgba(240,237,232,0.1); }
+body.light .ft-ticket { background: #f5f2ed; }
+body.light .ft-ticket-inner { border-color: rgba(0,0,0,0.1); }
+body.light .ft-ticket-label { color: rgba(0,0,0,0.35); }
+body.light .ft-ticket-value { color: #0a0a0a; }
 body.light .ft-watch { background: #f5f2ed; }
 body.light .ft-watch-player { background: #e8e5e0; border-color: rgba(0,0,0,0.08); }
 body.light .ft-watch-coming { color: rgba(0,0,0,0.3); }
