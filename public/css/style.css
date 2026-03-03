@@ -1113,6 +1113,12 @@ nav.scrolled .nav-bg { opacity: 1; }
   position: relative;
   overflow: hidden;
 }
+.ft-hero-scroll.reveal {
+  transform: translateX(-50%) translateY(24px);
+}
+.ft-hero-scroll.reveal.visible {
+  transform: translateX(-50%) translateY(0);
+}
 .ft-scroll-line::after {
   content: '';
   position: absolute;
