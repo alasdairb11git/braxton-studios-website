@@ -1,7 +1,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Braxton Studios</title>
+<title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Braxton Studios — Scotland\'s YouTube Production Company' %></title>
+<meta name="description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.' %>">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : 'Braxton Studios — Scotland\'s YouTube Production Company' %>">
+<meta property="og:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.' %>">
+<meta property="og:image" content="<%= typeof ogImage !== 'undefined' ? ogImage : '/images/logo-small.jpg' %>">
+<meta property="og:site_name" content="Braxton Studios">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : 'Braxton Studios — Scotland\'s YouTube Production Company' %>">
+<meta name="twitter:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.' %>">
+<meta name="twitter:image" content="<%= typeof ogImage !== 'undefined' ? ogImage : '/images/logo-small.jpg' %>">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+
+<% if (typeof schema !== 'undefined') { %>
+<script type="application/ld+json"><%- JSON.stringify(schema) %></script>
+<% } %>
