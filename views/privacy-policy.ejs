@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <section class="legal-page">
+    <div class="legal-inner">
+      <span class="legal-eyebrow reveal">Legal</span>
+      <h1 class="legal-title reveal">Privacy Policy</h1>
+      <p class="legal-updated reveal reveal-delay-1">Last updated: March 2026</p>
+
+      <div class="legal-content reveal reveal-delay-1">
+        <h2>1. Introduction</h2>
+        <p>Braxton Studios ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website braxtonstudios.com.</p>
+
+        <h2>2. Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+        <ul>
+          <li><strong>Contact Information:</strong> Name, email address, and any message you submit through our contact form.</li>
+          <li><strong>Usage Data:</strong> Information about how you interact with our website, including pages visited, time spent, and referring URLs.</li>
+          <li><strong>Technical Data:</strong> Browser type, device information, and IP address collected automatically through cookies and similar technologies.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Respond to enquiries submitted through our contact form</li>
+          <li>Improve our website and user experience</li>
+          <li>Analyse website traffic and usage patterns</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+
+        <h2>4. Legal Basis for Processing</h2>
+        <p>We process your personal data on the following legal bases:</p>
+        <ul>
+          <li><strong>Consent:</strong> Where you have given us clear consent to process your data for a specific purpose.</li>
+          <li><strong>Legitimate Interests:</strong> Where processing is necessary for our legitimate business interests, such as improving our services.</li>
+          <li><strong>Contractual Necessity:</strong> Where processing is necessary to fulfil a contract or respond to your enquiry.</li>
+        </ul>
+
+        <h2>5. Data Sharing</h2>
+        <p>We do not sell, trade, or rent your personal information to third parties. We may share your data with trusted service providers who assist us in operating our website, provided they agree to keep your information confidential.</p>
+
+        <h2>6. Data Retention</h2>
+        <p>We retain your personal information only for as long as necessary to fulfil the purposes outlined in this policy, or as required by law.</p>
+
+        <h2>7. Your Rights</h2>
+        <p>Under the UK General Data Protection Regulation (UK GDPR), you have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your data</li>
+          <li>Object to or restrict processing of your data</li>
+          <li>Data portability</li>
+          <li>Withdraw consent at any time</li>
+        </ul>
+
+        <h2>8. Third-Party Links</h2>
+        <p>Our website may contain links to third-party websites such as YouTube, Instagram, and LinkedIn. We are not responsible for the privacy practices of these external sites and encourage you to review their privacy policies.</p>
+
+        <h2>9. Security</h2>
+        <p>We take reasonable measures to protect your personal information from unauthorised access, alteration, or destruction. However, no method of transmission over the internet is 100% secure.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us at:</p>
+        <p><a href="mailto:<%= contactEmail %>" class="legal-link"><%= contactEmail %></a></p>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

@@ -43,4 +43,18 @@ router.get('/films/the-flatwarming', (req, res) => {
   });
 });
 
+router.get('/privacy-policy', (req, res) => {
+  res.render('privacy-policy', {
+    contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',
+    year: new Date().getFullYear()
+  });
+});
+
+router.get('/cookie-policy', (req, res) => {
+  res.render('cookie-policy', {
+    contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',
+    year: new Date().getFullYear()
+  });
+});
+
 module.exports = router;
