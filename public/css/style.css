@@ -1365,6 +1365,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 .about-inner {
   padding: 120px 48px;
   max-width: 1100px;
+  margin: 0 auto;
 }
 .about-eyebrow {
   font-size: 11px; letter-spacing: 0.25em;
@@ -1678,7 +1679,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   /* About */
   .about-inner { padding: 80px 24px; }
   .about-stats { grid-template-columns: 1fr 1fr; }
-  .about-contact-link { font-size: 18px; word-break: break-all; }
+  .about-contact-link { font-size: 14px; word-break: break-all; }
   .stat-num { font-size: 28px; }
 
   /* Footer */
