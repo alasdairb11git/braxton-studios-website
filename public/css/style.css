@@ -1371,7 +1371,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   font-size: 11px; letter-spacing: 0.25em;
   text-transform: uppercase; color: rgba(0,0,0,0.5);
   margin-bottom: 40px;
-  display: flex; align-items: center; gap: 16px;
+  display: flex; align-items: center; justify-content: center; gap: 16px;
 }
 .about-eyebrow::before {
   content: ''; width: 32px; height: 1px; background: rgba(0,0,0,0.4);
@@ -1382,25 +1382,26 @@ nav.scrolled .nav-bg { opacity: 1; }
   line-height: 0.9; letter-spacing: 0.01em;
   margin-bottom: 60px;
   color: var(--black);
+  text-align: center;
 }
 .about-body {
-  display: flex; flex-direction: column; gap: 48px;
+  display: flex; flex-direction: column; gap: 48px; align-items: center;
   padding-top: 48px; border-top: 1px solid rgba(0,0,0,0.2);
 }
-.about-text-block { max-width: 720px; }
+.about-text-block { max-width: 720px; text-align: center; }
 .about-text {
   font-size: 18px; line-height: 1.75; color: rgba(0,0,0,0.75);
 }
 .about-text strong { color: var(--black); font-weight: 500; }
-.about-right { display: flex; flex-direction: column; gap: 40px; }
-.about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
-.stat { border-top: 1px solid rgba(0,0,0,0.2); padding-top: 16px; }
+.about-right { display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%; }
+.about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; width: 100%; }
+.stat { border-top: 1px solid rgba(0,0,0,0.2); padding-top: 16px; text-align: center; }
 .stat-num {
   font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
   font-size: 32px; line-height: 1; color: var(--black);
 }
 .stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.5); margin-top: 4px; }
-.about-contact { display: flex; flex-direction: column; gap: 16px; }
+.about-contact { display: flex; flex-direction: column; gap: 16px; align-items: center; }
 .about-contact-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.5); }
 .about-contact-link {
   font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
@@ -1417,7 +1418,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 .contact-form {
   margin-top: 40px;
   display: flex; flex-direction: column; gap: 16px;
-  max-width: 480px;
+  max-width: 480px; width: 100%;
 }
 .contact-form input,
 .contact-form textarea {
