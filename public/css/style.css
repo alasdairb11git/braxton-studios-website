@@ -88,7 +88,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   border-radius: 50%; object-fit: cover;
 }
 .nav-links {
-  position: relative; z-index: 1;
+  position: absolute; left: 50%; transform: translateX(-50%); z-index: 1;
   display: flex; gap: 48px; list-style: none; align-items: center;
 }
 .nav-links a {
@@ -1468,11 +1468,12 @@ footer {
   padding: 40px 48px;
   display: flex; align-items: center; justify-content: space-between;
   border-top: 1px solid rgba(240,237,232,0.08);
+  position: relative;
 }
 .footer-logo img {
   height: 36px; width: 36px; border-radius: 50%; object-fit: cover;
 }
-.footer-links { display: flex; gap: 32px; }
+.footer-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 32px; }
 .footer-links a {
   color: var(--grey); text-decoration: none;
   font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
