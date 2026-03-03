@@ -1475,22 +1475,22 @@ nav.scrolled .nav-bg { opacity: 1; }
 /* ── FOOTER ── */
 footer {
   background: var(--black);
-  padding: 40px 48px;
+  padding: 48px 48px;
   display: flex; align-items: center; justify-content: space-between;
   border-top: 1px solid rgba(240,237,232,0.08);
   position: relative;
 }
 .footer-logo img {
-  height: 36px; width: 36px; border-radius: 50%; object-fit: cover;
+  height: 48px; width: 48px; border-radius: 50%; object-fit: cover;
 }
-.footer-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 32px; }
+.footer-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 36px; }
 .footer-links a {
-  color: var(--grey); text-decoration: none;
-  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(240,237,232,0.7); text-decoration: none;
+  font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
   transition: color 0.3s; cursor: none;
 }
 .footer-links a:hover { color: var(--teal); }
-.footer-copy { font-size: 11px; color: var(--grey); letter-spacing: 0.05em; }
+.footer-copy { font-size: 13px; color: rgba(240,237,232,0.5); letter-spacing: 0.05em; }
 
 /* ── MARQUEE ── */
 .marquee {
