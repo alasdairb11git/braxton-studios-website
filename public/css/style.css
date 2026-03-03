@@ -668,7 +668,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
   font-size: 16px;
   letter-spacing: 0.04em;
-  color: var(--white);
+  color: var(--teal);
   margin-bottom: 12px;
 }
 .cc-role-desc {
@@ -1742,7 +1742,7 @@ body.light .cc-roles { background: #f5f2ed; color: #0a0a0a; }
 body.light .cc-roles-header { border-color: rgba(0,0,0,0.1); }
 body.light .cc-role-card { border-color: rgba(0,0,0,0.1); }
 body.light .cc-role-card:hover { border-color: rgba(0,0,0,0.25); }
-body.light .cc-role-title { color: #0a0a0a; }
+body.light .cc-role-title { color: var(--teal); }
 body.light .cc-role-desc { color: rgba(0,0,0,0.5); }
 body.light .cc-benefit { border-color: rgba(240,237,232,0.1); }
 body.light .cc-benefit-title { color: #f0ede8; }
