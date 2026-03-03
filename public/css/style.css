@@ -1587,7 +1587,9 @@ footer {
 #films + .marquee { background: var(--black); border-color: rgba(240,237,232,0.08); }
 .marquee-track {
   display: flex; white-space: nowrap;
-  animation: marquee 18s linear infinite;
+  animation: marquee 24s linear infinite;
+  will-change: transform;
+  width: max-content;
 }
 .marquee-item {
   font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
