@@ -1759,9 +1759,9 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   /* Founder */
   .fn-hero { grid-template-columns: 1fr; height: auto; }
   .fn-hero-image { height: 50vh; }
-  .fn-hero-text { padding: 48px 24px; min-height: 50vh; }
+  .fn-hero-text { padding: 48px 24px; min-height: auto; }
   .fn-hero-scroll { display: none; }
-  .fn-statement { padding: 60px 24px; }
+  .fn-statement { padding: 32px 24px 60px; }
   .fn-statement-mark { font-size: 48px; }
   .fn-stats { padding: 60px 24px; }
   .fn-stats-inner { flex-direction: column; gap: 40px; }
