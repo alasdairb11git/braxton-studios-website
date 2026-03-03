@@ -30,6 +30,17 @@ document.addEventListener('mousemove', e => {
   requestAnimationFrame(animRing);
 })();
 
+// ── CURSOR COLOR SWAP ON TEAL SECTIONS ──
+const aboutSection = document.getElementById('about');
+document.addEventListener('mousemove', e => {
+  if (aboutSection) {
+    const rect = aboutSection.getBoundingClientRect();
+    const over = e.clientY >= rect.top && e.clientY <= rect.bottom;
+    cursor.classList.toggle('cursor-dark', over);
+    ring.classList.toggle('cursor-dark', over);
+  }
+});
+
 // ── CURSOR HOVER ON PROJECT CARDS ──
 document.querySelectorAll('.project-card, .project-card-link').forEach(card => {
   card.addEventListener('mouseenter', () => {

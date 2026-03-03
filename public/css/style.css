@@ -63,6 +63,10 @@ body {
   user-select: none;
 }
 .cursor-ring.hover-active .cursor-text { opacity: 1; }
+.cursor.cursor-dark { background: var(--black); }
+.cursor-ring.cursor-dark { border-color: rgba(0,0,0,0.4); }
+.cursor-ring.cursor-dark.hover-active { background: var(--black); border-color: var(--black); }
+.cursor-ring.cursor-dark .cursor-text { color: var(--teal); }
 
 /* ── NAV ── */
 nav {
