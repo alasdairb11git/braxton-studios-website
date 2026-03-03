@@ -36,4 +36,11 @@ router.get('/films/tedrad', (req, res) => {
   });
 });
 
+router.get('/films/the-flatwarming', (req, res) => {
+  res.render('the-flatwarming', {
+    contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',
+    year: new Date().getFullYear()
+  });
+});
+
 module.exports = router;

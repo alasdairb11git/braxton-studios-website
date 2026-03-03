@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <!-- Film Title Card Hero -->
+  <section class="ft-hero">
+    <div class="ft-hero-bg"></div>
+    <div class="ft-hero-grain"></div>
+    <div class="ft-hero-vignette"></div>
+    <div class="ft-hero-content">
+      <span class="ft-hero-eyebrow reveal">A Braxton Studios Film</span>
+      <h1 class="ft-hero-title reveal">The<br>Flatwarming</h1>
+      <p class="ft-hero-year reveal reveal-delay-1">2025</p>
+    </div>
+    <div class="ft-hero-scroll reveal reveal-delay-2">
+      <span>Enter</span>
+      <div class="ft-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Ticket Stub Info Bar -->
+  <section class="ft-ticket">
+    <div class="ft-ticket-inner">
+      <div class="ft-ticket-item reveal">
+        <span class="ft-ticket-label">Year</span>
+        <span class="ft-ticket-value">2025</span>
+      </div>
+      <div class="ft-ticket-item reveal reveal-delay-1">
+        <span class="ft-ticket-label">Runtime</span>
+        <span class="ft-ticket-value">TBC</span>
+      </div>
+      <div class="ft-ticket-item reveal reveal-delay-2">
+        <span class="ft-ticket-label">Director</span>
+        <span class="ft-ticket-value">TBC</span>
+      </div>
+      <div class="ft-ticket-item reveal reveal-delay-3">
+        <span class="ft-ticket-label">Genre</span>
+        <span class="ft-ticket-value">Short Film</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Watch the Film -->
+  <section class="ft-watch">
+    <div class="ft-watch-inner reveal">
+      <span class="ft-watch-eyebrow">Now Showing</span>
+      <div class="ft-watch-player">
+        <!-- Replace placeholder with iframe when YouTube link is provided -->
+        <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <div class="ft-watch-placeholder">
+          <div class="ft-watch-play-icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="32" fill="rgba(103,205,195,0.15)" stroke="rgba(103,205,195,0.4)" stroke-width="1"/>
+              <polygon points="26,20 46,32 26,44" fill="var(--teal)"/>
+            </svg>
+          </div>
+          <p class="ft-watch-coming">Coming Soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BTS Gallery -->
+  <section class="ft-gallery">
+    <div class="ft-gallery-header reveal">
+      <span class="ft-gallery-eyebrow">Production Stills</span>
+      <h2 class="ft-gallery-heading">Behind The<br>Scenes</h2>
+    </div>
+    <div class="ft-gallery-grid">
+      <div class="ft-gallery-item reveal">
+        <div class="ft-gallery-placeholder"></div>
+      </div>
+      <div class="ft-gallery-item ft-gallery-item-tall reveal reveal-delay-1">
+        <div class="ft-gallery-placeholder"></div>
+      </div>
+      <div class="ft-gallery-item reveal reveal-delay-2">
+        <div class="ft-gallery-placeholder"></div>
+      </div>
+      <div class="ft-gallery-item reveal">
+        <div class="ft-gallery-placeholder"></div>
+      </div>
+      <div class="ft-gallery-item reveal reveal-delay-1">
+        <div class="ft-gallery-placeholder"></div>
+      </div>
+      <div class="ft-gallery-item reveal reveal-delay-2">
+        <div class="ft-gallery-placeholder"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behind The Scenes Text -->
+  <section class="ft-bts">
+    <div class="ft-bts-inner reveal">
+      <div class="ft-bts-left">
+        <span class="cs-content-eyebrow">Production Notes</span>
+        <h2 class="cs-content-heading">The Making<br>Of The Film</h2>
+      </div>
+      <div class="ft-bts-right">
+        <p>Behind the scenes content coming soon. This section will detail the creative process, production challenges, and the story behind bringing The Flatwarming to life.</p>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>
