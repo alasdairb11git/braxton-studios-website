@@ -1685,7 +1685,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
 
   /* Footer */
   footer { padding: 28px 24px; flex-direction: column; gap: 20px; text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .footer-links { position: static; transform: none; flex-wrap: wrap; justify-content: center; }
 }
 
 /* ── LIGHT MODE ── */
