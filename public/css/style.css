@@ -1773,11 +1773,12 @@ body.light .nav-hamburger span { background: #0a0a0a; }
 
   /* Film Ticket */
   .ft-hero { height: 80vh; }
-  .ft-hero-title { font-size: clamp(28px, 9vw, 60px); }
+  .ft-hero-title { font-size: clamp(24px, 8vw, 50px); }
   .ft-hero-scroll { display: none; }
-  .ft-ticket { padding: 0 24px; }
+  .ft-ticket { padding: 0 16px; }
   .ft-ticket-inner { grid-template-columns: 1fr 1fr; }
-  .ft-ticket-item { padding: 32px 16px; }
+  .ft-ticket-item { padding: 28px 12px; }
+  .ft-ticket-value { font-size: 18px; }
   .ft-watch { padding: 60px 24px; }
   .ft-gallery { padding: 0 24px 48px; }
   .ft-gallery-header { padding: 48px 0 32px; }
