@@ -1624,7 +1624,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   border-radius: 6px;
   cursor: none;
   transition: opacity 0.3s;
-  align-self: flex-start;
+  align-self: center;
 }
 .contact-form button:hover { opacity: 0.85; }
 .contact-form button:disabled { opacity: 0.5; cursor: default; }
