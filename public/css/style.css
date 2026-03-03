@@ -1074,7 +1074,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 .ft-hero-title {
   font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
-  font-size: clamp(48px, 10vw, 140px);
+  font-size: clamp(48px, 8vw, 100px);
   line-height: 0.88;
   letter-spacing: 0.02em;
   color: var(--white);
