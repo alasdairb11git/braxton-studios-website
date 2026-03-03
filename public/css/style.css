@@ -1517,6 +1517,33 @@ footer {
   position: relative; z-index: 1;
   display: flex; align-items: center; gap: 16px;
 }
+.nav-contact-btn {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 24px;
+  border: 1px solid rgba(240,237,232,0.25);
+  border-radius: 100px;
+  color: var(--white);
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+  cursor: none;
+}
+.nav-contact-btn:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--black);
+}
+body.light .nav-contact-btn {
+  border-color: rgba(0,0,0,0.2);
+  color: #0a0a0a;
+}
+body.light .nav-contact-btn:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #0a0a0a;
+}
 
 /* ── HAMBURGER (hidden on desktop) ── */
 .nav-hamburger {
@@ -1544,7 +1571,8 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   body { cursor: auto; }
   .nav-links a, .project-card, .about-contact-link,
   .contact-form input, .contact-form textarea, .contact-form button,
-  .theme-toggle { cursor: auto; }
+  .theme-toggle, .nav-contact-btn { cursor: auto; }
+  .nav-contact-btn { display: none; }
 
   /* Nav */
   nav { padding: 20px 24px; }
