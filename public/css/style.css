@@ -1500,6 +1500,22 @@ nav.scrolled .nav-bg { opacity: 1; }
   cursor: none;
 }
 .about-contact-link:hover { border-color: var(--black); }
+.about-media-kit {
+  display: inline-block;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  padding: 12px 28px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 100px;
+  margin-top: 16px;
+  transition: background 0.3s, border-color 0.3s;
+  cursor: none;
+}
+.about-media-kit:hover { background: var(--black); color: var(--teal); border-color: var(--black); }
 
 /* ── CONTACT FORM ── */
 .contact-form {
