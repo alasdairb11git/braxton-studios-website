@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
     ...defaults,
     pageTitle: 'Braxton Studios — Scotland\'s YouTube Production Company',
     pageDescription: 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.',
-    ogImage: '/images/logo-small.jpg',
+    ogImage: '/images/favicon.jpg',
     schema: businessSchema
   });
 });
@@ -70,7 +70,7 @@ router.get('/films/tedrad', (req, res) => {
     ...defaults,
     pageTitle: 'Tedrad — Now Casting — Braxton Studios',
     pageDescription: 'Tedrad is a short film in development by Braxton Studios. Now casting crew for filming in Ayrshire and Glasgow, April–May 2026.',
-    ogImage: '/images/logo-small.jpg'
+    ogImage: '/images/favicon.jpg'
   });
 });
 
