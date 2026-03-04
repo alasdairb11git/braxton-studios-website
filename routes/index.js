@@ -83,6 +83,14 @@ router.get('/films/the-flatwarming', (req, res) => {
   });
 });
 
+router.get('/faqs', (req, res) => {
+  res.render('faqs', {
+    ...defaults,
+    pageTitle: 'FAQs — Braxton Studios',
+    pageDescription: 'Frequently asked questions about Braxton Studios. Learn about our YouTube production services, strategy, pricing, and how to work with us.'
+  });
+});
+
 router.get('/privacy-policy', (req, res) => {
   res.render('privacy-policy', {
     ...defaults,

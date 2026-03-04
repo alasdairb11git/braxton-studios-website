@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <section class="legal-page">
+    <div class="legal-inner">
+      <span class="legal-eyebrow reveal">Support</span>
+      <h1 class="legal-title reveal">FAQs</h1>
+      <p class="legal-updated reveal reveal-delay-1">Frequently Asked Questions</p>
+
+      <div class="faq-list reveal reveal-delay-1">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What services does Braxton Studios offer?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We offer end-to-end YouTube production — from channel strategy and content planning through to filming, editing, and post-production. We also produce short-form content for TikTok and Instagram, podcast production, and original short films.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Who do you work with?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We work with creators, brands, and businesses who are serious about building audiences on YouTube. Whether you're launching a new channel, scaling an existing one, or producing a one-off campaign — we can help.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Where are you based?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're based in Scotland, with most of our production work taking place across Glasgow, Ayrshire, and the surrounding areas. We're open to working on projects across the UK and beyond.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What does end-to-end production mean?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>It means we handle everything. From the initial strategy and planning, through pre-production, filming, editing, and final delivery — you don't need to manage multiple freelancers or agencies. We're your in-house YouTube team.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you offer YouTube strategy as a standalone service?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. We can provide data-driven YouTube strategy consultations covering content planning, audience growth, SEO optimisation, and algorithm-friendly formatting — even if you have your own production team in place.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What kind of results can I expect?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Results vary depending on the project, but across our campaigns we've generated over 2 million organic YouTube views, 700K+ TikTok views, and 500+ leads for our clients. We focus on producing content that drives real, measurable engagement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you produce short films and original content?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. We believe in leading by example. Our original productions — like The Flatwarming and the upcoming Tedrad — showcase the same cinematic quality we bring to our client work. It's how we prove what's possible.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I get started?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Drop us a message through the <a href="/#about" class="legal-link">contact form</a> or email us at <a href="mailto:<%= contactEmail %>" class="legal-link"><%= contactEmail %></a>. Tell us a bit about your project and we'll get back to you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How much does a project cost?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every project is different, so we tailor our pricing based on scope, deliverables, and timeline. Get in touch and we'll put together a proposal that works for your budget.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I join the Braxton Studios crew?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're always open to hearing from talented filmmakers, editors, and creatives. Check our <a href="/films/tedrad" class="legal-link">current crew calls</a> for active opportunities, or send us your reel and we'll keep you on file for future projects.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+
+  <script>
+    (function() {
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const isOpen = item.classList.contains('active');
+          document.querySelectorAll('.faq-item.active').forEach(el => el.classList.remove('active'));
+          if (!isOpen) item.classList.add('active');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
