@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <!-- Hero -->
+  <section class="audit-hero">
+    <div class="audit-hero-content reveal">
+      <span class="cs-hero-eyebrow">Shop</span>
+      <h1 class="cs-hero-title">Products</h1>
+      <p class="audit-hero-sub">Tools and resources built from real production experience.</p>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="products-grid-section">
+    <div class="products-grid-inner">
+      <a href="/youtube-audit" class="product-card-link reveal">
+        <div class="product-card">
+          <span class="product-card-eyebrow">PDF Template</span>
+          <h3 class="product-card-title">YouTube Channel Audit</h3>
+          <p class="product-card-desc">8 sections. 60+ checkpoints. Score system. 30/60/90 day action plan.</p>
+          <span class="product-card-price">&pound;29</span>
+        </div>
+      </a>
+      <div class="product-card-link reveal reveal-delay-1">
+        <div class="product-card product-card-soon">
+          <span class="product-card-eyebrow">LUT Pack</span>
+          <h3 class="product-card-title">Nikon/RED LUTs</h3>
+          <p class="product-card-desc">Cinematic colour grades built for Nikon and RED workflows.</p>
+          <span class="product-card-tag-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

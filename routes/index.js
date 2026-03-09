@@ -83,6 +83,24 @@ router.get('/films/the-flatwarming', (req, res) => {
   });
 });
 
+router.get('/products', (req, res) => {
+  res.render('products', {
+    ...defaults,
+    pageTitle: 'Products — Braxton Studios',
+    pageDescription: 'Tools and resources built from real production experience. YouTube audit templates, LUT packs, and more from Braxton Studios.',
+    ogImage: '/images/favicon.jpg'
+  });
+});
+
+router.get('/youtube-audit', (req, res) => {
+  res.render('youtube-audit', {
+    ...defaults,
+    pageTitle: 'YouTube Channel Audit — Braxton Studios',
+    pageDescription: 'The Braxton Studios YouTube Channel Audit Template. A complete 8-section framework with 60+ checkpoints, score system, and 30/60/90 day action plan. Built by a studio with 2M+ organic views. £29.',
+    ogImage: '/images/favicon.jpg'
+  });
+});
+
 router.get('/faqs', (req, res) => {
   res.render('faqs', {
     ...defaults,
