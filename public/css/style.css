@@ -2024,13 +2024,14 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   overflow: hidden;
 }
 .product-card-has-img {
-  padding: 0;
+  padding: 24px 24px 0;
 }
 .product-card-img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 16/9;
   overflow: hidden;
   background: #0a0a0a;
+  border-radius: 12px;
 }
 .product-card-img img {
   width: 100%;
