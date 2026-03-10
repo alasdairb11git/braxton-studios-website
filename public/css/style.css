@@ -1864,6 +1864,88 @@ body.light .nav-hamburger span { background: #0a0a0a; }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* ── EMAIL SIGNUP ── */
+.signup-section {
+  background: var(--black);
+  border-top: 1px solid rgba(240,237,232,0.08);
+  padding: 80px 48px;
+  text-align: center;
+}
+.signup-inner {
+  max-width: 480px;
+  margin: 0 auto;
+}
+.signup-heading {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.signup-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(240,237,232,0.5);
+  margin-bottom: 32px;
+}
+.signup-input-wrap {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.signup-input {
+  flex: 1;
+  padding: 14px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  background: rgba(240,237,232,0.06);
+  border: 1px solid rgba(240,237,232,0.12);
+  border-radius: 4px;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.3s;
+}
+.signup-input::placeholder { color: rgba(240,237,232,0.3); }
+.signup-input:focus { border-color: var(--teal); }
+.signup-btn {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  background: var(--teal);
+  color: var(--black);
+  border: none;
+  border-radius: 4px;
+  cursor: none;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+.signup-btn:hover { opacity: 0.85; }
+.signup-consent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(240,237,232,0.4);
+  cursor: none;
+}
+.signup-consent input[type="checkbox"] {
+  accent-color: var(--teal);
+  cursor: none;
+}
+.signup-consent a {
+  color: var(--teal);
+  text-decoration: none;
+}
+.signup-consent a:hover { text-decoration: underline; }
+.signup-msg {
+  font-size: 13px;
+  margin-top: 16px;
+  min-height: 20px;
+}
+.signup-msg.success { color: var(--teal); }
+.signup-msg.error { color: #e74c3c; }
+
 /* ── AUDIT PAGE ── */
 .audit-hero {
   display: flex;
@@ -2211,6 +2293,12 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .about-contact-link { font-size: 14px; word-break: break-all; }
   .stat-num { font-size: 28px; }
 
+  /* Signup */
+  .signup-section { padding: 60px 24px; }
+  .signup-input-wrap { flex-direction: column; }
+  .signup-btn { cursor: auto; width: 100%; }
+  .signup-consent { cursor: auto; }
+
   /* Footer */
   footer { padding: 28px 24px; flex-direction: column; gap: 20px; text-align: center; }
   .footer-links { position: static; transform: none; flex-wrap: wrap; justify-content: center; }
@@ -2334,6 +2422,12 @@ body.light .product-card-price { color: #f0ede8; }
 body.light .product-card-tag-soon { color: rgba(240,237,232,0.3); }
 body.light .product-card-soon:hover { border-color: rgba(240,237,232,0.1); }
 body.light #about { background: var(--teal); }
+body.light .signup-section { background: #f5f2ed; border-color: rgba(0,0,0,0.08); }
+body.light .signup-heading { color: #0a0a0a; }
+body.light .signup-text { color: rgba(0,0,0,0.45); }
+body.light .signup-input { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); color: #0a0a0a; }
+body.light .signup-input::placeholder { color: rgba(0,0,0,0.3); }
+body.light .signup-consent { color: rgba(0,0,0,0.4); }
 body.light footer { background: #0a0a0a; border-color: rgba(240,237,232,0.08); }
 body.light footer .footer-copy { color: #666; }
 body.light footer .footer-links a { color: #666; }

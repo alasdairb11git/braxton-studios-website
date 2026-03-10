@@ -132,3 +132,48 @@ if (contactForm) {
     }
   });
 }
+
+// ── EMAIL SIGNUP ──
+const signupForm = document.getElementById('signupForm');
+if (signupForm) {
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = signupForm.querySelector('button');
+    const msgEl = document.getElementById('signupMsg');
+    btn.disabled = true;
+    btn.textContent = 'Subscribing...';
+    if (msgEl) msgEl.textContent = '';
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: signupForm.email.value
+        })
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        if (msgEl) {
+          msgEl.textContent = data.message;
+          msgEl.className = 'signup-msg success';
+        }
+        signupForm.reset();
+      } else {
+        if (msgEl) {
+          msgEl.textContent = data.error || 'Something went wrong.';
+          msgEl.className = 'signup-msg error';
+        }
+      }
+    } catch (err) {
+      if (msgEl) {
+        msgEl.textContent = 'Network error. Please try again.';
+        msgEl.className = 'signup-msg error';
+      }
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+    }
+  });
+}
