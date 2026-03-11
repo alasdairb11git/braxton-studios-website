@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <style>
+    .tf-gate {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--black);
+      padding: 48px 24px;
+    }
+    .tf-gate-inner {
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .tf-gate-label {
+      font-family: 'Graphik', 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .tf-gate-title {
+      font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      color: var(--white);
+      line-height: 0.9;
+      margin-bottom: 16px;
+    }
+    .tf-gate-text {
+      font-size: 15px;
+      color: rgba(240,237,232,0.4);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .tf-gate-form { display: flex; flex-direction: column; gap: 12px; }
+    .tf-gate-input {
+      padding: 14px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      background: rgba(240,237,232,0.06);
+      border: 1px solid rgba(240,237,232,0.12);
+      border-radius: 4px;
+      color: var(--white);
+      outline: none;
+      text-align: center;
+      letter-spacing: 0.1em;
+      transition: border-color 0.3s;
+    }
+    .tf-gate-input::placeholder { color: rgba(240,237,232,0.25); }
+    .tf-gate-input:focus { border-color: var(--teal); }
+    .tf-gate-btn {
+      font-family: 'Graphik', 'DM Sans', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      background: var(--teal);
+      color: var(--black);
+      border: none;
+      border-radius: 4px;
+      cursor: none;
+      transition: opacity 0.3s;
+    }
+    .tf-gate-btn:hover { opacity: 0.85; }
+    .tf-gate-error {
+      font-size: 13px;
+      color: #e74c3c;
+      margin-top: 12px;
+    }
+    .tf-confidential {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: rgba(240,237,232,0.2);
+      margin-top: 48px;
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <% if (!authorized) { %>
+  <!-- Password Gate -->
+  <section class="tf-gate">
+    <div class="tf-gate-inner">
+      <p class="tf-gate-label">Private Document</p>
+      <h1 class="tf-gate-title">The Transfer</h1>
+      <p class="tf-gate-text">This page is restricted to investors and partners. Enter the access code to continue.</p>
+      <form class="tf-gate-form" method="POST" action="/the-transfer">
+        <input type="password" name="password" class="tf-gate-input" placeholder="Access code" required autofocus>
+        <button type="submit" class="tf-gate-btn">Enter</button>
+        <% if (typeof error !== 'undefined' && error) { %>
+        <p class="tf-gate-error"><%= error %></p>
+        <% } %>
+      </form>
+      <p class="tf-confidential">Confidential. Braxton Studios 2026.</p>
+    </div>
+  </section>
+
+  <% } else { %>
+  <!-- Content -->
+  <section class="audit-hero">
+    <div class="audit-hero-content reveal">
+      <span class="cs-hero-eyebrow">Sport. Culture. Live.</span>
+      <h1 class="cs-hero-title">The Transfer</h1>
+      <p class="audit-hero-sub">A live multi-sport, multi-creator event concept designed for the Scottish market and built for national and international scale.</p>
+    </div>
+  </section>
+
+  <!-- Executive Summary -->
+  <section class="cs-content">
+    <div class="cs-content-inner reveal">
+      <div class="cs-content-left">
+        <span class="cs-content-eyebrow">Overview</span>
+        <h2 class="cs-content-heading">Executive<br>Summary</h2>
+      </div>
+      <div class="cs-content-right">
+        <p>The Transfer combines three simultaneous sporting arenas (football, tennis, rugby sevens) with a live audience voting mechanic that allows viewers to transfer YouTube creators and personalities directly into the active games.</p>
+        <p>Positioned at the intersection of sports entertainment, creator culture, and live performance, with no direct competitor in the Scottish events market. Anchored by Scottish athletes and musicians, populated by UK and international YouTube creators.</p>
+        <p>Phase 1 is a proof-of-concept event at a 500 to 2,000 capacity venue in Glasgow or Edinburgh, targeted for 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Three Arenas -->
+  <section class="audit-process">
+    <div class="audit-process-inner reveal">
+      <span class="cs-content-eyebrow" style="color: rgba(240,237,232,0.4);">The Format</span>
+      <h2 class="cs-content-heading" style="color: var(--white); margin-bottom: 48px;">Three<br>Arenas</h2>
+      <div class="audit-steps">
+        <div class="audit-step">
+          <span class="audit-step-num">01</span>
+          <h4 class="audit-step-title">Football</h4>
+          <p>5-a-side format with professional players. Creators enter as substitutes mid-game.</p>
+        </div>
+        <div class="audit-step">
+          <span class="audit-step-num">02</span>
+          <h4 class="audit-step-title">Tennis</h4>
+          <p>Tie-break format, first to 7 points. Creator faces a professional in a direct 1v1 contest.</p>
+        </div>
+        <div class="audit-step">
+          <span class="audit-step-num">03</span>
+          <h4 class="audit-step-title">Rugby Sevens</h4>
+          <p>7-a-side, 7-minute halves with professional athletes. Creator enters as a live substitution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transfer Window -->
+  <section class="cs-content">
+    <div class="cs-content-inner reveal">
+      <div class="cs-content-left">
+        <span class="cs-content-eyebrow">The Mechanic</span>
+        <h2 class="cs-content-heading">Transfer<br>Window</h2>
+      </div>
+      <div class="cs-content-right">
+        <p>Creators are placed in the Transfer Window Lounge, a branded area visible to the audience via a continuous camera feed. Audience members vote via a real-time app or QR code at key moments.</p>
+        <p>Two transfer types: a Loan Transfer places the creator temporarily before returning them. A Permanent Transfer means they remain in that arena for the rest of the match. The audience votes on both the recipient and the transfer type.</p>
+        <p>Each creator is represented by a visual Transfer Card styled after a football squad card, featuring ratings across speed, skill, entertainment value, and wildcard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership Tiers -->
+  <section class="audit-process">
+    <div class="audit-process-inner reveal">
+      <span class="cs-content-eyebrow" style="color: rgba(240,237,232,0.4);">Commercial Model</span>
+      <h2 class="cs-content-heading" style="color: var(--white); margin-bottom: 48px;">Partnership<br>Structure</h2>
+      <div class="audit-sections-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="audit-section-card">
+          <span class="audit-step-num">Principal</span>
+          <h4 class="audit-step-title" style="margin-top: 12px;">Maximum 2 per event</h4>
+          <p style="font-size: 14px; line-height: 1.7; color: rgba(240,237,232,0.5); margin-top: 12px;">Title-level integration. Naming rights, full brand activation of the Transfer Window Lounge, VIP hospitality, social media integration, and post-event content rights.</p>
+        </div>
+        <div class="audit-section-card">
+          <span class="audit-step-num">Official</span>
+          <h4 class="audit-step-title" style="margin-top: 12px;">Maximum 5 per event</h4>
+          <p style="font-size: 14px; line-height: 1.7; color: rgba(240,237,232,0.5); margin-top: 12px;">Category exclusivity. Logo placement, branded on-site presence, social media inclusion, complimentary tickets, and post-event recap content.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="cs-content">
+    <div class="cs-content-inner reveal">
+      <div class="cs-content-left">
+        <span class="cs-content-eyebrow">The Roadmap</span>
+        <h2 class="cs-content-heading">Three<br>Phases</h2>
+      </div>
+      <div class="cs-content-right">
+        <div class="audit-item">
+          <h4 class="audit-item-title">Phase 1: Proof of Concept (2026)</h4>
+          <p>500 to 2,000 capacity venue in Glasgow or Edinburgh. Sell out. Secure one Principal Partner and two Official Partners. Produce the content library. Prove the format works live.</p>
+        </div>
+        <div class="audit-item">
+          <h4 class="audit-item-title">Phase 2: Scale Up (2027)</h4>
+          <p>3,000 to 6,000 capacity Scottish arena. Grow creator roster with larger UK names. Expand broadcast reach. Full Official Partner roster. Begin Hydro conversations.</p>
+        </div>
+        <div class="audit-item">
+          <h4 class="audit-item-title">Phase 3: OVO Hydro (2028+)</h4>
+          <p>14,000 capacity. Title broadcast partner secured. National press coverage. Full commercial partnership roster. Potential international expansion of the format.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revenue -->
+  <section class="audit-process">
+    <div class="audit-process-inner reveal">
+      <span class="cs-content-eyebrow" style="color: rgba(240,237,232,0.4);">Phase 1 Financials</span>
+      <h2 class="cs-content-heading" style="color: var(--white); margin-bottom: 48px;">Projected<br>Revenue</h2>
+      <div class="audit-sections-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="audit-section-card">
+          <span class="audit-step-num" style="font-size: 24px;">Cost</span>
+          <p style="font-family: 'Ethnocentric', sans-serif; font-size: 28px; color: var(--white); margin-top: 16px;">&pound;46K &ndash; &pound;100K</p>
+          <p style="font-size: 14px; line-height: 1.7; color: rgba(240,237,232,0.5); margin-top: 12px;">Venue, production, talent, marketing, operations, and contingency.</p>
+        </div>
+        <div class="audit-section-card">
+          <span class="audit-step-num" style="font-size: 24px;">Revenue</span>
+          <p style="font-family: 'Ethnocentric', sans-serif; font-size: 28px; color: var(--white); margin-top: 16px;">&pound;76K &ndash; &pound;108K</p>
+          <p style="font-size: 14px; line-height: 1.7; color: rgba(240,237,232,0.5); margin-top: 12px;">Tickets, partnerships, merchandise, and pay-per-view broadcast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="audit-cta">
+    <div class="audit-cta-inner reveal">
+      <h2 class="audit-cta-heading">Partnership Enquiries</h2>
+      <p class="audit-cta-text">To discuss Principal or Official Partnership opportunities, get in touch.</p>
+      <a href="mailto:info@braxtonstudios.com?subject=The%20Transfer%20%E2%80%94%20Partnership%20Enquiry" class="audit-cta-btn">Get in Touch</a>
+      <p class="audit-cta-note">Confidential. Braxton Studios retains all IP rights to The Transfer concept, format, and brand.</p>
+    </div>
+  </section>
+
+  <% } %>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

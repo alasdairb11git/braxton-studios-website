@@ -101,6 +101,30 @@ router.get('/youtube-audit', (req, res) => {
   });
 });
 
+router.get('/the-transfer', (req, res) => {
+  res.render('the-transfer', {
+    ...defaults,
+    pageTitle: 'The Transfer — Braxton Studios',
+    pageDescription: 'The Transfer. A private partnership document by Braxton Studios.',
+    ogImage: '/images/favicon.jpg',
+    authorized: false,
+    error: null
+  });
+});
+
+router.post('/the-transfer', (req, res) => {
+  const { password } = req.body;
+  const correct = password === (process.env.TRANSFER_PASSWORD || 'transfer2026');
+  res.render('the-transfer', {
+    ...defaults,
+    pageTitle: 'The Transfer — Braxton Studios',
+    pageDescription: 'The Transfer. A private partnership document by Braxton Studios.',
+    ogImage: '/images/favicon.jpg',
+    authorized: correct,
+    error: correct ? null : 'Incorrect access code. Please try again.'
+  });
+});
+
 router.get('/faqs', (req, res) => {
   res.render('faqs', {
     ...defaults,
