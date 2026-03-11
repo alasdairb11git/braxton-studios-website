@@ -2012,6 +2012,11 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   line-height: 1.7;
   color: rgba(240,237,232,0.5);
 }
+.tf-two-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
 .audit-sections-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2279,8 +2284,10 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .audit-hero { padding: 100px 24px 60px; min-height: 50vh; }
   .audit-process { padding: 60px 24px; }
   .audit-steps { grid-template-columns: 1fr; gap: 32px; }
-  .audit-sections-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .audit-sections-grid { grid-template-columns: 1fr; gap: 16px; }
+  .tf-two-col { grid-template-columns: 1fr; gap: 16px; }
   .audit-section-card { padding: 24px 16px; }
+  .audit-process .cs-content-heading { font-size: clamp(24px, 7vw, 32px); word-break: break-word; }
   .audit-cta-inner { padding: 60px 24px; }
   .audit-cta-btn { cursor: auto; }
   .products-grid-section { padding: 60px 24px; }
