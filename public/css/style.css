@@ -2087,7 +2087,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   align-items: flex-end;
   min-height: 60vh;
   background: var(--black);
-  padding: 100px 48px 80px;
+  padding: 160px 48px 80px;
 }
 .audit-hero-content { max-width: 700px; }
 .audit-hero-sub {
@@ -2305,10 +2305,105 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   color: rgba(0,0,0,0.35);
 }
 
+/* ── SPLIT SCREEN ── */
+.split-screen {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.split-panel {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 48px;
+  text-decoration: none;
+  color: var(--white);
+}
+.split-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s ease;
+}
+.split-panel:hover .split-bg {
+  transform: scale(1.05);
+}
+.split-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%);
+  transition: background 0.4s;
+}
+.split-panel:hover .split-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%);
+}
+.split-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.split-label {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.split-title {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin: 0;
+}
+.split-sub {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light-grey);
+}
+.split-badge {
+  position: absolute;
+  top: 80px;
+  right: 24px;
+  z-index: 2;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.split-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.split-left { border-right: 1px solid rgba(240,237,232,0.08); }
+
 /* ── STORIES ── */
 .stories-section {
   padding: 100px 48px;
-  background: var(--black);
+  background: rgba(103, 205, 195, 0.07);
 }
 .stories-header {
   display: flex;
@@ -2442,6 +2537,13 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .hero-bar-top, .hero-bar-bottom { height: 40px; }
   .hero-scroll { bottom: 60px; }
 
+  /* Split screen */
+  .split-screen { flex-direction: column; height: auto; }
+  .split-panel { min-height: 50vh; padding: 32px 24px; }
+  .split-left { border-right: none; border-bottom: 1px solid rgba(240,237,232,0.08); }
+  .split-title { font-size: clamp(16px, 4vw, 22px); }
+  .split-badge { top: auto; bottom: 80px; right: 16px; font-size: 10px; padding: 6px 12px; }
+
   /* Sections */
   .section-header { padding: 80px 24px 40px; }
 
@@ -2452,9 +2554,23 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .project-card { aspect-ratio: 16/9; }
 
   /* Stories */
-  .stories-section { padding: 60px 24px; }
-  .stories-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .stories-grid { grid-template-columns: 1fr; gap: 32px; }
+  .stories-section { padding: 60px 0; }
+  .stories-header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 24px; }
+  .stories-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 0 24px;
+    scroll-padding-left: 24px;
+    scrollbar-width: none;
+  }
+  .stories-grid::-webkit-scrollbar { display: none; }
+  .story-card {
+    flex: 0 0 75vw;
+    scroll-snap-align: start;
+  }
   .story-title { font-size: 14px; }
 
   /* Partners */
