@@ -287,6 +287,8 @@ nav.scrolled .nav-bg { opacity: 1; }
   white-space: nowrap;
   animation: heroFadeIn 1s 0.8s both;
 }
+.mobile-break { display: none;
+}
 
 /* Scroll indicator */
 .hero-scroll {
@@ -316,7 +318,8 @@ nav.scrolled .nav-bg { opacity: 1; }
 
 @media (max-width: 900px) {
   .hero-title { font-size: clamp(12px, 3.5vw, 20px); }
-  .hero-sub { font-size: 7px; letter-spacing: 0.15em; }
+  .hero-sub { font-size: 14px; letter-spacing: 0.25em; white-space: normal; }
+  .mobile-break { display: inline; }
 }
 
 /* ── SECTION PAGES ── */
