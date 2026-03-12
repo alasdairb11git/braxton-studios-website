@@ -88,8 +88,7 @@ nav.scrolled .nav-bg { opacity: 1; }
   display: flex; align-items: center;
 }
 .nav-logo img {
-  height: 48px; width: 48px;
-  border-radius: 50%; object-fit: cover;
+  height: 40px; width: auto;
 }
 .nav-links {
   position: absolute; left: 50%; transform: translateX(-50%); z-index: 1;
