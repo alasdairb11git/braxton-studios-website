@@ -227,7 +227,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 
 @media (max-width: 900px) {
-  .featured-banner-img { height: 50vh; }
+  .featured-banner-img { height: 100vh; }
   .featured-banner-title { font-size: clamp(12px, 3.5vw, 20px); }
   .featured-banner-btn { width: 40px; height: 40px; }
 }
@@ -283,9 +283,10 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 .hero-title .teal { color: var(--teal); }
 .hero-sub {
-  font-size: 9px; letter-spacing: 0.18em;
+  font-size: 12px; letter-spacing: 0.25em;
   text-transform: uppercase; color: var(--light-grey);
   margin-top: 20px;
+  white-space: nowrap;
   animation: heroFadeIn 1s 0.8s both;
 }
 
