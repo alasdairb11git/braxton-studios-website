@@ -1,3 +1,17 @@
+// ── SPLASH SCREEN ──
+const splash = document.getElementById('splash');
+if (splash) {
+  const splashLogo = splash.querySelector('.splash-logo');
+  // Fade logo in
+  setTimeout(() => { splashLogo.classList.add('show'); }, 200);
+  // Fade logo back out
+  setTimeout(() => { splashLogo.classList.remove('show'); }, 1800);
+  // Once logo has faded out, fade away the black overlay
+  setTimeout(() => { splash.classList.add('done'); }, 2400);
+  // Remove from DOM after fade finishes
+  setTimeout(() => { splash.remove(); }, 3400);
+}
+
 // ── THEME TOGGLE ──
 const themeToggle = document.getElementById('themeToggle');
 const toggleKnob = document.getElementById('toggleKnob');
