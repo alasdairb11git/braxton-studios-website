@@ -1778,15 +1778,11 @@ nav.scrolled .nav-bg { opacity: 1; }
 footer {
   background: var(--black);
   padding: 48px 48px 36px;
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 24px;
   border-top: 1px solid rgba(240,237,232,0.08);
-  position: relative;
 }
-.footer-logo img {
-  height: 80px; width: auto;
-}
-.footer-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 36px; }
+.footer-links { display: flex; gap: 36px; }
 .footer-links a {
   color: rgba(240,237,232,0.7); text-decoration: none;
   font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
@@ -1794,8 +1790,7 @@ footer {
 }
 .footer-links a:hover { color: var(--teal); }
 .footer-legal {
-  width: 100%; display: flex; gap: 24px; justify-content: center;
-  margin-top: 24px; order: 4;
+  display: flex; gap: 24px;
 }
 .footer-legal a {
   font-size: 11px; color: rgba(240,237,232,0.35);
