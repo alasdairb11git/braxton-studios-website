@@ -318,7 +318,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 
 @media (max-width: 900px) {
-  .hero-title { font-size: clamp(18px, 5.5vw, 28px); letter-spacing: 0.15em; }
+  .hero-title { font-size: clamp(14px, 4.5vw, 22px); letter-spacing: 0.15em; }
   .hero-sub { font-size: 11px; letter-spacing: 0.2em; white-space: normal; text-align: center; }
   .mobile-break { display: inline; }
 }
