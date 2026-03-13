@@ -2589,19 +2589,20 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .stories-grid {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    padding: 0 24px;
-    scroll-padding-left: 24px;
+    gap: 0;
+    padding: 0;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
   }
   .stories-grid::-webkit-scrollbar { display: none; }
   .story-card {
-    flex: 0 0 85vw;
-    scroll-snap-align: center;
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
     scroll-snap-stop: always;
+    padding: 0 24px;
+    box-sizing: border-box;
   }
   .story-title { font-size: 14px; }
 
