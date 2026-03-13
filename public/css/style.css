@@ -13,8 +13,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 img { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; pointer-events: none; }
 a img, .nav-logo img { pointer-events: auto; }
-a { text-decoration: none; }
-a:hover { text-decoration: none; }
+a, a:hover, a:visited, a:active, a:focus { text-decoration: none; outline: none; -webkit-tap-highlight-color: transparent; }
 
 :root {
   --black: #0a0a0a;
