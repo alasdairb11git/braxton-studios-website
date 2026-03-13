@@ -2537,6 +2537,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   text-transform: uppercase;
   color: var(--grey);
 }
+.stories-nav { display: none; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
@@ -2608,6 +2609,30 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .story-card:first-child { margin-left: 24px; }
   .story-card:last-child { margin-right: 24px; }
   .story-title { font-size: 15px; }
+  .stories-nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    padding: 0 24px;
+  }
+  .stories-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.05);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .stories-nav-btn:active {
+    background: rgba(255,255,255,0.15);
+    border-color: var(--teal);
+  }
 
   /* Partners */
   .partners-grid { grid-template-columns: 1fr 1fr; }

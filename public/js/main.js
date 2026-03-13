@@ -108,6 +108,23 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+// ── STORIES ARROWS ──
+const storiesGrid = document.querySelector('.stories-grid');
+const prevBtn = document.querySelector('.stories-prev');
+const nextBtn = document.querySelector('.stories-next');
+if (storiesGrid && prevBtn && nextBtn) {
+  const getCardWidth = () => {
+    const card = storiesGrid.querySelector('.story-card');
+    return card ? card.offsetWidth + parseInt(getComputedStyle(card).marginRight || 0) : 0;
+  };
+  prevBtn.addEventListener('click', () => {
+    storiesGrid.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    storiesGrid.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+  });
+}
+
 // ── CONTACT FORM ──
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
