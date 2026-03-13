@@ -2595,11 +2595,13 @@ body.light .nav-hamburger span { background: #0a0a0a; }
     padding: 0 24px;
     scroll-padding-left: 24px;
     scrollbar-width: none;
+    overscroll-behavior-x: contain;
   }
   .stories-grid::-webkit-scrollbar { display: none; }
   .story-card {
-    flex: 0 0 75vw;
-    scroll-snap-align: start;
+    flex: 0 0 85vw;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
   .story-title { font-size: 14px; }
 
