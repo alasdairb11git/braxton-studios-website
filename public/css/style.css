@@ -2708,6 +2708,8 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   /* Hero video swap */
   .hero-video-desktop { display: none; }
   .hero-video-mobile { display: block; }
+  .hero-video { pointer-events: none; }
+  .hero-video-overlay { pointer-events: none; }
 
   /* Audit */
   .audit-hero { padding: 100px 24px 60px; min-height: 50vh; }
