@@ -125,6 +125,33 @@ router.post('/the-transfer', (req, res) => {
   });
 });
 
+router.get('/stories/kings-trust', (req, res) => {
+  res.render('story-kings-trust', {
+    ...defaults,
+    pageTitle: 'A New Chapter with The King\'s Trust — Braxton Studios',
+    pageDescription: 'Braxton Studios is proud to be in development with the King\'s Trust, scaling operations and supporting established clients and partners in 2026.',
+    ogImage: '/images/arran_bs_mobile.jpg'
+  });
+});
+
+router.get('/stories/shiny-list', (req, res) => {
+  res.render('story-shiny-list', {
+    ...defaults,
+    pageTitle: 'Two Hearts Secures Shiny List Award — Braxton Studios',
+    pageDescription: 'Alasdair Braxton\'s short film Two Hearts has been officially recognised on the prestigious Shiny List, celebrating emerging directorial talent.',
+    ogImage: '/images/kenmore-6-2.jpg'
+  });
+});
+
+router.get('/stories/flatwarming-screening', (req, res) => {
+  res.render('story-flatwarming-screening', {
+    ...defaults,
+    pageTitle: 'The Flatwarming Screening at Beautiful Sunday\'s Film Club — Braxton Studios',
+    pageDescription: 'The Flatwarming secures an intimate screening at Beautiful Sunday\'s Film Club at the historic Old Toll Bar in Glasgow.',
+    ogImage: '/images/flatwarming-18.jpg'
+  });
+});
+
 router.get('/faqs', (req, res) => {
   res.render('faqs', {
     ...defaults,
