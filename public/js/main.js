@@ -113,15 +113,17 @@ const storiesGrid = document.querySelector('.stories-grid');
 const prevBtn = document.querySelector('.stories-prev');
 const nextBtn = document.querySelector('.stories-next');
 if (storiesGrid && prevBtn && nextBtn) {
-  const getCardWidth = () => {
+  const getScrollAmount = () => {
     const card = storiesGrid.querySelector('.story-card');
-    return card ? card.offsetWidth + parseInt(getComputedStyle(card).marginRight || 0) : 0;
+    if (!card) return 0;
+    const gap = parseInt(getComputedStyle(storiesGrid).gap) || 0;
+    return card.offsetWidth + gap;
   };
   prevBtn.addEventListener('click', () => {
-    storiesGrid.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+    storiesGrid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
   nextBtn.addEventListener('click', () => {
-    storiesGrid.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+    storiesGrid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
 }
 
