@@ -2589,22 +2589,24 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .stories-header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 24px; }
   .stories-grid {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 0;
     padding: 0;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
+    touch-action: pan-x;
   }
   .stories-grid::-webkit-scrollbar { display: none; }
   .story-card {
-    flex: 0 0 100vw;
+    flex: 0 0 calc(100vw - 48px);
+    margin: 0 24px 0 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    padding: 0 24px;
-    box-sizing: border-box;
   }
+  .story-card:first-child { margin-left: 24px; }
+  .story-card:last-child { margin-right: 24px; }
   .story-title { font-size: 15px; }
 
   /* Partners */
