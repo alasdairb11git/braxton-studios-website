@@ -2954,6 +2954,14 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   text-transform: uppercase;
   color: var(--light-grey);
 }
+.shiny-date-row {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 4px; width: 100%;
+}
+.shiny-hero-logo { width: 60px; opacity: 0.8; }
+@media (max-width: 900px) {
+  .shiny-date-row { flex-direction: row; align-items: center; justify-content: space-between; }
+  .shiny-hero-logo { width: 50px; }
+}
 .story-body {
   background: rgba(103, 205, 195, 0.07);
   padding: 80px 48px;
