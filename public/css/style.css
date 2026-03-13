@@ -2607,6 +2607,8 @@ body.light .nav-hamburger span { background: #0a0a0a; }
     scroll-snap-stop: always;
   }
   .story-title { font-size: 15px; }
+  .story-img { transition: none !important; }
+  .story-card:hover .story-img { transform: none !important; }
   .stories-nav {
     display: flex;
     justify-content: center;
