@@ -2593,21 +2593,19 @@ body.light .nav-hamburger span { background: #0a0a0a; }
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 0;
-    padding: 0;
+    gap: 16px;
+    padding: 0 24px;
+    scroll-padding-left: 24px;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
     touch-action: pan-x;
   }
   .stories-grid::-webkit-scrollbar { display: none; }
   .story-card {
-    flex: 0 0 calc(100vw - 48px);
-    margin: 0 24px 0 0;
+    flex: 0 0 calc(100vw - 64px);
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
-  .story-card:first-child { margin-left: 24px; }
-  .story-card:last-child { margin-right: 24px; }
   .story-title { font-size: 15px; }
   .stories-nav {
     display: flex;
