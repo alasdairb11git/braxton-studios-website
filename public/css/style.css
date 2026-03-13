@@ -2598,7 +2598,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
     scroll-padding-left: 24px;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
-    touch-action: pan-x;
+    touch-action: pan-x pan-y;
   }
   .stories-grid::-webkit-scrollbar { display: none; }
   .story-card {
