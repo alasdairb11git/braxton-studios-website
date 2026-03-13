@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <section class="listing-hero">
+    <h1 class="listing-hero-title">Campaigns</h1>
+  </section>
+
+  <section class="listing-grid">
+    <a href="/campaigns/building-brand-advocacy" class="listing-card reveal">
+      <div class="listing-card-img">
+        <img src="/images/bba-podcast.jpg" alt="Building Brand Advocacy">
+        <div class="listing-card-overlay"></div>
+      </div>
+      <div class="listing-card-info">
+        <h2 class="listing-card-title">Building Brand Advocacy</h2>
+        <p class="listing-card-sub">Podcast Production — Archive House Agency</p>
+      </div>
+    </a>
+    <a href="/campaigns/adum" class="listing-card reveal reveal-delay-1">
+      <div class="listing-card-img">
+        <img src="/images/adum.jpg" alt="Adum">
+        <div class="listing-card-overlay"></div>
+      </div>
+      <div class="listing-card-info">
+        <h2 class="listing-card-title">Adum</h2>
+        <p class="listing-card-sub">Artist Campaign — Alasdair Braxton</p>
+      </div>
+    </a>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

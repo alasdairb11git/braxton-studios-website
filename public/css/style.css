@@ -112,6 +112,34 @@ nav.scrolled .nav-bg { opacity: 1; }
 .nav-links a:hover { color: var(--teal); }
 .nav-links a:hover::after { width: 100%; }
 
+/* Nav dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  padding: 12px 0 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-dropdown-menu li {
+  background: rgba(10,10,10,0.92);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+.nav-dropdown-menu a {
+  font-size: 12px !important;
+}
+
 /* ── SPLASH SCREEN ── */
 .splash {
   position: fixed;
@@ -2992,4 +3020,88 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   .story-badge { padding: 32px 24px 0; }
   .story-badge-logo { height: 36px; }
   .story-video { padding: 40px 24px 60px; }
+}
+
+/* ── Listing Pages (Campaigns, Films, Stories) ── */
+.listing-hero {
+  padding: 160px 48px 60px;
+  background: var(--black);
+}
+.listing-hero-title {
+  font-family: 'Graphik', sans-serif;
+  font-weight: 300;
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--white);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--black);
+  padding: 0 0 2px;
+}
+.listing-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.listing-card {
+  display: block;
+  text-decoration: none;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.listing-card-img {
+  position: relative;
+  overflow: hidden;
+}
+.listing-card-img img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.listing-card:hover .listing-card-img img {
+  transform: scale(1.05);
+}
+.listing-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  pointer-events: none;
+}
+.listing-card-info {
+  padding: 24px 28px 32px;
+  background: var(--black);
+}
+.listing-card-category {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+.listing-card-title {
+  font-family: 'Graphik', sans-serif;
+  font-weight: 300;
+  font-size: clamp(16px, 2vw, 22px);
+  color: var(--white);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+.listing-card-sub {
+  font-size: 13px;
+  color: var(--light-grey);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .listing-hero { padding: 120px 24px 40px; }
+  .listing-grid { grid-template-columns: 1fr; }
+  .listing-grid-3 { grid-template-columns: 1fr; }
+  .listing-card-info { padding: 20px 24px 28px; }
 }

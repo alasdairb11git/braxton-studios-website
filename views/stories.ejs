@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <section class="listing-hero">
+    <h1 class="listing-hero-title">Stories</h1>
+  </section>
+
+  <section class="listing-grid listing-grid-3">
+    <a href="/stories/kings-trust" class="listing-card reveal">
+      <div class="listing-card-img">
+        <img src="/images/arran_bs_mobile.jpg" alt="King's Trust">
+        <div class="listing-card-overlay"></div>
+      </div>
+      <div class="listing-card-info">
+        <span class="listing-card-category">Business</span>
+        <h2 class="listing-card-title">A New Chapter with The King's Trust</h2>
+        <p class="listing-card-sub">March 10, 2026</p>
+      </div>
+    </a>
+    <a href="/stories/shiny-list" class="listing-card reveal reveal-delay-1">
+      <div class="listing-card-img">
+        <img src="/images/al-banus.jpg" alt="Shiny List Award">
+        <div class="listing-card-overlay"></div>
+      </div>
+      <div class="listing-card-info">
+        <span class="listing-card-category">Films</span>
+        <h2 class="listing-card-title">Two Hearts Secures Shiny List Award</h2>
+        <p class="listing-card-sub">March 1, 2026</p>
+      </div>
+    </a>
+    <a href="/stories/flatwarming-screening" class="listing-card reveal reveal-delay-2">
+      <div class="listing-card-img">
+        <img src="/images/flatwarming-18.jpg" alt="Flatwarming Screening">
+        <div class="listing-card-overlay"></div>
+      </div>
+      <div class="listing-card-info">
+        <span class="listing-card-category">Films</span>
+        <h2 class="listing-card-title">The Flatwarming at Beautiful Sunday's Film Club</h2>
+        <p class="listing-card-sub">September 2025</p>
+      </div>
+    </a>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

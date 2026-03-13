@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <section class="listing-hero">
+    <h1 class="listing-hero-title">Films</h1>
+  </section>
+
+  <section class="listing-grid">
+    <a href="/films/the-flatwarming" class="listing-card reveal">
+      <div class="listing-card-img">
+        <img src="/images/the-flatwarming.jpg" alt="The Flatwarming">
+        <div class="listing-card-overlay"></div>
+      </div>
+      <div class="listing-card-info">
+        <h2 class="listing-card-title">The Flatwarming</h2>
+        <p class="listing-card-sub">Short Film — 2025</p>
+      </div>
+    </a>
+    <a href="/films/tedrad" class="listing-card reveal reveal-delay-1">
+      <div class="listing-card-img" style="background: linear-gradient(135deg, #0a1a0a 0%, #152d15 50%, #0a0a0a 100%); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center;">
+        <div class="listing-card-overlay"></div>
+        <span style="color: var(--teal); font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; position: relative; z-index: 2;">Now Casting</span>
+      </div>
+      <div class="listing-card-info">
+        <h2 class="listing-card-title">Tedrad</h2>
+        <p class="listing-card-sub">Feature Film — Now Casting</p>
+      </div>
+    </a>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

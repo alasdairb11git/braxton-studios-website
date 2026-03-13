@@ -38,6 +38,33 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/campaigns', (req, res) => {
+  res.render('campaigns', {
+    ...defaults,
+    pageTitle: 'Campaigns — Braxton Studios',
+    pageDescription: 'Campaign work by Braxton Studios. Podcast production, artist campaigns, and brand partnerships.',
+    ogImage: '/images/bba-podcast.jpg'
+  });
+});
+
+router.get('/films', (req, res) => {
+  res.render('films', {
+    ...defaults,
+    pageTitle: 'Films — Braxton Studios',
+    pageDescription: 'Films by Braxton Studios. Short films, feature films, and cinematic storytelling.',
+    ogImage: '/images/the-flatwarming.jpg'
+  });
+});
+
+router.get('/stories', (req, res) => {
+  res.render('stories', {
+    ...defaults,
+    pageTitle: 'Stories — Braxton Studios',
+    pageDescription: 'The latest news and stories from Braxton Studios.',
+    ogImage: '/images/arran_bs_mobile.jpg'
+  });
+});
+
 router.get('/campaigns/building-brand-advocacy', (req, res) => {
   res.render('case-study-bba', {
     ...defaults,
