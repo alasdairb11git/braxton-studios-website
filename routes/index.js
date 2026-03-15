@@ -171,7 +171,18 @@ router.get('/stories/kings-trust', (req, res) => {
     pageTitle: 'A New Chapter with The King\'s Trust — Braxton Studios',
     pageDescription: 'Braxton Studios is proud to be in development with the King\'s Trust, scaling operations and supporting established clients and partners in 2026.',
     ogImage: '/images/arran_bs_mobile.jpg',
-    schema: { '@context': 'https://schema.org', '@type': 'Article', headline: 'The Latest from Braxton Studios: A New Chapter with The King\'s Trust', datePublished: '2026-03-10', author: { '@type': 'Organization', name: 'Braxton Studios' }, publisher: { '@type': 'Organization', name: 'Braxton Studios' }, image: 'https://braxtonstudios.com/images/arran_bs_mobile.jpg' }
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: 'The Latest from Braxton Studios: A New Chapter with The King\'s Trust',
+      description: 'Braxton Studios is proud to be in development with the King\'s Trust, scaling operations and supporting established clients and partners in 2026.',
+      datePublished: '2026-03-10T00:00:00+00:00',
+      dateModified: '2026-03-10T00:00:00+00:00',
+      author: { '@type': 'Organization', name: 'Braxton Studios', url: 'https://braxtonstudios.com' },
+      publisher: { '@type': 'Organization', name: 'Braxton Studios', logo: { '@type': 'ImageObject', url: 'https://braxtonstudios.com/images/BS_transparent_2026.png' } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://braxtonstudios.com/stories/kings-trust' },
+      image: 'https://braxtonstudios.com/images/arran_bs_mobile.jpg'
+    }
   });
 });
 
@@ -183,7 +194,18 @@ router.get('/stories/shiny-list', (req, res) => {
     pageTitle: 'Two Hearts Secures Shiny List Award — Braxton Studios',
     pageDescription: 'Alasdair Braxton\'s short film Two Hearts has been officially recognised on the prestigious Shiny List, celebrating emerging directorial talent.',
     ogImage: '/images/kenmore-6-2.jpg',
-    schema: { '@context': 'https://schema.org', '@type': 'Article', headline: 'Alasdair Braxton\'s Two Hearts Secures Shiny List Award', datePublished: '2026-03-01', author: { '@type': 'Person', name: 'Alasdair Braxton' }, publisher: { '@type': 'Organization', name: 'Braxton Studios' }, image: 'https://braxtonstudios.com/images/al-banus.jpg' }
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: 'Alasdair Braxton\'s Two Hearts Secures Shiny List Award',
+      description: 'Alasdair Braxton\'s short film Two Hearts has been officially recognised on the prestigious Shiny List, celebrating emerging directorial talent.',
+      datePublished: '2026-03-01T00:00:00+00:00',
+      dateModified: '2026-03-01T00:00:00+00:00',
+      author: { '@type': 'Organization', name: 'Braxton Studios', url: 'https://braxtonstudios.com' },
+      publisher: { '@type': 'Organization', name: 'Braxton Studios', logo: { '@type': 'ImageObject', url: 'https://braxtonstudios.com/images/BS_transparent_2026.png' } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://braxtonstudios.com/stories/shiny-list' },
+      image: 'https://braxtonstudios.com/images/al-banus.jpg'
+    }
   });
 });
 
@@ -195,7 +217,18 @@ router.get('/stories/flatwarming-screening', (req, res) => {
     pageTitle: 'The Flatwarming Screening at Beautiful Sunday\'s Film Club — Braxton Studios',
     pageDescription: 'The Flatwarming secures an intimate screening at Beautiful Sunday\'s Film Club at the historic Old Toll Bar in Glasgow.',
     ogImage: '/images/flatwarming-18.jpg',
-    schema: { '@context': 'https://schema.org', '@type': 'Article', headline: 'The Flatwarming Secures Screening at Beautiful Sunday\'s Film Club', datePublished: '2025-09-01', author: { '@type': 'Organization', name: 'Braxton Studios' }, publisher: { '@type': 'Organization', name: 'Braxton Studios' }, image: 'https://braxtonstudios.com/images/flatwarming-18.jpg' }
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: 'The Flatwarming Secures Screening at Beautiful Sunday\'s Film Club',
+      description: 'The Flatwarming secures an intimate screening at Beautiful Sunday\'s Film Club at the historic Old Toll Bar in Glasgow.',
+      datePublished: '2025-09-01T00:00:00+00:00',
+      dateModified: '2025-09-01T00:00:00+00:00',
+      author: { '@type': 'Organization', name: 'Braxton Studios', url: 'https://braxtonstudios.com' },
+      publisher: { '@type': 'Organization', name: 'Braxton Studios', logo: { '@type': 'ImageObject', url: 'https://braxtonstudios.com/images/BS_transparent_2026.png' } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://braxtonstudios.com/stories/flatwarming-screening' },
+      image: 'https://braxtonstudios.com/images/flatwarming-18.jpg'
+    }
   });
 });
 
@@ -252,6 +285,43 @@ ${pages.map(p => `  <url>
     <loc>https://braxtonstudios.com${p.loc}</loc>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+  res.set('Content-Type', 'application/xml');
+  res.send(xml);
+});
+
+router.get('/news-sitemap.xml', (req, res) => {
+  const stories = [
+    {
+      loc: '/stories/kings-trust',
+      title: 'The Latest from Braxton Studios: A New Chapter with The King\'s Trust',
+      date: '2026-03-10T00:00:00+00:00'
+    },
+    {
+      loc: '/stories/shiny-list',
+      title: 'Alasdair Braxton\'s Two Hearts Secures Shiny List Award',
+      date: '2026-03-01T00:00:00+00:00'
+    },
+    {
+      loc: '/stories/flatwarming-screening',
+      title: 'The Flatwarming Secures Screening at Beautiful Sunday\'s Film Club',
+      date: '2025-09-01T00:00:00+00:00'
+    }
+  ];
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${stories.map(s => `  <url>
+    <loc>https://braxtonstudios.com${s.loc}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Braxton Studios</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>${s.date}</news:publication_date>
+      <news:title>${s.title}</news:title>
+    </news:news>
   </url>`).join('\n')}
 </urlset>`;
   res.set('Content-Type', 'application/xml');

@@ -3,3 +3,4 @@ Allow: /
 Disallow: /the-transfer
 
 Sitemap: https://braxtonstudios.com/sitemap.xml
+Sitemap: https://braxtonstudios.com/news-sitemap.xml
