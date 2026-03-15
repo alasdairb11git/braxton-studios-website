@@ -3138,6 +3138,10 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   color: var(--black);
   letter-spacing: 0.04em;
   margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+.listing-card:hover .listing-card-title {
+  color: var(--teal);
 }
 .listing-card-sub {
   font-size: 13px;
