@@ -3083,8 +3083,9 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2px;
-  background: var(--black);
-  padding: 0 0 2px;
+  background: var(--white);
+  padding: 40px 48px 80px;
+  gap: 32px;
 }
 .listing-grid-3 {
   grid-template-columns: repeat(3, 1fr);
@@ -3092,9 +3093,11 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
 .listing-card {
   display: block;
   text-decoration: none;
-  color: var(--white);
+  color: var(--black);
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(10,10,10,0.08);
 }
 .listing-card-img {
   position: relative;
@@ -3118,7 +3121,7 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
 }
 .listing-card-info {
   padding: 24px 28px 32px;
-  background: var(--black);
+  background: var(--white);
 }
 .listing-card-category {
   display: inline-block;
@@ -3132,20 +3135,20 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   font-family: 'Graphik', sans-serif;
   font-weight: 300;
   font-size: clamp(16px, 2vw, 22px);
-  color: var(--white);
+  color: var(--black);
   letter-spacing: 0.04em;
   margin-bottom: 6px;
 }
 .listing-card-sub {
   font-size: 13px;
-  color: var(--light-grey);
+  color: #666;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 @media (max-width: 900px) {
   .listing-hero { padding: 120px 24px 40px; }
-  .listing-grid { grid-template-columns: 1fr; }
+  .listing-grid { grid-template-columns: 1fr; padding: 32px 24px 60px; gap: 28px; }
   .listing-grid-3 { grid-template-columns: 1fr; }
   .listing-card-info { padding: 20px 24px 28px; }
 }
