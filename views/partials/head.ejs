@@ -11,12 +11,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Braxton Studios — Scotland\'s YouTube Production Company' %></title>
 <meta name="description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.' %>">
+<link rel="canonical" href="https://braxtonstudios.com<%= typeof canonicalPath !== 'undefined' ? canonicalPath : '' %>">
 
 <!-- Open Graph -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="<%= typeof ogType !== 'undefined' ? ogType : 'website' %>">
 <meta property="og:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : 'Braxton Studios — Scotland\'s YouTube Production Company' %>">
 <meta property="og:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.' %>">
-<meta property="og:image" content="<%= typeof ogImage !== 'undefined' ? ogImage : '/images/favicon.jpg' %>">
+<meta property="og:image" content="https://braxtonstudios.com<%= typeof ogImage !== 'undefined' ? ogImage : '/images/favicon.jpg' %>">
+<meta property="og:url" content="https://braxtonstudios.com<%= typeof canonicalPath !== 'undefined' ? canonicalPath : '' %>">
 <meta property="og:site_name" content="Braxton Studios">
 
 <!-- Twitter Card -->

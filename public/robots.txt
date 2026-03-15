@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /the-transfer
+
+Sitemap: https://braxtonstudios.com/sitemap.xml
