@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <section class="contact-hero">
+    <img src="/images/contact_website_banner.jpg" alt="Braxton Studios" class="contact-hero-img">
+    <div class="contact-hero-overlay"></div>
+  </section>
+
+  <section class="contact-page">
+    <div class="contact-inner">
+      <div class="contact-header reveal">
+        <span class="contact-eyebrow">Get In Touch</span>
+        <h1 class="contact-title">Let's Create<br>Together.</h1>
+        <p class="contact-subtitle">We'd love to hear about your next project.</p>
+      </div>
+
+      <form id="contactForm" class="contact-page-form reveal reveal-delay-1">
+        <div class="contact-form-row">
+          <div class="contact-field">
+            <label class="contact-label">Name</label>
+            <input type="text" name="name" placeholder="Your name" required>
+          </div>
+          <div class="contact-field">
+            <label class="contact-label">Email</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="contact-field">
+          <label class="contact-label">Project Type</label>
+          <select name="projectType" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="Films">Films</option>
+            <option value="Campaigns">Campaigns</option>
+            <option value="Products">Products</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="contact-field">
+          <label class="contact-label">Message</label>
+          <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+        <div id="formMessage"></div>
+      </form>
+
+      <div class="contact-info reveal reveal-delay-2">
+        <a href="mailto:<%= contactEmail %>" class="contact-email-link"><%= contactEmail %></a>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>
