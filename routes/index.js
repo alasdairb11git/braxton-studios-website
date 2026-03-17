@@ -232,6 +232,16 @@ router.get('/stories/flatwarming-screening', (req, res) => {
   });
 });
 
+router.get('/contact', (req, res) => {
+  res.render('contact', {
+    ...defaults,
+    canonicalPath: '/contact',
+    pageTitle: 'Contact — Braxton Studios',
+    pageDescription: 'Get in touch with Braxton Studios. Tell us about your project and we\'ll get back to you within 24 hours.',
+    ogImage: '/images/favicon.jpg'
+  });
+});
+
 router.get('/faqs', (req, res) => {
   res.render('faqs', {
     ...defaults,
@@ -275,6 +285,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/stories/kings-trust', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/shiny-list', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/flatwarming-screening', priority: '0.7', changefreq: 'yearly' },
+    { loc: '/contact', priority: '0.7', changefreq: 'yearly' },
     { loc: '/faqs', priority: '0.4', changefreq: 'yearly' },
     { loc: '/privacy-policy', priority: '0.2', changefreq: 'yearly' },
     { loc: '/cookie-policy', priority: '0.2', changefreq: 'yearly' }

@@ -145,7 +145,7 @@ if (contactForm) {
         body: JSON.stringify({
           name: contactForm.name.value,
           email: contactForm.email.value,
-          message: contactForm.message.value
+          message: (contactForm.projectType && contactForm.projectType.value ? '[' + contactForm.projectType.value + '] ' : '') + contactForm.message.value
         })
       });
       const data = await res.json();
