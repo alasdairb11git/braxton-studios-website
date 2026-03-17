@@ -3395,8 +3395,8 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
 .contact-socials a:hover { color: var(--black); }
 
 @media (max-width: 900px) {
-  .contact-page { padding: 120px 24px 60px; }
+  .contact-page { padding: 40px 24px 60px; }
   .contact-form-row { grid-template-columns: 1fr; }
   .contact-title { font-size: clamp(28px, 8vw, 48px); }
-  .contact-email-link { font-size: 14px; word-break: break-all; }
+  .contact-email-link { font-size: 11px; word-break: break-all; padding: 10px 20px; }
 }
