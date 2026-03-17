@@ -2010,6 +2010,36 @@ body.light .nav-contact-btn:hover {
   color: #0a0a0a;
 }
 
+/* ── MOBILE CONTACT BUTTON IN MENU ── */
+.nav-contact-mobile { display: none; }
+@media (max-width: 900px) {
+  .nav-contact-mobile { display: list-item; margin-top: 24px; }
+  .nav-contact-mobile a {
+    display: inline-block;
+    padding: 14px 40px;
+    border: 1px solid rgba(240,237,232,0.3);
+    border-radius: 100px;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .nav-contact-mobile a:hover {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: var(--black);
+  }
+  body.light .nav-contact-mobile a {
+    border-color: rgba(0,0,0,0.2);
+    color: #0a0a0a;
+  }
+  body.light .nav-contact-mobile a:hover {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+}
+
 /* ── HAMBURGER (hidden on desktop) ── */
 .nav-hamburger {
   display: none;
@@ -2558,7 +2588,8 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   .nav-links {
     position: fixed; inset: 0; left: 0; transform: none;
     flex-direction: column; justify-content: center; align-items: center;
-    gap: 32px;
+    gap: 24px;
+    padding-bottom: 60px;
     background: rgba(10,10,10,0.95);
     backdrop-filter: blur(16px);
     opacity: 0; pointer-events: none;
