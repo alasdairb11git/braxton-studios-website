@@ -3200,7 +3200,6 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  opacity: 0.7;
 }
 .contact-hero-overlay {
   display: none;
