@@ -3200,6 +3200,7 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  opacity: 0.7;
 }
 .contact-hero-overlay {
   position: absolute;
@@ -3212,11 +3213,11 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
 .contact-page {
   background: #3d9e94;
   color: var(--black);
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 160px 48px 80px;
+  padding: 60px 48px 80px;
 }
 .contact-inner {
   max-width: 640px;
@@ -3350,11 +3351,17 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   font-size: clamp(16px, 2.5vw, 24px);
   color: var(--black);
   letter-spacing: 0.05em;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 4px;
-  transition: border-color 0.3s ease;
+  padding: 12px 28px;
+  border: 1px solid rgba(10,10,10,0.2);
+  border-radius: 100px;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
-.contact-email-link:hover { border-color: var(--black); }
+.contact-email-link:hover {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--teal);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
 .contact-socials {
   display: flex;
   gap: 24px;
