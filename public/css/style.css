@@ -3203,15 +3203,10 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   opacity: 0.7;
 }
 .contact-hero-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(to bottom, transparent, #3d9e94);
+  display: none;
 }
 .contact-page {
-  background: #3d9e94;
+  background: #fff;
   color: var(--black);
   min-height: auto;
   display: flex;
@@ -3245,6 +3240,9 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   line-height: 1.05;
   color: var(--black);
   margin-bottom: 20px;
+}
+.contact-title-accent {
+  color: var(--teal);
 }
 .contact-subtitle {
   font-size: 17px;
@@ -3308,7 +3306,7 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   padding-right: 40px;
 }
 .contact-page-form select option {
-  background: var(--teal);
+  background: #fff;
   color: var(--black);
 }
 .contact-page-form textarea {
