@@ -232,6 +232,29 @@ router.get('/stories/flatwarming-screening', (req, res) => {
   });
 });
 
+router.get('/stories/techscaler', (req, res) => {
+  res.render('story-techscaler', {
+    ...defaults,
+    canonicalPath: '/stories/techscaler',
+    ogType: 'article',
+    pageTitle: 'Braxton Studios Enters Techscaler\'s Early Stage Programme — Braxton Studios',
+    pageDescription: 'Braxton Studios has been accepted into Techscaler, Scotland\'s national tech scaling programme, focusing on customer discovery, product development, and investment readiness.',
+    ogImage: '/images/Glasgow night xmas markets-3.jpeg',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: 'Braxton Studios Enters Techscaler\'s Early Stage Programme',
+      description: 'Braxton Studios has been accepted into Techscaler, Scotland\'s national tech scaling programme, focusing on customer discovery, product development, and investment readiness.',
+      datePublished: '2026-03-27T00:00:00+00:00',
+      dateModified: '2026-03-27T00:00:00+00:00',
+      author: { '@type': 'Organization', name: 'Braxton Studios', url: 'https://braxtonstudios.com' },
+      publisher: { '@type': 'Organization', name: 'Braxton Studios', logo: { '@type': 'ImageObject', url: 'https://braxtonstudios.com/images/BS_transparent_2026.png' } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://braxtonstudios.com/stories/techscaler' },
+      image: 'https://braxtonstudios.com/images/Glasgow night xmas markets-3.jpeg'
+    }
+  });
+});
+
 router.get('/contact', (req, res) => {
   res.render('contact', {
     ...defaults,
@@ -285,6 +308,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/stories/kings-trust', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/shiny-list', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/flatwarming-screening', priority: '0.7', changefreq: 'yearly' },
+    { loc: '/stories/techscaler', priority: '0.7', changefreq: 'yearly' },
     { loc: '/contact', priority: '0.7', changefreq: 'yearly' },
     { loc: '/faqs', priority: '0.4', changefreq: 'yearly' },
     { loc: '/privacy-policy', priority: '0.2', changefreq: 'yearly' },
@@ -318,6 +342,11 @@ router.get('/news-sitemap.xml', (req, res) => {
       loc: '/stories/flatwarming-screening',
       title: 'The Flatwarming Secures Screening at Beautiful Sunday\'s Film Club',
       date: '2025-09-01T00:00:00+00:00'
+    },
+    {
+      loc: '/stories/techscaler',
+      title: 'Braxton Studios Enters Techscaler\'s Early Stage Programme',
+      date: '2026-03-27T00:00:00+00:00'
     }
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
