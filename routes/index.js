@@ -28,6 +28,47 @@ const businessSchema = {
   ]
 };
 
+// All stories sorted by date (newest first) — homepage shows the 3 most recent
+const allStories = [
+  {
+    href: '/stories/techscaler',
+    img: '/images/Glasgow night xmas markets-3.jpeg',
+    alt: 'Braxton Studios Enters Techscaler',
+    category: 'Business',
+    title: "Braxton Studios Enters Techscaler's Early Stage Programme",
+    date: '27 March 2026',
+    sortDate: new Date('2026-03-27')
+  },
+  {
+    href: '/stories/kings-trust',
+    img: '/images/arran_bs_mobile.jpg',
+    alt: "Braxton Studios x The King's Trust",
+    category: 'Business',
+    title: "The Latest from Braxton Studios: A New Chapter with The King's Trust",
+    date: '10 March 2026',
+    sortDate: new Date('2026-03-10')
+  },
+  {
+    href: '/stories/shiny-list',
+    img: '/images/kenmore-6-2.jpg',
+    alt: 'Two Hearts — Shiny List Award',
+    imgClass: 'story-img-twohearts',
+    category: 'Films',
+    title: "Alasdair Braxton's 'Two Hearts' Secures Shiny List Award",
+    date: '1 March 2026',
+    sortDate: new Date('2026-03-01')
+  },
+  {
+    href: '/stories/flatwarming-screening',
+    img: '/images/flatwarming-18.jpg',
+    alt: "The Flatwarming — Beautiful Sunday's Film Club",
+    category: 'Films',
+    title: "'The Flatwarming' Lands Screening at Beautiful Sunday's Film Club",
+    date: 'September 2025',
+    sortDate: new Date('2025-09-01')
+  }
+].sort((a, b) => b.sortDate - a.sortDate);
+
 router.get('/', (req, res) => {
   res.render('index', {
     ...defaults,
@@ -35,7 +76,8 @@ router.get('/', (req, res) => {
     pageTitle: 'Braxton Studios — Scotland\'s YouTube Production Company',
     pageDescription: 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.',
     ogImage: '/images/favicon.jpg',
-    schema: businessSchema
+    schema: businessSchema,
+    stories: allStories.slice(0, 3)
   });
 });
 

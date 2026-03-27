@@ -7,51 +7,18 @@
   </div>
 
   <div class="stories-grid">
-
-    <a href="/stories/techscaler" class="story-card reveal reveal-delay-1">
+<% stories.forEach(function(story, i) { %>
+    <a href="<%= story.href %>" class="story-card reveal reveal-delay-<%= i + 1 %>">
       <div class="story-img-wrap">
-        <img src="/images/Glasgow night xmas markets-3.jpeg" alt="Braxton Studios Enters Techscaler" class="story-img">
-        <span class="story-category">Business</span>
+        <img src="<%= story.img %>" alt="<%= story.alt %>" class="story-img<%= story.imgClass ? ' ' + story.imgClass : '' %>">
+        <span class="story-category"><%= story.category %></span>
       </div>
       <div class="story-info">
-        <h3 class="story-title">Braxton Studios Enters Techscaler's Early Stage Programme</h3>
-        <span class="story-date">27 March 2026</span>
+        <h3 class="story-title"><%= story.title %></h3>
+        <span class="story-date"><%= story.date %></span>
       </div>
     </a>
-
-    <a href="/stories/kings-trust" class="story-card reveal reveal-delay-2">
-      <div class="story-img-wrap">
-        <img src="/images/arran_bs_mobile.jpg" alt="Braxton Studios x The King's Trust" class="story-img">
-        <span class="story-category">Business</span>
-      </div>
-      <div class="story-info">
-        <h3 class="story-title">The Latest from Braxton Studios: A New Chapter with The King's Trust</h3>
-        <span class="story-date">10 March 2026</span>
-      </div>
-    </a>
-
-    <a href="/stories/shiny-list" class="story-card reveal reveal-delay-3">
-      <div class="story-img-wrap">
-        <img src="/images/kenmore-6-2.jpg" alt="Two Hearts — Shiny List Award" class="story-img story-img-twohearts">
-        <span class="story-category">Films</span>
-      </div>
-      <div class="story-info">
-        <h3 class="story-title">Alasdair Braxton's 'Two Hearts' Secures Shiny List Award</h3>
-        <span class="story-date">1 March 2026</span>
-      </div>
-    </a>
-
-    <a href="/stories/flatwarming-screening" class="story-card reveal reveal-delay-4">
-      <div class="story-img-wrap">
-        <img src="/images/flatwarming-18.jpg" alt="The Flatwarming — Beautiful Sunday's Film Club" class="story-img">
-        <span class="story-category">Films</span>
-      </div>
-      <div class="story-info">
-        <h3 class="story-title">'The Flatwarming' Lands Screening at Beautiful Sunday's Film Club</h3>
-        <span class="story-date">September 2025</span>
-      </div>
-    </a>
-
+<% }); %>
   </div>
 
   <div class="stories-nav">
