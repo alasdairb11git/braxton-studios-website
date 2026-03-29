@@ -28,6 +28,74 @@ const businessSchema = {
   ]
 };
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Braxton Studios',
+  url: 'https://braxtonstudios.com',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Braxton Studios',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://braxtonstudios.com/images/BS_transparent_2026.png'
+    }
+  }
+};
+
+const siteNavigationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: [
+    {
+      '@type': 'SiteNavigationElement',
+      position: 1,
+      name: 'Campaigns',
+      description: 'Podcast production, artist campaigns, and brand partnerships by Braxton Studios.',
+      url: 'https://braxtonstudios.com/campaigns'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 2,
+      name: 'Films',
+      description: 'Short films, feature films, and cinematic storytelling by Braxton Studios.',
+      url: 'https://braxtonstudios.com/films'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 3,
+      name: 'Products',
+      description: 'YouTube audit templates, LUT packs, and tools built from real production experience.',
+      url: 'https://braxtonstudios.com/products'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 4,
+      name: 'Stories',
+      description: 'The latest news and stories from Braxton Studios.',
+      url: 'https://braxtonstudios.com/stories'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 5,
+      name: 'Contact',
+      description: 'Get in touch with Braxton Studios.',
+      url: 'https://braxtonstudios.com/contact'
+    }
+  ]
+};
+
+function breadcrumb(name, path) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://braxtonstudios.com/' },
+      { '@type': 'ListItem', position: 2, name: name, item: 'https://braxtonstudios.com' + path }
+    ]
+  };
+}
+
 // All stories sorted by date (newest first) — homepage shows the 3 most recent
 const allStories = [
   {
@@ -76,7 +144,7 @@ router.get('/', (req, res) => {
     pageTitle: 'Braxton Studios — Scotland\'s YouTube Production Company',
     pageDescription: 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.',
     ogImage: '/images/favicon.jpg',
-    schema: businessSchema,
+    schemas: [businessSchema, websiteSchema, siteNavigationSchema],
     stories: allStories.slice(0, 3)
   });
 });
@@ -87,7 +155,8 @@ router.get('/campaigns', (req, res) => {
     canonicalPath: '/campaigns',
     pageTitle: 'Campaigns — Braxton Studios',
     pageDescription: 'Campaign work by Braxton Studios. Podcast production, artist campaigns, and brand partnerships.',
-    ogImage: '/images/bba-podcast.jpg'
+    ogImage: '/images/bba-podcast.jpg',
+    schema: breadcrumb('Campaigns', '/campaigns')
   });
 });
 
@@ -97,7 +166,8 @@ router.get('/films', (req, res) => {
     canonicalPath: '/films',
     pageTitle: 'Films — Braxton Studios',
     pageDescription: 'Films by Braxton Studios. Short films, feature films, and cinematic storytelling.',
-    ogImage: '/images/the-flatwarming.jpg'
+    ogImage: '/images/the-flatwarming.jpg',
+    schema: breadcrumb('Films', '/films')
   });
 });
 
@@ -107,7 +177,8 @@ router.get('/stories', (req, res) => {
     canonicalPath: '/stories',
     pageTitle: 'Stories — Braxton Studios',
     pageDescription: 'The latest news and stories from Braxton Studios.',
-    ogImage: '/images/arran_bs_mobile.jpg'
+    ogImage: '/images/arran_bs_mobile.jpg',
+    schema: breadcrumb('Stories', '/stories')
   });
 });
 
@@ -167,7 +238,8 @@ router.get('/products', (req, res) => {
     canonicalPath: '/products',
     pageTitle: 'Products — Braxton Studios',
     pageDescription: 'Tools and resources built from real production experience. YouTube audit templates, LUT packs, and more from Braxton Studios.',
-    ogImage: '/images/favicon.jpg'
+    ogImage: '/images/favicon.jpg',
+    schema: breadcrumb('Products', '/products')
   });
 });
 
@@ -303,7 +375,8 @@ router.get('/contact', (req, res) => {
     canonicalPath: '/contact',
     pageTitle: 'Contact — Braxton Studios',
     pageDescription: 'Get in touch with Braxton Studios. Tell us about your project and we\'ll get back to you within 24 hours.',
-    ogImage: '/images/favicon.jpg'
+    ogImage: '/images/favicon.jpg',
+    schema: breadcrumb('Contact', '/contact')
   });
 });
 
