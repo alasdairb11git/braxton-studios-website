@@ -8,7 +8,7 @@ const defaults = {
 
 const businessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'VideoProductionCompany',
+  '@type': 'Organization',
   name: 'Braxton Studios',
   description: 'Specialist YouTube production company based in Scotland. Cinematic production paired with data-driven strategy.',
   foundingDate: '2023',
