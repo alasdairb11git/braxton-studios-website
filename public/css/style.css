@@ -3188,6 +3188,260 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   .listing-card-info { padding: 20px 24px 28px; }
 }
 
+/* ── SERVICES PAGE ── */
+.services-section { padding: 100px 48px; }
+.services-section-dark { background: var(--black); }
+.services-section-light { background: var(--white); }
+.services-inner { max-width: 1100px; margin: 0 auto; }
+
+.services-eyebrow {
+  display: block;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+.services-eyebrow-dark { color: var(--teal); }
+
+.services-heading {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  margin-bottom: 32px;
+}
+.services-heading-dark { color: var(--black); }
+
+.services-intro {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+.services-intro p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(240,237,232,0.6);
+  margin-bottom: 16px;
+}
+.services-intro p:last-child { margin-bottom: 0; }
+.services-intro-dark p { color: rgba(10,10,10,0.55); }
+
+/* Media placeholder for video loops */
+.services-media-placeholder {
+  width: 100%;
+  aspect-ratio: 16/7;
+  background: rgba(240,237,232,0.05);
+  border: 1px dashed rgba(240,237,232,0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 56px;
+  overflow: hidden;
+}
+.services-media-placeholder-light {
+  background: rgba(10,10,10,0.03);
+  border-color: rgba(10,10,10,0.1);
+}
+.services-media-inner { text-align: center; }
+.services-media-label {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.25);
+}
+.services-media-label-dark { color: rgba(10,10,10,0.25); }
+
+/* When real media is added, use this class */
+.services-media-placeholder img,
+.services-media-placeholder video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Feature grid */
+.services-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+.services-feature {
+  padding: 28px 24px;
+  border: 1px solid rgba(240,237,232,0.08);
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+.services-feature:hover { border-color: rgba(240,237,232,0.2); }
+.services-feature-title {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.services-feature-desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(240,237,232,0.45);
+}
+
+/* CTA */
+.services-cta-wrap { text-align: center; }
+.services-cta {
+  display: inline-block;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--teal);
+  padding: 16px 48px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.services-cta:hover { opacity: 0.85; }
+
+/* Tier cards */
+.services-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+}
+.services-tier-card {
+  border: 1px solid rgba(10,10,10,0.1);
+  border-radius: 6px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s;
+}
+.services-tier-card:hover { border-color: rgba(10,10,10,0.25); }
+.services-tier-card-featured {
+  border-color: var(--teal);
+  position: relative;
+}
+.services-tier-card-featured:hover { border-color: var(--teal); }
+.services-tier-number {
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+.services-tier-name {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+.services-tier-tagline {
+  font-size: 15px;
+  color: rgba(10,10,10,0.5);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.services-tier-includes {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--teal);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+.services-tier-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  flex-grow: 1;
+}
+.services-tier-list li {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(10,10,10,0.6);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(10,10,10,0.05);
+  padding-left: 16px;
+  position: relative;
+}
+.services-tier-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 5px;
+  height: 5px;
+  background: var(--teal);
+  border-radius: 50%;
+}
+.services-tier-cta {
+  display: block;
+  text-align: center;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  border: 1px solid var(--black);
+  padding: 14px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: auto;
+}
+.services-tier-cta:hover {
+  background: var(--black);
+  color: var(--white);
+}
+.services-tier-card-featured .services-tier-cta {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--black);
+}
+.services-tier-card-featured .services-tier-cta:hover { opacity: 0.85; }
+
+/* Services mobile */
+@media (max-width: 900px) {
+  .services-section { padding: 60px 24px; }
+  .services-features-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .services-tiers { grid-template-columns: 1fr; gap: 20px; }
+  .services-media-placeholder { aspect-ratio: 16/9; }
+}
+@media (max-width: 520px) {
+  .services-features-grid { grid-template-columns: 1fr; }
+}
+
+/* Services light mode */
+body.light .services-section-dark { background: #0a0a0a; }
+body.light .services-section-light { background: #0a0a0a; }
+body.light .services-heading-dark { color: #f0ede8; }
+body.light .services-intro-dark p { color: rgba(240,237,232,0.5); }
+body.light .services-tier-card { border-color: rgba(240,237,232,0.1); }
+body.light .services-tier-card:hover { border-color: rgba(240,237,232,0.25); }
+body.light .services-tier-card-featured { border-color: var(--teal); }
+body.light .services-tier-name { color: #f0ede8; }
+body.light .services-tier-tagline { color: rgba(240,237,232,0.45); }
+body.light .services-tier-list li { color: rgba(240,237,232,0.55); border-color: rgba(240,237,232,0.06); }
+body.light .services-tier-cta { color: #f0ede8; border-color: #f0ede8; }
+body.light .services-tier-cta:hover { background: #f0ede8; color: #0a0a0a; }
+body.light .services-tier-card-featured .services-tier-cta { color: #0a0a0a; border-color: var(--teal); }
+body.light .services-tier-includes { color: var(--teal); }
+body.light .services-media-placeholder { background: rgba(240,237,232,0.05); border-color: rgba(240,237,232,0.1); }
+body.light .services-media-placeholder-light { background: rgba(240,237,232,0.05); border-color: rgba(240,237,232,0.1); }
+body.light .services-media-label-dark { color: rgba(240,237,232,0.2); }
+
 /* ── CONTACT PAGE ── */
 .contact-hero {
   position: relative;
