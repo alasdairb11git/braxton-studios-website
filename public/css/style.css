@@ -3405,12 +3405,43 @@ body.light .toggle-knob { transform: translateX(24px); background: #0a0a0a; }
   background: var(--black);
   color: var(--white);
 }
+/* Foundation — clean, light */
+.services-tier-foundation {
+  background: var(--white);
+}
+
+/* Growth — teal accent */
 .services-tier-card-featured .services-tier-cta {
   background: var(--teal);
   border-color: var(--teal);
   color: var(--black);
 }
 .services-tier-card-featured .services-tier-cta:hover { opacity: 0.85; }
+
+/* Partnership — premium dark inverted */
+.services-tier-premium {
+  background: var(--black);
+  border-color: rgba(240,237,232,0.12);
+}
+.services-tier-premium:hover { border-color: rgba(240,237,232,0.25); }
+.services-tier-number-premium { color: var(--teal); }
+.services-tier-name-premium { color: var(--white); }
+.services-tier-tagline-premium { color: rgba(240,237,232,0.45); }
+.services-tier-includes-premium { color: var(--teal); }
+.services-tier-list-premium li {
+  color: rgba(240,237,232,0.55);
+  border-color: rgba(240,237,232,0.07);
+}
+.services-tier-cta-premium {
+  color: var(--black);
+  background: var(--white);
+  border-color: var(--white);
+}
+.services-tier-cta-premium:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--black);
+}
 
 /* Services mobile */
 @media (max-width: 900px) {
@@ -3441,6 +3472,14 @@ body.light .services-tier-includes { color: var(--teal); }
 body.light .services-media-placeholder { background: rgba(240,237,232,0.05); border-color: rgba(240,237,232,0.1); }
 body.light .services-media-placeholder-light { background: rgba(240,237,232,0.05); border-color: rgba(240,237,232,0.1); }
 body.light .services-media-label-dark { color: rgba(240,237,232,0.2); }
+body.light .services-tier-foundation { background: #0a0a0a; }
+body.light .services-tier-premium { background: #f0ede8; border-color: rgba(10,10,10,0.1); }
+body.light .services-tier-premium:hover { border-color: rgba(10,10,10,0.25); }
+body.light .services-tier-name-premium { color: #0a0a0a; }
+body.light .services-tier-tagline-premium { color: rgba(10,10,10,0.5); }
+body.light .services-tier-list-premium li { color: rgba(10,10,10,0.6); border-color: rgba(10,10,10,0.06); }
+body.light .services-tier-cta-premium { color: #f0ede8; background: #0a0a0a; border-color: #0a0a0a; }
+body.light .services-tier-cta-premium:hover { background: var(--teal); border-color: var(--teal); color: #0a0a0a; }
 
 /* ── CONTACT PAGE ── */
 .contact-hero {
