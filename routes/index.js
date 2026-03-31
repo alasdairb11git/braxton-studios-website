@@ -71,20 +71,13 @@ const siteNavigationSchema = {
     {
       '@type': 'SiteNavigationElement',
       position: 4,
-      name: 'Services',
-      description: 'Video production and YouTube strategy services by Braxton Studios.',
-      url: 'https://braxtonstudios.com/services'
-    },
-    {
-      '@type': 'SiteNavigationElement',
-      position: 5,
       name: 'Stories',
       description: 'The latest news and stories from Braxton Studios.',
       url: 'https://braxtonstudios.com/stories'
     },
     {
       '@type': 'SiteNavigationElement',
-      position: 6,
+      position: 5,
       name: 'Contact',
       description: 'Get in touch with Braxton Studios.',
       url: 'https://braxtonstudios.com/contact'
@@ -432,7 +425,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/films', priority: '0.8', changefreq: 'monthly' },
     { loc: '/stories', priority: '0.8', changefreq: 'weekly' },
     { loc: '/products', priority: '0.7', changefreq: 'monthly' },
-    { loc: '/services', priority: '0.8', changefreq: 'monthly' },
+    // { loc: '/services', priority: '0.8', changefreq: 'monthly' },
     { loc: '/youtube-audit', priority: '0.8', changefreq: 'monthly' },
     { loc: '/campaigns/building-brand-advocacy', priority: '0.6', changefreq: 'yearly' },
     { loc: '/campaigns/adum', priority: '0.6', changefreq: 'yearly' },
