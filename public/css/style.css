@@ -649,6 +649,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 .cs-hero-archerfield .cs-hero-bg {
   background: url('/images/archerfield clean up.jpeg') center/cover no-repeat;
+  filter: brightness(0.6);
 }
 .cs-artist-links {
   display: flex;
@@ -2497,10 +2498,10 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   transform: scale(1.05);
 }
 .split-bg-films { background-position: center 30%; }
-.split-bg-showcases { background-position: 55% center; }
+.split-bg-showcases { background-position: 25% center; }
 @media (min-width: 901px) {
   .split-bg-films { background-position: center 70%; }
-  .split-bg-showcases { background-position: 55% center; }
+  .split-bg-showcases { background-position: 25% center; }
 }
 .split-overlay {
   position: absolute;
