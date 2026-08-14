@@ -50,8 +50,8 @@ const siteNavigationSchema = {
     {
       '@type': 'SiteNavigationElement',
       position: 1,
-      name: 'Campaigns',
-      description: 'Podcast production, artist campaigns, and brand partnerships by Braxton Studios.',
+      name: 'Showcases',
+      description: 'Campaigns, brand studies, and creative direction by Braxton Studios.',
       url: 'https://braxtonstudios.com/campaigns'
     },
     {
@@ -162,10 +162,10 @@ router.get('/campaigns', (req, res) => {
   res.render('campaigns', {
     ...defaults,
     canonicalPath: '/campaigns',
-    pageTitle: 'Campaigns — Braxton Studios',
-    pageDescription: 'Campaign work by Braxton Studios. Podcast production, artist campaigns, and brand partnerships.',
+    pageTitle: 'Showcases — Braxton Studios',
+    pageDescription: 'Selected work by Braxton Studios. Campaigns, brand studies, and creative direction.',
     ogImage: '/images/bba-podcast.jpg',
-    schema: breadcrumb('Campaigns', '/campaigns')
+    schema: breadcrumb('Showcases', '/campaigns')
   });
 });
 
