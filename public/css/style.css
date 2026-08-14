@@ -2888,7 +2888,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
 
   /* About */
   .about-inner { padding: 80px 24px; }
-  .about-stats { grid-template-columns: 1fr 1fr; }
+  .about-stats { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
   .about-contact-link { font-size: 14px; word-break: break-all; }
   .stat-num { font-size: 28px; }
 
