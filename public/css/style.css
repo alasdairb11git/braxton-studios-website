@@ -1368,6 +1368,27 @@ nav.scrolled .nav-bg { opacity: 1; }
   opacity: 0.85;
 }
 
+/* Split two-column CTA */
+.fn-cta-split {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+.fn-cta-col { max-width: 400px; }
+.fn-cta-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(10,10,10,0.15);
+}
+@media (max-width: 900px) {
+  .fn-cta-split { grid-template-columns: 1fr; gap: 40px; }
+  .fn-cta-divider { width: 100%; height: 1px; }
+  .fn-cta-col { max-width: none; }
+}
+
 /* ── FILM TICKET: THE FLATWARMING ── */
 .ft-hero {
   position: relative;
