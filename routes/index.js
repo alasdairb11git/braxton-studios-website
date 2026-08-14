@@ -227,8 +227,8 @@ router.get('/films/tedrad', (req, res) => {
   res.render('crew-call-tedrad', {
     ...defaults,
     canonicalPath: '/films/tedrad',
-    pageTitle: 'Tedrad — Now Casting — Braxton Studios',
-    pageDescription: 'Tedrad is a short film in development by Braxton Studios. Now casting crew for filming in Ayrshire and Glasgow, April–May 2026.',
+    pageTitle: 'Tedrad — In Development — Braxton Studios',
+    pageDescription: 'Tedrad is a short film in development by Braxton Studios, filming in Ayrshire and Glasgow, April–May 2026.',
     ogImage: '/images/favicon.jpg'
   });
 });
