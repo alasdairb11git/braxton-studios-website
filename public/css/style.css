@@ -1820,7 +1820,7 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 .about-text strong { color: var(--black); font-weight: 500; }
 .about-right { display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%; }
-.about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; width: 100%; }
+.about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; width: 100%; }
 .stat { border-top: 1px solid rgba(0,0,0,0.2); padding-top: 16px; text-align: center; }
 .stat-num {
   font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
@@ -2497,8 +2497,10 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   transform: scale(1.05);
 }
 .split-bg-films { background-position: center 30%; }
+.split-bg-showcases { background-position: center 50%; }
 @media (min-width: 901px) {
   .split-bg-films { background-position: center 70%; }
+  .split-bg-showcases { background-position: center 90%; }
 }
 .split-overlay {
   position: absolute;
