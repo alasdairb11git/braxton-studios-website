@@ -2496,6 +2496,10 @@ body.light .nav-hamburger span { background: #0a0a0a; }
 .split-panel:hover .split-bg {
   transform: scale(1.05);
 }
+.split-bg-films { background-position: center 30%; }
+@media (min-width: 901px) {
+  .split-bg-films { background-position: center 70%; }
+}
 .split-overlay {
   position: absolute;
   inset: 0;
