@@ -10,7 +10,13 @@
 <% stories.forEach(function(story, i) { %>
     <a href="<%= story.href %>" class="story-card reveal reveal-delay-<%= i + 1 %>">
       <div class="story-img-wrap">
+        <% if (story.placeholder) { %>
+        <div class="story-img story-placeholder">
+          <span class="story-placeholder-label">Image Coming Soon</span>
+        </div>
+        <% } else { %>
         <img src="<%= story.img %>" alt="<%= story.alt %>" class="story-img<%= story.imgClass ? ' ' + story.imgClass : '' %>">
+        <% } %>
         <span class="story-category"><%= story.category %></span>
       </div>
       <div class="story-info">

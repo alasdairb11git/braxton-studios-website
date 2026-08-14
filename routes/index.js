@@ -99,6 +99,15 @@ function breadcrumb(name, path) {
 // All stories sorted by date (newest first) — homepage shows the 3 most recent
 const allStories = [
   {
+    href: '/stories/cannes-2026',
+    img: '/images/Cannes Hero Boats.JPG',
+    alt: 'Braxton Studios at Cannes Lions 2026',
+    category: 'Business',
+    title: "Unpacking Cannes Lions 2026: Braxton Studios Debrief",
+    date: '26 June 2026',
+    sortDate: new Date('2026-06-26')
+  },
+  {
     href: '/stories/techscaler',
     img: '/images/Glasgow night xmas markets-3.jpeg',
     alt: 'Braxton Studios Enters Techscaler',
@@ -288,6 +297,29 @@ router.post('/the-transfer', (req, res) => {
   });
 });
 
+router.get('/stories/cannes-2026', (req, res) => {
+  res.render('story-cannes-2026', {
+    ...defaults,
+    canonicalPath: '/stories/cannes-2026',
+    ogType: 'article',
+    pageTitle: 'Unpacking Cannes Lions 2026: Braxton Studios Debrief',
+    pageDescription: 'Braxton Studios received official media accreditation for Cannes Lions International Festival of Creativity 2026, streaming the festival live from Scotland and sharing key industry takeaways on AI, creativity, and brand strategy.',
+    ogImage: '/images/Cannes Hero Boats.JPG',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: 'Unpacking Cannes Lions 2026: Braxton Studios Debrief',
+      description: 'Braxton Studios received official media accreditation for Cannes Lions International Festival of Creativity 2026, streaming the festival live from Scotland and sharing key industry takeaways on AI, creativity, and brand strategy.',
+      datePublished: '2026-06-26T00:00:00+00:00',
+      dateModified: '2026-06-26T00:00:00+00:00',
+      author: { '@type': 'Organization', name: 'Braxton Studios', url: 'https://braxtonstudios.com' },
+      publisher: { '@type': 'Organization', name: 'Braxton Studios', logo: { '@type': 'ImageObject', url: 'https://braxtonstudios.com/images/BS_transparent_2026.png' } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://braxtonstudios.com/stories/cannes-2026' },
+      image: 'https://braxtonstudios.com/images/Cannes Hero Boats.JPG'
+    }
+  });
+});
+
 router.get('/stories/kings-trust', (req, res) => {
   res.render('story-kings-trust', {
     ...defaults,
@@ -432,6 +464,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/films/the-flatwarming', priority: '0.6', changefreq: 'yearly' },
     { loc: '/films/tedrad', priority: '0.6', changefreq: 'monthly' },
     { loc: '/about/alasdair-braxton', priority: '0.5', changefreq: 'yearly' },
+    { loc: '/stories/cannes-2026', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/kings-trust', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/shiny-list', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/flatwarming-screening', priority: '0.7', changefreq: 'yearly' },
@@ -455,6 +488,11 @@ ${pages.map(p => `  <url>
 
 router.get('/news-sitemap.xml', (req, res) => {
   const stories = [
+    {
+      loc: '/stories/cannes-2026',
+      title: 'Unpacking Cannes Lions 2026: Braxton Studios Debrief',
+      date: '2026-06-26T00:00:00+00:00'
+    },
     {
       loc: '/stories/kings-trust',
       title: 'The Latest from Braxton Studios: A New Chapter with The King\'s Trust',
