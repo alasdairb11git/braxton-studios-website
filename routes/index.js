@@ -222,6 +222,16 @@ router.get('/campaigns/adum', (req, res) => {
   });
 });
 
+router.get('/campaigns/archerfield-showcase', (req, res) => {
+  res.render('case-study-archerfield', {
+    ...defaults,
+    canonicalPath: '/campaigns/archerfield-showcase',
+    pageTitle: 'Archerfield — Braxton Studios',
+    pageDescription: 'An independent brand study led by Alasdair Braxton exploring creative direction, DV directing, and cinematography across the Archerfield estate.',
+    ogImage: '/images/archerfield clean up.jpeg'
+  });
+});
+
 router.get('/about/alasdair-braxton', (req, res) => {
   res.render('founder-ab', {
     ...defaults,
@@ -461,6 +471,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/youtube-audit', priority: '0.8', changefreq: 'monthly' },
     { loc: '/campaigns/building-brand-advocacy', priority: '0.6', changefreq: 'yearly' },
     { loc: '/campaigns/adum', priority: '0.6', changefreq: 'yearly' },
+    { loc: '/campaigns/archerfield-showcase', priority: '0.6', changefreq: 'yearly' },
     { loc: '/films/the-flatwarming', priority: '0.6', changefreq: 'yearly' },
     { loc: '/films/tedrad', priority: '0.6', changefreq: 'monthly' },
     { loc: '/about/alasdair-braxton', priority: '0.5', changefreq: 'yearly' },

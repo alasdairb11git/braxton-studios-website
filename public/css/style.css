@@ -647,6 +647,9 @@ nav.scrolled .nav-bg { opacity: 1; }
 .cs-hero-adum .cs-hero-bg {
   background: url('/images/adum.jpg') center top/cover no-repeat;
 }
+.cs-hero-archerfield .cs-hero-bg {
+  background: url('/images/archerfield clean up.jpeg') center/cover no-repeat;
+}
 .cs-artist-links {
   display: flex;
   justify-content: center;
@@ -1648,6 +1651,37 @@ nav.scrolled .nav-bg { opacity: 1; }
 }
 .ft-gallery-item:hover img {
   transform: scale(1.03);
+}
+
+/* Stills grid — portrait-friendly, centers uneven last row */
+.cs-stills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.cs-stills-item {
+  flex: 1 1 calc(33.333% - 16px);
+  max-width: calc(33.333% - 16px);
+  aspect-ratio: 3/4;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.cs-stills-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.cs-stills-item:hover img {
+  transform: scale(1.03);
+}
+@media (max-width: 900px) {
+  .cs-stills-item { flex: 1 1 calc(50% - 12px); max-width: calc(50% - 12px); }
+}
+@media (max-width: 560px) {
+  .cs-stills-item { flex: 1 1 100%; max-width: 100%; }
 }
 
 /* Lightbox */
@@ -2904,6 +2938,14 @@ body.light .cc-benefit { border-color: rgba(240,237,232,0.1); }
 body.light .cc-benefit-title { color: #f0ede8; }
 body.light .cc-benefit p { color: rgba(240,237,232,0.55); }
 body.light .cc-locations { background: #0a0a0a; }
+body.light .cs-days-header .cs-content-eyebrow { color: rgba(0,0,0,0.4); }
+body.light .cs-days-header .cs-content-eyebrow::before { background: rgba(0,0,0,0.3); }
+body.light .cs-day-card { border-color: rgba(0,0,0,0.1); }
+body.light .cs-day-card:hover { border-color: rgba(0,0,0,0.25); }
+body.light .cs-day-label { color: rgba(0,0,0,0.4); }
+body.light .cs-day-block p { color: rgba(0,0,0,0.55); }
+body.light .cs-days .services-media-placeholder { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.1); }
+body.light .cs-days .services-media-label { color: rgba(0,0,0,0.25); }
 body.light .fn-hero-text { background: #f5f2ed; }
 body.light .fn-hero-name { color: #0a0a0a; }
 body.light .fn-hero-role { color: rgba(0,0,0,0.35); }
@@ -3670,6 +3712,124 @@ body.light .services-hero { background: #141414; }
 }
 @media (max-width: 520px) {
   .services-features-grid { grid-template-columns: 1fr; }
+}
+
+/* ── CASE STUDY: DAYS / EXPLORATORY PRODUCTION ── */
+.cs-days {
+  background: var(--black);
+  padding: 100px 48px;
+}
+.cs-days-header {
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.cs-days-header-tight { margin-bottom: 40px; }
+.cs-days-header .cs-content-eyebrow { color: rgba(240,237,232,0.4); justify-content: center; }
+.cs-days-header .cs-content-eyebrow::before { background: rgba(240,237,232,0.3); }
+.cs-days-header .cs-content-heading { margin-top: 16px; color: var(--white); }
+.cs-days-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.cs-day-card {
+  border: 1px solid rgba(240,237,232,0.08);
+  border-radius: 6px;
+  padding: 40px 36px;
+  transition: border-color 0.3s;
+}
+.cs-day-card:hover { border-color: rgba(240,237,232,0.2); }
+.cs-day-number {
+  display: block;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+.cs-day-title {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 2.5vw, 28px);
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+.cs-day-block { margin-bottom: 24px; }
+.cs-day-block:last-child { margin-bottom: 0; }
+.cs-day-label {
+  display: block;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.4);
+  margin-bottom: 8px;
+}
+.cs-day-block p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(240,237,232,0.6);
+}
+
+/* Showreel video (portrait) */
+.cs-showreel-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+.cs-showreel-video {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 9/16;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(240,237,232,0.03);
+  flex: 1;
+}
+.cs-showreel-video-center {
+  max-width: 320px;
+  z-index: 1;
+}
+.cs-showreel-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Credits */
+.cs-credits {
+  background: #f0ede8;
+  padding: 60px 48px;
+  text-align: center;
+}
+.cs-credits-inner { max-width: 600px; margin: 0 auto; }
+.cs-credits-text {
+  font-size: 15px;
+  color: rgba(0,0,0,0.6);
+  margin-bottom: 12px;
+}
+.cs-credits-disclaimer {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(0,0,0,0.35);
+}
+
+@media (max-width: 900px) {
+  .cs-days { padding: 60px 24px; }
+  .cs-days-grid { grid-template-columns: 1fr; gap: 20px; }
+  .cs-day-card { padding: 32px 24px; }
+  .cs-credits { padding: 48px 24px; }
+  .cs-showreel-row { flex-direction: column; gap: 24px; }
+  .cs-showreel-video, .cs-showreel-video-center { max-width: 300px; }
 }
 
 /* ── CONTACT PAGE ── */
