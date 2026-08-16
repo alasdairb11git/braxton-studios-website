@@ -1,2 +1,11 @@
+<script>
+(function(){
+  try {
+    if (localStorage.getItem('bs-theme') === 'light') {
+      document.body.classList.add('light');
+    }
+  } catch(e) {}
+})();
+</script>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"><span class="cursor-text">VIEW</span></div>
