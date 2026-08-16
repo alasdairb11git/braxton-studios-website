@@ -721,7 +721,9 @@ body.light .nav-logo-light { display: block; }
 }
 /* Photo-background heroes (case studies) always need light text, regardless of theme */
 .cs-hero .cs-hero-title,
-.cs-hero .cs-hero-sub {
+.cs-hero .cs-hero-sub,
+.cc-hero .cs-hero-title,
+.cc-hero .cs-hero-sub {
   color: #f0ede8;
 }
 
@@ -3041,6 +3043,7 @@ body.light .signup-consent { color: rgba(0,0,0,0.4); }
 body.light footer { background: #f5f2ed; border-color: rgba(0,0,0,0.08); }
 body.light footer .footer-copy { color: #666; }
 body.light footer .footer-links a { color: #666; }
+body.light footer .footer-links a:hover { color: var(--teal); }
 body.light footer .footer-legal a { color: #555; }
 body.light footer .footer-legal a:hover { color: #0a0a0a; }
 body.light .legal-page { background: #f5f2ed; }
