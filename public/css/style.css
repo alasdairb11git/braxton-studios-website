@@ -203,27 +203,52 @@ body.light .nav-logo-light { display: block; }
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #f0ede8;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-  animation: pulse-ring 2s ease-in-out infinite;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.featured-banner-btn-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+}
+.featured-banner-btn-ring .ring-base {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 2;
+}
+.featured-banner-btn-ring .ring-fill {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 144.5;
+  stroke-dashoffset: 144.5;
+  transition: stroke-dashoffset 0.7s ease;
+}
+.featured-banner-btn svg:not(.featured-banner-btn-ring) {
+  position: relative;
+  z-index: 1;
 }
 .featured-banner-link:hover .featured-banner-btn {
-  border-color: #f0ede8;
   transform: scale(1.1);
 }
-@keyframes pulse-ring {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
-  50% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+.featured-banner-link:hover .featured-banner-btn-ring .ring-fill {
+  stroke-dashoffset: 0;
 }
 
 @media (max-width: 900px) {
   .featured-banner-img { height: 100vh; }
   .featured-banner-title { font-size: clamp(12px, 3.5vw, 20px); }
   .featured-banner-btn { width: 40px; height: 40px; }
+  .featured-banner-btn-ring { width: 40px; height: 40px; }
 }
 
 /* ── HERO ── */
