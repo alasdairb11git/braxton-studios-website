@@ -40,48 +40,6 @@ themeToggle.addEventListener('click', () => {
   updateToggleIcon();
 });
 
-// ── CUSTOM CURSOR ──
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-});
-
-(function animRing() {
-  rx += (mx - rx) * 0.1;
-  ry += (my - ry) * 0.1;
-  ring.style.left = rx + 'px';
-  ring.style.top = ry + 'px';
-  requestAnimationFrame(animRing);
-})();
-
-// ── CURSOR COLOR SWAP ON TEAL SECTIONS ──
-const aboutSection = document.getElementById('about');
-document.addEventListener('mousemove', e => {
-  if (aboutSection) {
-    const rect = aboutSection.getBoundingClientRect();
-    const over = e.clientY >= rect.top && e.clientY <= rect.bottom;
-    cursor.classList.toggle('cursor-dark', over);
-    ring.classList.toggle('cursor-dark', over);
-  }
-});
-
-// ── CURSOR HOVER ON PROJECT CARDS ──
-document.querySelectorAll('.project-card, .project-card-link').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    ring.classList.add('hover-active');
-    cursor.style.opacity = '0';
-  });
-  card.addEventListener('mouseleave', () => {
-    ring.classList.remove('hover-active');
-    cursor.style.opacity = '1';
-  });
-});
-
 // ── HAMBURGER MENU ──
 const hamburger = document.getElementById('navHamburger');
 const navLinks = document.querySelector('.nav-links');
