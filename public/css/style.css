@@ -3038,10 +3038,11 @@ body.light .signup-text { color: rgba(0,0,0,0.45); }
 body.light .signup-input { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); color: #0a0a0a; }
 body.light .signup-input::placeholder { color: rgba(0,0,0,0.3); }
 body.light .signup-consent { color: rgba(0,0,0,0.4); }
-body.light footer { background: #0a0a0a; border-color: rgba(240,237,232,0.08); }
+body.light footer { background: #f5f2ed; border-color: rgba(0,0,0,0.08); }
 body.light footer .footer-copy { color: #666; }
 body.light footer .footer-links a { color: #666; }
 body.light footer .footer-legal a { color: #555; }
+body.light footer .footer-legal a:hover { color: #0a0a0a; }
 body.light .legal-page { background: #f5f2ed; }
 body.light .legal-title { color: #0a0a0a; }
 body.light .legal-content h2 { color: #0a0a0a; }
