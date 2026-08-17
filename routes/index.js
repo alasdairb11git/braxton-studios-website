@@ -150,7 +150,7 @@ router.get('/', (req, res) => {
   res.render('index', {
     ...defaults,
     canonicalPath: '/',
-    pageTitle: 'Digital Entertainment Studio — Film, Entertainment and YouTube Strategy',
+    pageTitle: 'Digital Entertainment Studio',
     pageDescription: 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.',
     ogImage: '/images/favicon.jpg',
     schemas: [businessSchema, websiteSchema, siteNavigationSchema],
