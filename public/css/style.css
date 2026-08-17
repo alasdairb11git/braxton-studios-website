@@ -1787,7 +1787,7 @@ body.light .nav-logo-light { display: block; }
 }
 .about-heading {
   font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
-  font-size: clamp(32px, 5vw, 72px);
+  font-size: clamp(32px, 4vw, 56px);
   line-height: 0.9; letter-spacing: 0.01em;
   margin-bottom: 60px;
   color: #0a0a0a;
@@ -2854,6 +2854,7 @@ body.light .nav-hamburger span { background: #0a0a0a; }
 
   /* About */
   .about-inner { padding: 80px 24px; }
+  .about-heading { font-size: clamp(22px, 7vw, 32px); word-break: break-word; }
   .about-stats { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
   .about-contact-link { font-size: 14px; word-break: break-all; }
   .stat-num { font-size: 28px; }
