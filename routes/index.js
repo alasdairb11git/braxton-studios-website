@@ -512,6 +512,15 @@ router.get('/cookie-policy', (req, res) => {
   });
 });
 
+router.get('/terms-and-conditions', (req, res) => {
+  res.render('terms-and-conditions', {
+    ...defaults,
+    canonicalPath: '/terms-and-conditions',
+    pageTitle: 'Terms & Conditions — Braxton Studios',
+    pageDescription: 'Braxton Studios terms and conditions, covering website use, digital product purchases, and refunds.'
+  });
+});
+
 router.get('/sitemap.xml', (req, res) => {
   const pages = [
     { loc: '/', priority: '1.0', changefreq: 'weekly' },
@@ -535,7 +544,8 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/contact', priority: '0.7', changefreq: 'yearly' },
     { loc: '/faqs', priority: '0.4', changefreq: 'yearly' },
     { loc: '/privacy-policy', priority: '0.2', changefreq: 'yearly' },
-    { loc: '/cookie-policy', priority: '0.2', changefreq: 'yearly' }
+    { loc: '/cookie-policy', priority: '0.2', changefreq: 'yearly' },
+    { loc: '/terms-and-conditions', priority: '0.2', changefreq: 'yearly' }
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

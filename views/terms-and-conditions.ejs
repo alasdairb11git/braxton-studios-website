@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <section class="legal-page">
+    <div class="legal-inner">
+      <span class="legal-eyebrow reveal">Legal</span>
+      <h1 class="legal-title reveal">Terms &amp; Conditions</h1>
+      <p class="legal-updated reveal reveal-delay-1">Last updated: August 2026</p>
+
+      <div class="legal-content reveal reveal-delay-1">
+        <h2>1. Introduction</h2>
+        <p>These Terms &amp; Conditions ("Terms") govern your use of braxtonstudios.com and any products or services purchased from Braxton Studios ("we", "our", "us"). By using our website or purchasing from us, you agree to these Terms.</p>
+
+        <h2>2. Our Services</h2>
+        <p>Braxton Studios provides video production, YouTube strategy, brand campaigns, and original entertainment content. The scope, deliverables, pricing, and timeline for any production or strategy engagement are agreed separately with each client, typically by proposal or contract, and are not governed by these Terms alone.</p>
+
+        <h2>3. Digital Products</h2>
+        <p>We sell downloadable digital products, such as the YouTube Channel Audit template, through our website. When you purchase a digital product:</p>
+        <ul>
+          <li>Payment is processed securely through Stripe. We do not store your card details.</li>
+          <li>Your product is delivered by email, typically within a few minutes of successful payment.</li>
+          <li>Digital products are for your own personal or internal business use and may not be resold, redistributed, or shared publicly.</li>
+        </ul>
+
+        <h2>4. Refunds</h2>
+        <p>Because digital products are delivered instantly and cannot be "returned," we do not offer refunds once a product has been successfully delivered, except where required by law. If you don't receive your product due to a technical error on our end, contact us and we'll resend it or issue a refund.</p>
+
+        <h2>5. Intellectual Property</h2>
+        <p>All content on this website — including video, photography, written copy, branding, and downloadable products — is owned by Braxton Studios or used with permission, and is protected by copyright and other intellectual property laws. You may not copy, reproduce, or reuse it without our written consent. Ownership of work produced for client projects is set out in the relevant client agreement.</p>
+
+        <h2>6. Acceptable Use</h2>
+        <p>You agree not to use our website in any way that could damage, disable, or impair it, or interfere with anyone else's use of it. This includes attempting to gain unauthorised access to our systems or extracting data from the site through automated means.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>We provide our website and digital products on an "as is" basis. To the fullest extent permitted by law, Braxton Studios is not liable for any indirect or consequential loss arising from your use of the website or our digital products. Nothing in these Terms limits our liability where it would be unlawful to do so.</p>
+
+        <h2>8. Third-Party Services</h2>
+        <p>Payments are processed by Stripe and are subject to Stripe's own terms and privacy policy. We are not responsible for the availability or performance of third-party services we rely on to operate our website.</p>
+
+        <h2>9. Governing Law</h2>
+        <p>These Terms are governed by the laws of Scotland, and any disputes will be subject to the exclusive jurisdiction of the Scottish courts.</p>
+
+        <h2>10. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. Any changes will be posted on this page with an updated revision date.</p>
+
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us at:</p>
+        <p><a href="mailto:<%= contactEmail %>" class="legal-link"><%= contactEmail %></a></p>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>
