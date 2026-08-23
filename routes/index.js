@@ -85,6 +85,45 @@ const siteNavigationSchema = {
   ]
 };
 
+const faqs = [
+  {
+    q: 'What services does Braxton Studios offer?',
+    a: "We're a digital entertainment studio — we produce end-to-end YouTube content, brand and business campaigns, original short films, podcasts, and short-form content for TikTok and Instagram. Whatever the platform, we handle strategy, filming, editing, and delivery in-house."
+  },
+  {
+    q: 'Who do you work with?',
+    a: "We work with creators, brands, and businesses who want cinematic content backed by real strategy — whether that's a YouTube channel, a brand campaign, or an original production. Whether you're launching a new channel, scaling an existing one, or producing a one-off campaign, we can help."
+  },
+  {
+    q: 'Where are you based?',
+    a: "We're based in Scotland, with most of our production work taking place across Glasgow, Ayrshire, and the surrounding areas. We're open to working on projects across the UK and beyond."
+  },
+  {
+    q: 'Do you offer YouTube strategy as a standalone service?',
+    a: 'Yes. We can provide data-driven YouTube strategy consultations covering content planning, audience growth, SEO optimisation, and algorithm-friendly formatting — even if you have your own production team in place.'
+  },
+  {
+    q: 'What kind of results can I expect?',
+    a: "Results vary depending on the project, but across our campaigns we've generated over 2 million organic YouTube views, 700K+ TikTok views, and 500+ leads for our clients. We focus on producing content that drives real, measurable engagement."
+  },
+  {
+    q: 'Do you produce short films and original content?',
+    a: "Absolutely. We believe in leading by example. Our original productions — like The Flatwarming and the upcoming Tedrad — showcase the same cinematic quality we bring to our client work. It's how we prove what's possible."
+  },
+  {
+    q: 'How do I get started?',
+    a: `Drop us a message through the <a href="/#about" class="legal-link">contact form</a> or email us at <a href="mailto:${defaults.contactEmail}" class="legal-link">${defaults.contactEmail}</a>. Tell us a bit about your project and we'll get back to you.`
+  },
+  {
+    q: 'How much does a project cost?',
+    a: "Every project is different, so we tailor our pricing based on scope, deliverables, and timeline. Get in touch and we'll put together a proposal that works for your budget."
+  },
+  {
+    q: 'Can I join the Braxton Studios crew?',
+    a: `We're always open to hearing from talented filmmakers, editors, and creatives. Send your reel and a bit about yourself to <a href="mailto:${defaults.contactEmail}" class="legal-link">${defaults.contactEmail}</a> and we'll keep you on file for future projects.`
+  }
+];
+
 function breadcrumb(name, path) {
   return {
     '@context': 'https://schema.org',
@@ -438,7 +477,20 @@ router.get('/faqs', (req, res) => {
     ...defaults,
     canonicalPath: '/faqs',
     pageTitle: 'FAQs — Braxton Studios',
-    pageDescription: 'Frequently asked questions about Braxton Studios. Learn about our YouTube production services, strategy, pricing, and how to work with us.'
+    pageDescription: "Frequently asked questions about Braxton Studios, Scotland's digital entertainment studio. Learn about our YouTube production, brand campaigns, original content, pricing, and how to work with us.",
+    faqs,
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(item => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a.replace(/<[^>]+>/g, '')
+        }
+      }))
+    }
   });
 });
 
