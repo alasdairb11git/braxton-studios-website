@@ -346,6 +346,28 @@ router.post('/the-transfer', (req, res) => {
   });
 });
 
+router.get('/projects/wings-of-the-fallen', (req, res) => {
+  res.render('wings-of-the-fallen', {
+    ...defaults,
+    canonicalPath: '/projects/wings-of-the-fallen',
+    pageTitle: 'Wings of the Fallen — Braxton Studios',
+    pageDescription: 'Wings of the Fallen. A short film written by Alasdair Braxton. Private project page for investors.',
+    ogImage: '/images/favicon.jpg',
+    noindex: true
+  });
+});
+
+router.get('/projects/ripples-of-easdale', (req, res) => {
+  res.render('ripples-of-easdale', {
+    ...defaults,
+    canonicalPath: '/projects/ripples-of-easdale',
+    pageTitle: 'Ripples of Easdale — Braxton Studios',
+    pageDescription: 'Ripples of Easdale. A feature film in development by Braxton Studios. Private project page for investors.',
+    ogImage: '/images/favicon.jpg',
+    noindex: true
+  });
+});
+
 router.get('/stories/cannes-2026', (req, res) => {
   res.render('story-cannes-2026', {
     ...defaults,

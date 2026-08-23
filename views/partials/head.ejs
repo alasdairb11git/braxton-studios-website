@@ -12,6 +12,9 @@
 <title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Braxton Studios — Scotland\'s YouTube Production Company' %></title>
 <meta name="description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.' %>">
 <link rel="canonical" href="https://braxtonstudios.com<%= typeof canonicalPath !== 'undefined' ? canonicalPath : '' %>">
+<% if (typeof noindex !== 'undefined' && noindex) { %>
+<meta name="robots" content="noindex, nofollow">
+<% } %>
 
 <!-- Open Graph -->
 <meta property="og:type" content="<%= typeof ogType !== 'undefined' ? ogType : 'website' %>">

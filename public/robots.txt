@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /the-transfer
+Disallow: /projects/wings-of-the-fallen
+Disallow: /projects/ripples-of-easdale
 
 Sitemap: https://braxtonstudios.com/sitemap.xml
 Sitemap: https://braxtonstudios.com/news-sitemap.xml
