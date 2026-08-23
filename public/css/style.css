@@ -4106,6 +4106,7 @@ body.light .services-hero { background: #141414; }
   padding: 0 24px;
   transform: translateY(-1px);
 }
+.pitch-facts-5 { grid-template-columns: repeat(5, 1fr); }
 .pitch-fact {
   border-top: 1px solid rgba(240,237,232,0.15);
   padding: 24px 20px;
