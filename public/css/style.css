@@ -1928,7 +1928,7 @@ footer {
   margin-bottom: 20px;
   transition: color 0.3s ease;
 }
-.footer-badge:hover { color: var(--teal); }
+.footer-badge:hover { color: #C4429B; }
 .footer-badge-icon { flex-shrink: 0; }
 .footer-badge-tick {
   stroke-dasharray: 1;
@@ -3024,7 +3024,7 @@ body.light footer .footer-links a:hover { color: var(--teal); }
 body.light footer .footer-legal a { color: #555; }
 body.light footer .footer-legal a:hover { color: #0a0a0a; }
 body.light footer .footer-badge { color: #666; }
-body.light footer .footer-badge:hover { color: var(--teal); }
+body.light footer .footer-badge:hover { color: #C4429B; }
 body.light .legal-page { background: #f5f2ed; }
 body.light .legal-title { color: #0a0a0a; }
 body.light .legal-content h2 { color: #0a0a0a; }
