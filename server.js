@@ -9,7 +9,10 @@ const PORT = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Static files
+// Static files — long cache for videos/images (rarely change, biggest bandwidth cost),
+// default (short) cache for everything else so active edits show up right away
+app.use('/videos', express.static(path.join(__dirname, 'public/videos'), { maxAge: '30d' }));
+app.use('/images', express.static(path.join(__dirname, 'public/images'), { maxAge: '7d' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Stripe webhook needs raw body — must come BEFORE express.json()
