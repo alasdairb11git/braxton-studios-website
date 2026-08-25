@@ -1240,6 +1240,8 @@ body.light .nav-logo-light { display: block; }
   color: rgba(10,10,10,0.4);
   margin-top: 12px;
   display: block;
+  white-space: nowrap;
+  transition: color 0.3s ease;
 }
 .fn-stat-divider {
   width: 1px;
@@ -1247,6 +1249,18 @@ body.light .nav-logo-light { display: block; }
   background: rgba(10,10,10,0.15);
   flex-shrink: 0;
 }
+.fn-stat-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.fn-stat-badge-icon svg {
+  width: clamp(56px, 8vw, 96px);
+  height: clamp(56px, 8vw, 96px);
+}
+.fn-stat-partner { cursor: default; }
 
 /* Founder Vision */
 .fn-vision {
@@ -2976,6 +2990,7 @@ body.light .fn-stats { background: #0a0a0a; color: #f0ede8; }
 body.light .fn-stat-num { color: #f0ede8; }
 body.light .fn-stat-label { color: rgba(240,237,232,0.4); }
 body.light .fn-stat-divider { background: rgba(240,237,232,0.15); }
+body.light .fn-stat-badge-icon { color: #f0ede8; }
 body.light .fn-vision { background: #f5f2ed; color: #0a0a0a; }
 body.light .fn-vision-heading { color: #0a0a0a; }
 body.light .fn-vision-eyebrow { color: rgba(0,0,0,0.4); }
