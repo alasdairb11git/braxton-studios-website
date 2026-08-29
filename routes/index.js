@@ -500,7 +500,7 @@ router.get('/creucast', (req, res) => {
     canonicalPath: '/creucast',
     pageTitle: 'Creucast — Join the Creator Collective — Braxton Studios',
     pageDescription: 'Creucast is a Scotland-based creator collective from Braxton Studios. 8 creators, monthly content days, crew for each other. 4 spots left.',
-    ogImage: '/images/favicon.jpg',
+    ogImage: '/images/creucast.jpg',
     schema: breadcrumb('Creucast', '/creucast')
   });
 });
@@ -511,7 +511,7 @@ router.get('/creucast/apply', (req, res) => {
     canonicalPath: '/creucast/apply',
     pageTitle: 'Apply — Creucast — Braxton Studios',
     pageDescription: 'Apply to join Creucast, a Scotland-based creator collective from Braxton Studios.',
-    ogImage: '/images/favicon.jpg'
+    ogImage: '/images/creucast.jpg'
   });
 });
 
