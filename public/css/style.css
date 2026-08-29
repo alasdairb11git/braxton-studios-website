@@ -43,6 +43,8 @@ nav {
 }
 .nav-members-dropdown {
   position: relative;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
 }
 .nav-members-btn {
   display: inline-block;
