@@ -40,6 +40,28 @@ themeToggle.addEventListener('click', () => {
   updateToggleIcon();
 });
 
+// ── MEMBERS CALL DROPDOWN (click to open, like a menu) ──
+const membersDropdown = document.querySelector('.nav-members-dropdown');
+const membersToggle = document.getElementById('membersDropdownToggle');
+if (membersDropdown && membersToggle) {
+  const closeDropdown = () => {
+    membersDropdown.classList.remove('open');
+    membersToggle.setAttribute('aria-expanded', 'false');
+  };
+  membersToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const willOpen = !membersDropdown.classList.contains('open');
+    membersDropdown.classList.toggle('open', willOpen);
+    membersToggle.setAttribute('aria-expanded', String(willOpen));
+  });
+  document.addEventListener('click', (e) => {
+    if (!membersDropdown.contains(e.target)) closeDropdown();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDropdown();
+  });
+}
+
 // ── HAMBURGER MENU ──
 const hamburger = document.getElementById('navHamburger');
 const navLinks = document.querySelector('.nav-links');
