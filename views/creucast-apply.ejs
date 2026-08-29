@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <section class="apply-section">
+    <div class="apply-inner">
+      <span class="apply-brand reveal">Creucast</span>
+      <h1 class="apply-heading reveal reveal-delay-1">Apply to Join</h1>
+      <p class="apply-subhead reveal reveal-delay-1">Tell us a bit about yourself. We'll be in touch if it looks like a fit.</p>
+
+      <form id="creucastForm" class="apply-form reveal reveal-delay-2">
+        <div class="apply-field">
+          <label class="apply-label" for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" class="apply-input" placeholder="Your name">
+        </div>
+
+        <div class="apply-field">
+          <label class="apply-label" for="youtubeLink">YouTube Channel Link <span class="apply-required">*</span></label>
+          <input type="url" id="youtubeLink" name="youtubeLink" class="apply-input" placeholder="https://youtube.com/@yourchannel" required>
+        </div>
+
+        <div class="apply-field">
+          <label class="apply-label" for="socialHandle">Instagram or TikTok Handle <span class="apply-required">*</span></label>
+          <input type="text" id="socialHandle" name="socialHandle" class="apply-input" placeholder="@yourhandle" required>
+        </div>
+
+        <div class="apply-field">
+          <label class="apply-label" for="mainSkill">Main Skill or Role</label>
+          <input type="text" id="mainSkill" name="mainSkill" class="apply-input" placeholder="e.g. camera, sound, editing, lighting, hair &amp; makeup, directing">
+        </div>
+
+        <div class="apply-field">
+          <label class="apply-label" for="contentFocus">Content Focus or Desired Focus</label>
+          <input type="text" id="contentFocus" name="contentFocus" class="apply-input" placeholder="e.g. health &amp; wellness, cooking, sport, music">
+        </div>
+
+        <div class="apply-field">
+          <label class="apply-label" for="whyGrow">Why do you want to grow your personal brand right now?</label>
+          <textarea id="whyGrow" name="whyGrow" class="apply-textarea" rows="3" placeholder="Short answer"></textarea>
+        </div>
+
+        <div class="apply-field">
+          <label class="apply-label" for="whyCollective">Why does this collective appeal to you?</label>
+          <textarea id="whyCollective" name="whyCollective" class="apply-textarea" rows="3" placeholder="Short answer"></textarea>
+        </div>
+
+        <div class="apply-field">
+          <label class="apply-label" for="commitment">Can you commit to a monthly content day, plus crewing for others, for 6 months?</label>
+          <select id="commitment" name="commitment" class="apply-select">
+            <option value="Yes">Yes</option>
+            <option value="Not sure">Not sure</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <button type="submit" class="apply-submit-btn">Send Application</button>
+        <div id="applyMessage" class="apply-message"></div>
+      </form>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+
+  <script>
+    (function() {
+      const form = document.getElementById('creucastForm');
+      const msgEl = document.getElementById('applyMessage');
+      if (!form) return;
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        msgEl.textContent = '';
+        msgEl.className = 'apply-message';
+
+        try {
+          const res = await fetch('/api/creucast-apply', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              fullName: form.fullName.value,
+              youtubeLink: form.youtubeLink.value,
+              socialHandle: form.socialHandle.value,
+              mainSkill: form.mainSkill.value,
+              contentFocus: form.contentFocus.value,
+              whyGrow: form.whyGrow.value,
+              whyCollective: form.whyCollective.value,
+              commitment: form.commitment.value
+            })
+          });
+          const data = await res.json();
+
+          if (res.ok) {
+            msgEl.textContent = data.message;
+            msgEl.className = 'apply-message success';
+            form.reset();
+          } else {
+            msgEl.textContent = data.error || 'Something went wrong.';
+            msgEl.className = 'apply-message error';
+          }
+        } catch (err) {
+          msgEl.textContent = 'Network error. Please try again.';
+          msgEl.className = 'apply-message error';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Send Application';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -494,6 +494,27 @@ router.get('/contact', (req, res) => {
   });
 });
 
+router.get('/creucast', (req, res) => {
+  res.render('creucast', {
+    ...defaults,
+    canonicalPath: '/creucast',
+    pageTitle: 'Creucast — Join the Creator Collective — Braxton Studios',
+    pageDescription: 'Creucast is a Scotland-based creator collective from Braxton Studios. 8 creators, monthly content days, crew for each other. 4 spots left.',
+    ogImage: '/images/favicon.jpg',
+    schema: breadcrumb('Creucast', '/creucast')
+  });
+});
+
+router.get('/creucast/apply', (req, res) => {
+  res.render('creucast-apply', {
+    ...defaults,
+    canonicalPath: '/creucast/apply',
+    pageTitle: 'Apply — Creucast — Braxton Studios',
+    pageDescription: 'Apply to join Creucast, a Scotland-based creator collective from Braxton Studios.',
+    ogImage: '/images/favicon.jpg'
+  });
+});
+
 router.get('/faqs', (req, res) => {
   res.render('faqs', {
     ...defaults,
@@ -564,6 +585,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/stories/flatwarming-screening', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/techscaler', priority: '0.7', changefreq: 'yearly' },
     { loc: '/contact', priority: '0.7', changefreq: 'yearly' },
+    { loc: '/creucast', priority: '0.6', changefreq: 'weekly' },
     { loc: '/faqs', priority: '0.4', changefreq: 'yearly' },
     { loc: '/privacy-policy', priority: '0.2', changefreq: 'yearly' },
     { loc: '/cookie-policy', priority: '0.2', changefreq: 'yearly' },
