@@ -62,6 +62,17 @@ if (membersDropdown && membersToggle) {
   });
 }
 
+// ── CREUCAST FAQ ACCORDION ──
+document.querySelectorAll('.creucast-faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('active');
+    item.parentElement.querySelectorAll('.creucast-faq-item.active').forEach(el => el.classList.remove('active'));
+    if (!isOpen) item.classList.add('active');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+
 // ── HAMBURGER MENU ──
 const hamburger = document.getElementById('navHamburger');
 const navLinks = document.querySelector('.nav-links');
