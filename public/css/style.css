@@ -2534,6 +2534,9 @@ body.light .nav-hamburger span { background: #0a0a0a; }
   }
   .fieldkit-hero-right { padding-top: 6px; }
 }
+@media (max-width: 900px) {
+  .fieldkit-hero-right { margin-top: 40px; }
+}
 
 .fieldkit-hero-cta { margin-top: 28px; }
 @media (min-width: 901px) {
