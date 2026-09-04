@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <!-- Hero -->
+  <section class="audit-hero">
+    <div class="audit-hero-content fieldkit-hero-content reveal">
+      <div class="fieldkit-hero-left">
+        <span class="cs-hero-eyebrow">Field Notes LUTs</span>
+        <h1 class="cs-hero-title">iPhone<br>Field Kit</h1>
+        <p class="audit-hero-sub">A curated set of 5 mobile presets designed to keep your iPhone photos clean, natural, and consistent.</p>
+        <p class="fieldkit-hero-desc">Made for everyday shooting &mdash; colours stay balanced for a finished look without changing the feel of the original photo. Use them as they are, or adjust to match your own style. Compatible with DaVinci Resolve Photo (version 21) on desktop and iPad.</p>
+        <div class="fieldkit-hero-meta">
+          <div><strong>5 LUTs</strong>.cube format</div>
+          <div><strong>Photomator</strong>native import</div>
+          <div><strong>DaVinci</strong>Resolve 21+ photo mode</div>
+        </div>
+        <div class="fieldkit-wip">
+          <strong>Preview build.</strong> The five grades are locked in DaVinci Resolve but still being finessed for how they read on-device &mdash; they're landing more intense in Photomator than the flatter reference grade in Resolve, while the real exports are finished. Drag the slider, or pick one from the gallery, to compare each look below.
+        </div>
+      </div>
+      <div class="fieldkit-hero-right">
+        <img src="/images/field-kit-cover.png" alt="iPhone Field Kit" class="fieldkit-hero-cover">
+        <div class="fieldkit-hero-price">
+          <span class="fieldkit-price-amount">&pound;11.99</span>
+          <span class="fieldkit-price-note">One-time purchase &middot; Coming Soon</span>
+        </div>
+        <div class="fieldkit-btn-row">
+          <button type="button" class="fieldkit-cart-btn" data-cart-add
+            data-id="iphone-field-kit"
+            data-name="iPhone Field Kit"
+            data-price="11.99"
+            data-image="/images/field-kit-cover-wide.jpg"
+            data-checkout="https://buy.stripe.com/28EaEZ76I9rt84nbeR6AM01">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M6 8H18L17 20H7L6 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9 8V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V8" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            Add to Cart
+          </button>
+          <a href="https://buy.stripe.com/28EaEZ76I9rt84nbeR6AM01" target="_blank" rel="noopener" class="fieldkit-stripe-btn">Buy with Stripe</a>
+        </div>
+        <p class="fieldkit-hero-note">Instant digital delivery by email. All sales are final &mdash; no refunds. Checkout is handled securely by Stripe &mdash; by purchasing you agree to Stripe's terms and our own <a href="/terms-and-conditions">Terms &amp; Conditions</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Try It -->
+  <section class="fieldkit-try">
+    <div class="fieldkit-try-inner reveal">
+      <div class="fieldkit-compare" data-filter="contrast(1.28) saturate(.82) sepia(.22) hue-rotate(64deg) brightness(.9)" data-tint="#5B4530">
+        <div class="fieldkit-layer fieldkit-before" style="background-image:url('/images/bracken-before.jpg?v=2');"></div>
+        <div class="fieldkit-layer fieldkit-after" style="background-image:url('/images/bracken-after.jpg');"><div class="fieldkit-filter-overlay"></div></div>
+        <div class="fieldkit-side-label fieldkit-before">BEFORE</div>
+        <div class="fieldkit-side-label fieldkit-after">BRACKEN</div>
+        <div class="fieldkit-handle"><span class="fieldkit-handle-arrows"></span></div>
+      </div>
+
+      <div class="fieldkit-try-info">
+        <span class="fieldkit-try-label">Choose A Look</span>
+        <div class="fieldkit-lut-pills">
+          <button type="button" class="fieldkit-lut-pill active" data-lut="bracken"
+            data-filter="contrast(1.28) saturate(.82) sepia(.22) hue-rotate(64deg) brightness(.9)" data-tint="#5B4530"
+            data-real-before="/images/bracken-before.jpg?v=2" data-real-after="/images/bracken-after.jpg"
+            data-name="Bracken" data-mood="The original. Harsh shadow contrast pulled toward dark greens and browns &mdash; the signature look, unchanged in spirit."
+            data-format=".cube, 33-pt" data-best="Woodland, hillside, texture" data-intensity="Strong" data-pairs="Bracken Noir"
+            data-swatches="#3E3325,#5B4530,#78633C,#1D1B15">
+            <span class="fieldkit-pill-swatch" style="background:#5B4530"></span>Bracken
+          </button>
+          <button type="button" class="fieldkit-lut-pill" data-lut="bracken-noir"
+            data-filter="grayscale(1) contrast(1.32) brightness(.94)" data-tint="#2B2925"
+            data-real-before="/images/bracken-noir-before.jpg" data-real-after="/images/bracken-noir-after.jpg"
+            data-name="Bracken Noir" data-mood="A true monochrome derivative of Bracken &mdash; the same shadow structure and contrast weight, stripped of colour. Reads punchy and high-contrast by design, not a fault in the grade."
+            data-format=".cube, 33-pt" data-best="Portraits, architecture, texture" data-intensity="Strong" data-pairs="Bracken"
+            data-swatches="#111111,#4A4A4A,#8C8C8C,#EDEDED">
+            <span class="fieldkit-pill-swatch" style="background:#2B2925"></span>Bracken Noir
+          </button>
+          <button type="button" class="fieldkit-lut-pill" data-lut="birch"
+            data-filter="sepia(.22) saturate(1.12) brightness(1.09) contrast(.93) hue-rotate(-6deg)" data-tint="#B98456"
+            data-real-before="/images/birch-before.jpg" data-real-after="/images/birch-after.jpg"
+            data-name="Birch" data-mood="The warmer, softer counterpoint to Bracken. Gentle contrast, lifted shadows &mdash; built for people and warm light."
+            data-format=".cube, 33-pt" data-best="Portraits, golden hour" data-intensity="Soft" data-pairs="Firth"
+            data-swatches="#E7D3B4,#B98456,#8C5C35,#4A3520">
+            <span class="fieldkit-pill-swatch" style="background:#B98456"></span>Birch
+          </button>
+          <button type="button" class="fieldkit-lut-pill" data-lut="firth"
+            data-filter="saturate(.62) brightness(1.05) contrast(1.08)" data-tint="#57696E"
+            data-real-before="/images/firth-before.jpg" data-real-after="/images/firth-after.jpg"
+            data-name="Firth" data-mood="Cool, coastal, desaturated. Built to lean into the iPhone 17's cleaner shadow detail in blues and greys."
+            data-format=".cube, 33-pt" data-best="Coast, sky, water" data-intensity="Medium" data-pairs="Birch"
+            data-swatches="#B9C2C4,#57696E,#354246,#1B2224">
+            <span class="fieldkit-pill-swatch" style="background:#57696E"></span>Firth
+          </button>
+          <button type="button" class="fieldkit-lut-pill" data-lut="cairn"
+            data-filter="contrast(1.36) saturate(1.16) brightness(1.03)" data-tint="#8A4A2B"
+            data-real-before="/images/cairn-before.jpg" data-real-after="/images/cairn-after.jpg"
+            data-name="Cairn" data-mood="Punchy and editorial. Higher contrast, built to hold up on a feed &mdash; the sharpest of the five."
+            data-format=".cube, 33-pt" data-best="Editorial, social, product" data-intensity="Strong" data-pairs="Firth"
+            data-swatches="#D89A6E,#8A4A2B,#5C2E18,#2A150B">
+            <span class="fieldkit-pill-swatch" style="background:#8A4A2B"></span>Cairn
+          </button>
+        </div>
+
+        <h3 class="fieldkit-active-name">Bracken</h3>
+        <p class="fieldkit-active-mood">The original. Harsh shadow contrast pulled toward dark greens and browns &mdash; the signature look, unchanged in spirit.</p>
+
+        <div class="fieldkit-spec-panel">
+          <div class="fieldkit-spec-row"><span>Format</span><span data-spec="format">.cube, 33-pt</span></div>
+          <div class="fieldkit-spec-row"><span>Best for</span><span data-spec="best">Woodland, hillside, texture</span></div>
+          <div class="fieldkit-spec-row"><span>Intensity</span><span data-spec="intensity">Strong</span></div>
+          <div class="fieldkit-spec-row"><span>Pairs with</span><span data-spec="pairs">Bracken Noir</span></div>
+        </div>
+        <div class="fieldkit-swatch-row fieldkit-active-swatches">
+          <div class="fieldkit-swatch" style="background:#3E3325"></div>
+          <div class="fieldkit-swatch" style="background:#5B4530"></div>
+          <div class="fieldkit-swatch" style="background:#78633C"></div>
+          <div class="fieldkit-swatch" style="background:#1D1B15"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="fieldkit-gallery">
+    <div class="fieldkit-gallery-inner reveal">
+      <span class="fieldkit-gallery-label">All Five Looks</span>
+      <div class="fieldkit-gallery-grid">
+        <div class="fieldkit-gallery-card" data-lut="bracken">
+          <div class="fieldkit-gallery-img fieldkit-gallery-img-real" style="--gallery-before:url('/images/bracken-before.jpg?v=2'); --gallery-after:url('/images/bracken-after.jpg');"></div>
+          <span class="fieldkit-gallery-name">Bracken</span>
+        </div>
+        <div class="fieldkit-gallery-card" data-lut="bracken-noir">
+          <div class="fieldkit-gallery-img fieldkit-gallery-img-real" style="--gallery-before:url('/images/bracken-noir-before.jpg'); --gallery-after:url('/images/bracken-noir-after.jpg');"></div>
+          <span class="fieldkit-gallery-name">Bracken Noir</span>
+        </div>
+        <div class="fieldkit-gallery-card" data-lut="birch">
+          <div class="fieldkit-gallery-img fieldkit-gallery-img-real" style="--gallery-before:url('/images/birch-before.jpg'); --gallery-after:url('/images/birch-after.jpg');"></div>
+          <span class="fieldkit-gallery-name">Birch</span>
+        </div>
+        <div class="fieldkit-gallery-card" data-lut="firth">
+          <div class="fieldkit-gallery-img fieldkit-gallery-img-real" style="--gallery-before:url('/images/firth-before.jpg'); --gallery-after:url('/images/firth-after.jpg');"></div>
+          <span class="fieldkit-gallery-name">Firth</span>
+        </div>
+        <div class="fieldkit-gallery-card" data-lut="cairn">
+          <div class="fieldkit-gallery-img fieldkit-gallery-img-real" style="--gallery-before:url('/images/cairn-before.jpg'); --gallery-after:url('/images/cairn-after.jpg');"></div>
+          <span class="fieldkit-gallery-name">Cairn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/signup') %>
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

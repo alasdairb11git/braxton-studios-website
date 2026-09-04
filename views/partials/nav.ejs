@@ -21,6 +21,13 @@
         <a href="/contact">Contact</a>
       </div>
     </div>
+    <button type="button" class="nav-cart-btn" id="cartTrigger" aria-label="Open cart">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+        <path d="M6 8H18L17 20H7L6 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M9 8V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V8" stroke="currentColor" stroke-width="1.6"/>
+      </svg>
+      <span class="nav-cart-count" id="cartCount">0</span>
+    </button>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
     <span class="toggle-knob" id="toggleKnob"><img src="/images/logo-toggle.jpg" style="width:16px;height:16px;border-radius:50%;object-fit:cover;"></span>
   </button>
@@ -29,3 +36,5 @@
     </button>
   </div>
 </nav>
+
+<%- include('cart') %>

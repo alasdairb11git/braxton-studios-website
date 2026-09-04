@@ -322,6 +322,16 @@ router.get('/youtube-audit', (req, res) => {
   });
 });
 
+router.get('/luts', (req, res) => {
+  res.render('luts', {
+    ...defaults,
+    canonicalPath: '/luts',
+    pageTitle: 'iPhone Field Kit — Braxton Studios',
+    pageDescription: 'Five cinematic LUTs (.cube) built for a flat, log-style starting point. Works on iPhone photos in DaVinci Resolve 21+ and Photomator, built with Apple Log footage in mind too. Preview build from Braxton Studios.',
+    ogImage: '/images/favicon.jpg'
+  });
+});
+
 router.get('/the-transfer', (req, res) => {
   res.render('the-transfer', {
     ...defaults,
@@ -573,6 +583,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/products', priority: '0.7', changefreq: 'monthly' },
     // { loc: '/services', priority: '0.8', changefreq: 'monthly' },
     { loc: '/youtube-audit', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/luts', priority: '0.6', changefreq: 'monthly' },
     { loc: '/campaigns/building-brand-advocacy', priority: '0.6', changefreq: 'yearly' },
     { loc: '/campaigns/adum', priority: '0.6', changefreq: 'yearly' },
     { loc: '/campaigns/archerfield-showcase', priority: '0.6', changefreq: 'yearly' },

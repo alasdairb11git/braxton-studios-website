@@ -2,6 +2,10 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const router = express.Router();
 
+const stripe = process.env.STRIPE_SECRET_KEY
+  ? require('stripe')(process.env.STRIPE_SECRET_KEY)
+  : null;
+
 const transporter = nodemailer.createTransport({
   host: 'smtp.zoho.eu',
   port: 465,
@@ -9,6 +13,47 @@ const transporter = nodemailer.createTransport({
   auth: {
     user: process.env.ZOHO_EMAIL || 'info@braxtonstudios.com',
     pass: process.env.ZOHO_PASSWORD
+  }
+});
+
+// Server-side price lookup — never trust a price/amount sent from the client
+const CART_PRICES = {
+  'youtube-audit': 'price_1T8oGZRlZROjUc9liV3rUfAD',
+  'iphone-field-kit': 'price_1UBwjWRlZROjUc9lRYoD3ZgU'
+};
+
+// POST /api/create-checkout-session
+router.post('/create-checkout-session', async (req, res) => {
+  if (!stripe) {
+    return res.status(500).json({ error: 'Checkout is not configured. Please try again later.' });
+  }
+
+  const { items } = req.body;
+  if (!Array.isArray(items) || !items.length) {
+    return res.status(400).json({ error: 'Your cart is empty.' });
+  }
+
+  const line_items = [];
+  for (const item of items) {
+    const priceId = CART_PRICES[item.id];
+    if (!priceId) {
+      return res.status(400).json({ error: 'One of the items in your cart is no longer available.' });
+    }
+    line_items.push({ price: priceId, quantity: 1 });
+  }
+
+  try {
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
+    const session = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      line_items,
+      success_url: `${baseUrl}/products?checkout=success`,
+      cancel_url: `${baseUrl}/products`
+    });
+    res.status(200).json({ url: session.url });
+  } catch (err) {
+    console.error('Checkout session error:', err.message);
+    res.status(500).json({ error: 'Failed to start checkout. Please try again.' });
   }
 });
 
