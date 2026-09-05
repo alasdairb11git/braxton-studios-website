@@ -318,7 +318,7 @@ router.get('/youtube-audit', (req, res) => {
     canonicalPath: '/youtube-audit',
     pageTitle: 'YouTube Channel Audit — Braxton Studios',
     pageDescription: 'The Braxton Studios YouTube Channel Audit Template. A complete 8-section framework with 60+ checkpoints, score system, and 30/60/90 day action plan. Built by a studio with 2M+ organic views. £29.',
-    ogImage: '/images/favicon.jpg'
+    ogImage: '/images/YT_Template_Cover.jpg'
   });
 });
 
@@ -328,7 +328,7 @@ router.get('/luts', (req, res) => {
     canonicalPath: '/luts',
     pageTitle: 'iPhone Field Kit — Braxton Studios',
     pageDescription: 'Five cinematic LUTs (.cube) built for a flat, log-style starting point. Works on iPhone photos in DaVinci Resolve 21+ and Photomator, built with Apple Log footage in mind too. Preview build from Braxton Studios.',
-    ogImage: '/images/favicon.jpg'
+    ogImage: '/images/field-kit-cover-wide.jpg'
   });
 });
 
