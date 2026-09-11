@@ -237,7 +237,8 @@ router.get('/services', (req, res) => {
     pageTitle: 'Services — Braxton Studios',
     pageDescription: 'Video production and YouTube strategy services from Braxton Studios. Cinema-grade production paired with data-driven channel growth across three flexible tiers.',
     ogImage: '/images/favicon.jpg',
-    schema: breadcrumb('Services', '/services')
+    schema: breadcrumb('Services', '/services'),
+    noindex: true
   });
 });
 
