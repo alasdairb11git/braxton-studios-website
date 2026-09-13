@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Semi Skimmers — Pitch Deck | Braxton Studios</title>
+<meta name="description" content="A short-form documentary pitch prepared for PBS Digital Studios by Braxton Studios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/graphik-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Ethnocentric';
+    src: url('/fonts/ethnocentric-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #0D0D0D;
+    --bg-raised: #151515;
+    --bg-green: #0C1F19;
+    --bg-green-raised: #112722;
+    --teal: #38B69B;
+    --mint: #00FFC8;
+    --white: #F5F5F3;
+    --grey: #9A9A97;
+    --line: rgba(245,245,243,0.1);
+    --teal-tint: rgba(56,182,155,0.08);
+    --teal-border: rgba(56,182,155,0.35);
+    --font-display: 'Ethnocentric', 'Bebas Neue', sans-serif;
+    --font-body: 'Graphik', 'DM Sans', sans-serif;
+    --card-bg: var(--bg-raised);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: var(--mint); }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 18px;
+  }
+
+  section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type { border-bottom: none; }
+  section.section-green { background: var(--bg-green); --card-bg: var(--bg-green-raised); }
+
+  h1, h2, h3 { font-family: var(--font-display); font-weight: normal; letter-spacing: 0.01em; }
+
+  h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin-bottom: 28px;
+  }
+
+  p { color: var(--grey); font-size: 16px; font-family: var(--font-body); font-weight: 300; }
+
+  /* ---------- Reveal-on-scroll ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ---------- Media placeholder fallback ---------- */
+  .media-slot {
+    position: relative;
+    background: var(--teal-tint);
+    border: 1px solid var(--teal-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .media-slot img,
+  .media-slot video { width: 100%; height: 100%; object-fit: cover; }
+  .media-fallback {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--teal);
+    text-align: center;
+    padding: 20px;
+  }
+  .media-slot.is-missing img,
+  .media-slot.is-missing video { display: none; }
+  .media-slot.is-missing .media-fallback { display: flex; }
+  .media-fallback svg { width: 34px; height: 34px; opacity: 0.85; }
+  .media-fallback span {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 0 80px;
+    border-bottom: none;
+    background: var(--bg);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(56,182,155,0.14), transparent 60%), var(--bg);
+  }
+  .hero-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.55) 40%, rgba(13,13,13,0.9) 100%);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 32px;
+    width: 100%;
+    text-align: center;
+  }
+  .hero-logo {
+    height: 26px;
+    margin: 0 auto 40px;
+    opacity: 0.95;
+  }
+  .hero-logo-fallback {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    font-size: 15px;
+    color: var(--white);
+  }
+  .hero-logo-fallback .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    border: 1px solid rgba(56,182,155,0.4);
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 28px;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 7vw, 72px);
+    letter-spacing: 0.01em;
+    line-height: 1.02;
+    margin-bottom: 20px;
+  }
+  .hero-tagline {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: rgba(245,245,243,0.6);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Facts ---------- */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+    transform: translateY(-1px);
+  }
+  .fact {
+    border-top: 1px solid var(--line);
+    padding: 22px 20px;
+    text-align: center;
+    background: var(--bg);
+  }
+  .fact-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 8px;
+  }
+  .fact-value {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+  }
+  .fact-value a { color: var(--mint); text-decoration: none; border-bottom: 1px solid rgba(0,255,200,0.3); }
+  .fact-value a:hover { border-color: var(--mint); }
+
+  /* ---------- Logline ---------- */
+  .logline-section { padding: 90px 0; }
+  .logline {
+    font-size: clamp(21px, 3vw, 30px);
+    font-weight: normal;
+    color: var(--white);
+    line-height: 1.5;
+    max-width: 880px;
+  }
+  .logline .accent { color: var(--mint); }
+
+  /* ---------- Video ---------- */
+  .video-section { text-align: center; }
+  .phone-frame {
+    width: min(300px, 78vw);
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    border-radius: 28px;
+    border: 6px solid #1c1c1c;
+    box-shadow: 0 0 0 1px var(--line), 0 30px 60px -20px rgba(0,0,0,0.8);
+    background: #000;
+  }
+  .phone-frame .media-slot {
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    border: none;
+  }
+  .video-caption {
+    margin-top: 22px;
+    font-size: 13px;
+    color: var(--grey);
+    letter-spacing: 0.03em;
+  }
+
+  /* ---------- Thesis ---------- */
+  .thesis p {
+    font-size: 18px;
+    color: var(--white);
+    opacity: 0.85;
+    max-width: 780px;
+  }
+
+  /* ---------- Interlude ---------- */
+  .interlude {
+    height: 44vh;
+    min-height: 280px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ---------- Three-act grid ---------- */
+  .act-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 8px;
+  }
+  .act-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px 26px;
+  }
+  .act-number {
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--teal);
+    letter-spacing: 0.15em;
+    font-weight: normal;
+    margin-bottom: 16px;
+  }
+  .act-card h3 { font-size: 22px; margin-bottom: 12px; }
+  .act-card p { font-size: 14.5px; }
+
+  /* ---------- Why now ---------- */
+  .why-now {
+    background: var(--card-bg);
+    border: 1px solid var(--teal-border);
+    border-left: 3px solid var(--teal);
+    border-radius: 4px;
+    padding: 40px 42px;
+  }
+  .why-now p { font-size: 16.5px; color: var(--white); opacity: 0.85; }
+  .why-now p + p { margin-top: 14px; }
+
+  /* ---------- Personnel ---------- */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .person-card { text-align: center; }
+  .person-photo {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+  }
+  .person-photo .media-slot { width: 100%; height: 100%; border-radius: 50%; }
+  .person-photo .media-fallback svg { width: 26px; height: 26px; }
+  .person-name { font-family: var(--font-display); font-size: 19px; font-weight: normal; letter-spacing: 0.01em; margin-bottom: 4px; }
+  .person-role { font-size: 12.5px; color: var(--teal); letter-spacing: 0.04em; margin-bottom: 12px; }
+  .person-bio { font-size: 13.5px; }
+
+  /* ---------- Stats ---------- */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .stat-card {
+    border-top: 1px solid var(--teal-border);
+    padding-top: 20px;
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: normal;
+    color: var(--mint);
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+  }
+  .stat-label { font-size: 13.5px; color: var(--grey); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 800px) {
+    section { padding: 70px 0; }
+    .wrap { padding: 0 22px; }
+    .hero { padding: 120px 0 60px; }
+    .hero-inner { padding: 0 22px; }
+    .act-grid, .people-grid, .stats-grid { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr; padding: 0 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img id="heroImg" src="/images/easdale-skim.jpg" alt="" style="object-position: center 20%;" onerror="this.remove(); document.querySelector('.hero').classList.add('hero-no-image');">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <img class="hero-logo" id="heroLogo" src="./media/braxton-studios-logo.png" alt="Braxton Studios"
+        onerror="this.style.display='none'; document.getElementById('heroLogoFallback').style.display='flex';">
+      <div class="hero-logo-fallback" id="heroLogoFallback">
+        <span class="dot"></span> BRAXTON STUDIOS
+      </div>
+      <span class="hero-badge">A Short-Form Documentary</span>
+      <h1 class="hero-title">THE SEMI SKIMMERS</h1>
+      <p class="hero-tagline">Prepared for PBS Digital Studios</p>
+    </div>
+  </section>
+
+  <!-- ===================== FACTS ===================== -->
+  <div class="facts">
+    <div class="fact">
+      <span class="fact-label">Format</span>
+      <span class="fact-value">Short-Form Documentary</span>
+    </div>
+    <div class="fact">
+      <span class="fact-label">Runtime</span>
+      <span class="fact-value">20 Minutes</span>
+    </div>
+    <div class="fact">
+      <span class="fact-label">Next Championships</span>
+      <span class="fact-value">TBC — <a href="https://www.stoneskimming.com/" target="_blank" rel="noopener">stoneskimming.com</a></span>
+    </div>
+  </div>
+
+  <!-- ===================== LOGLINE ===================== -->
+  <section class="logline-section">
+    <div class="wrap reveal">
+      <span class="eyebrow">Logline</span>
+      <p class="logline">When a respected Scottish news presenter and his amateur team return to defend their standing at the World Stone Skimming Championships, they find a sport in crisis — a small island tradition built on <span class="accent">trust and community fundraising</span>, now shaken by its first-ever cheating scandal.</p>
+    </div>
+  </section>
+
+  <!-- ===================== VIDEO ===================== -->
+  <section class="video-section section-green">
+    <div class="wrap reveal">
+      <span class="eyebrow">Sizzle</span>
+      <div class="phone-frame">
+        <div class="media-slot" id="videoSlot">
+          <video id="teaserVideo" playsinline muted loop autoplay controls
+            onerror="document.getElementById('videoSlot').classList.add('is-missing')">
+            <source src="./media/semi-skimmers-2025.mp4" type="video/mp4">
+          </video>
+          <div class="media-fallback">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="M16 9l6-3v12l-6-3"/></svg>
+            <span>Championship Footage</span>
+          </div>
+        </div>
+      </div>
+      <p class="video-caption">Footage from the 2025 World Stone Skimming Championships.</p>
+    </div>
+  </section>
+
+  <!-- ===================== THESIS ===================== -->
+  <section class="thesis">
+    <div class="wrap reveal">
+      <span class="eyebrow">About The Film</span>
+      <h2>Trust, Tested.</h2>
+      <p>The World Stone Skimming Championships have run on Easdale Island for over three decades on little more than a handshake — a self-officiated, community-run event where the honour system is the only system. In 2025, that system broke: the event's first-ever cheating scandal called into question not just one result, but the informal trust the whole tradition depends on. The same year produced the championship's first-ever American winner, pulling a niche Scottish curiosity into an unfamiliar international spotlight at the exact moment its credibility was under strain. The Semi Skimmers follows a returning presenter and his team back into that tension — a story about what a small community protects when the rules are unwritten, and what happens the moment someone stops playing by them.</p>
+    </div>
+  </section>
+
+  <!-- ===================== INTERLUDE ===================== -->
+  <div class="interlude" style="background-image: url('/images/easdale-championship.jpg');"></div>
+
+  <!-- ===================== THREE ACTS ===================== -->
+  <section class="structure section-green">
+    <div class="wrap reveal">
+      <span class="eyebrow">Structure</span>
+      <h2>Three Acts</h2>
+      <div class="act-grid">
+        <div class="act-card">
+          <div class="act-number">ACT ONE</div>
+          <h3>The Team</h3>
+          <p>A respected Scottish news presenter and his amateur crew prepare to defend their standing at the championships, framed by the easy camaraderie and low stakes that first drew them to the sport.</p>
+        </div>
+        <div class="act-card">
+          <div class="act-number">ACT TWO</div>
+          <h3>The Island</h3>
+          <p>On Easdale, a tiny community sustains a world championship through volunteer labour and fundraising alone — a tradition of trust that has quietly held the event together for over thirty years.</p>
+        </div>
+        <div class="act-card">
+          <div class="act-number">ACT THREE</div>
+          <h3>The Championships</h3>
+          <p>As the competition unfolds, the fallout from 2025's cheating scandal surfaces — forcing the team, and the island, to reckon with what the event is actually built on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY NOW ===================== -->
+  <section class="why-now-section">
+    <div class="wrap reveal">
+      <span class="eyebrow">Why Now</span>
+      <h2>A Sport at a Turning Point</h2>
+      <div class="why-now">
+        <p>In 2025, the World Stone Skimming Championships were rocked by their first-ever cheating scandal — an unprecedented breach for an event that has always relied on honesty rather than officiating to function. The same year crowned the championship's first-ever American champion, drawing new international attention to a competition that had, until now, operated almost entirely under the radar.</p>
+        <p>That collision — a scandal threatening the event's founding trust, arriving in the exact year it broke through internationally — makes this the moment to tell this story, before the sport either fractures or finds a new equilibrium.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KEY PERSONNEL ===================== -->
+  <section class="personnel section-green">
+    <div class="wrap reveal">
+      <span class="eyebrow">Key Personnel</span>
+      <h2>Who's Behind It</h2>
+      <div class="people-grid">
+
+        <div class="person-card">
+          <div class="person-photo">
+            <div class="media-slot" id="photo1">
+              <img src="./media/brandon-cook.jpg" alt="Brandon Cook" style="object-position: center 25%;" onerror="document.getElementById('photo1').classList.add('is-missing')">
+              <div class="media-fallback">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="person-name">Brandon Cook</div>
+          <div class="person-role">STV News Presenter</div>
+          <p class="person-bio">Subject and contributor, and the originating research connection behind the film — a returning competitor with a personal stake in the championship's outcome.</p>
+        </div>
+
+        <div class="person-card">
+          <div class="person-photo">
+            <div class="media-slot" id="photo2">
+              <img src="./media/alasdair-braxton.jpg" alt="Alasdair Braxton" style="object-position: center 30%;" onerror="document.getElementById('photo2').classList.add('is-missing')">
+              <div class="media-fallback">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="person-name">Alasdair Braxton</div>
+          <div class="person-role">Director, Braxton Studios</div>
+          <p class="person-bio">Broadcast credits including BBC, Netflix, and STV. Leads creative direction and production for Braxton Studios' documentary and brand work.</p>
+        </div>
+
+        <div class="person-card">
+          <div class="person-photo">
+            <div class="media-slot" id="photo3">
+              <img src="./media/james-lygate.jpg" alt="James Lygate" style="object-position: center 30%;" onerror="document.getElementById('photo3').classList.add('is-missing')">
+              <div class="media-fallback">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="person-name">James Lygate</div>
+          <div class="person-role">Executive Producer / DoP</div>
+          <p class="person-bio">Founder of Etive Studios Ltd, with client credits including the BBC and ITV. Oversees cinematography and executive production on the film.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AUDIENCE & RELEVANCE ===================== -->
+  <section class="audience">
+    <div class="wrap reveal">
+      <span class="eyebrow">Audience &amp; Relevance</span>
+      <h2>Built for a Global Audience</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Countries represented among competitors at the championships</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2025</div>
+          <div class="stat-label">Year of the event's first-ever American champion</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">US</div>
+          <div class="stat-label">Braxton Studios' YouTube audience is predominantly US-based</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    var els = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(el) { io.observe(el); });
+
+    // Video fallback also fires if the source itself never resolves (no error bubbling in some browsers)
+    var v = document.getElementById('teaserVideo');
+    v.addEventListener('error', function() { document.getElementById('videoSlot').classList.add('is-missing'); });
+    setTimeout(function() {
+      if (v.readyState === 0) { document.getElementById('videoSlot').classList.add('is-missing'); }
+    }, 1200);
+  </script>
+
+</body>
+</html>
