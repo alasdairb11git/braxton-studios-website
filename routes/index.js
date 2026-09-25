@@ -138,6 +138,15 @@ function breadcrumb(name, path) {
 // All stories sorted by date (newest first) — homepage shows the 3 most recent
 const allStories = [
   {
+    href: '/stories/ls-productions',
+    img: '/images/edinburgh.jpg',
+    alt: 'Braxton Studios Named a Trusted LS Productions Supplier',
+    category: 'Business',
+    title: "Braxton Studios Named a Trusted LS Productions Supplier",
+    date: '25 September 2026',
+    sortDate: new Date('2026-09-25')
+  },
+  {
     href: '/stories/cannes-2026',
     img: '/images/Cannes Hero Boats.JPG',
     alt: 'Braxton Studios at Cannes Lions 2026',
@@ -471,6 +480,29 @@ router.get('/stories/flatwarming-screening', (req, res) => {
   });
 });
 
+router.get('/stories/ls-productions', (req, res) => {
+  res.render('story-ls-productions', {
+    ...defaults,
+    canonicalPath: '/stories/ls-productions',
+    ogType: 'article',
+    pageTitle: 'Braxton Studios Named a Trusted LS Productions Supplier — Braxton Studios',
+    pageDescription: 'Braxton Studios has been accepted into LS Productions\' database of trusted suppliers, providing video production and YouTube strategy services across its network.',
+    ogImage: '/images/edinburgh.jpg',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: 'Braxton Studios Named a Trusted LS Productions Supplier',
+      description: 'Braxton Studios has been accepted into LS Productions\' database of trusted suppliers, providing video production and YouTube strategy services across its network.',
+      datePublished: '2026-09-25T00:00:00+00:00',
+      dateModified: '2026-09-25T00:00:00+00:00',
+      author: { '@type': 'Organization', name: 'Braxton Studios', url: 'https://braxtonstudios.com' },
+      publisher: { '@type': 'Organization', name: 'Braxton Studios', logo: { '@type': 'ImageObject', url: 'https://braxtonstudios.com/images/BS_transparent_2026.png' } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://braxtonstudios.com/stories/ls-productions' },
+      image: 'https://braxtonstudios.com/images/edinburgh.jpg'
+    }
+  });
+});
+
 router.get('/stories/techscaler', (req, res) => {
   res.render('story-techscaler', {
     ...defaults,
@@ -591,6 +623,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/films/the-flatwarming', priority: '0.6', changefreq: 'yearly' },
     { loc: '/films/tedrad', priority: '0.6', changefreq: 'monthly' },
     { loc: '/about/alasdair-braxton', priority: '0.5', changefreq: 'yearly' },
+    { loc: '/stories/ls-productions', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/cannes-2026', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/kings-trust', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/shiny-list', priority: '0.7', changefreq: 'yearly' },
@@ -617,6 +650,11 @@ ${pages.map(p => `  <url>
 
 router.get('/news-sitemap.xml', (req, res) => {
   const stories = [
+    {
+      loc: '/stories/ls-productions',
+      title: 'Braxton Studios Named a Trusted LS Productions Supplier',
+      date: '2026-09-25T00:00:00+00:00'
+    },
     {
       loc: '/stories/cannes-2026',
       title: 'Unpacking Cannes Lions 2026: Braxton Studios Debrief',
