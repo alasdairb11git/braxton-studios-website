@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <!-- Hero -->
+  <section class="audit-hero">
+    <div class="audit-hero-content reveal">
+      <span class="cs-hero-eyebrow">Get Involved</span>
+      <h1 class="cs-hero-title">Casting Calls</h1>
+      <p class="audit-hero-sub">Two ways to work with Braxton Studios: join the creator collective, or step into a specific shoot.</p>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <section class="products-grid-section">
+    <div class="products-grid-inner">
+      <a href="/casting/university-student" class="product-card-link reveal">
+        <div class="product-card product-card-has-img">
+          <div class="product-card-img">
+            <img src="/images/irix_braxton studios.JPG" alt="Casting Calls">
+          </div>
+          <div class="product-card-content">
+            <span class="product-card-eyebrow">Open Call</span>
+            <h3 class="product-card-title">University Student</h3>
+            <p class="product-card-desc">Feature in a YouTube short-form video for a brand open call. Shot in Glasgow/Edinburgh.</p>
+          </div>
+        </div>
+      </a>
+      <a href="/creucast" class="product-card-link reveal reveal-delay-1">
+        <div class="product-card product-card-has-img">
+          <div class="product-card-img">
+            <img src="/images/creucast.jpg" alt="Creucast">
+          </div>
+          <div class="product-card-content">
+            <span class="product-card-eyebrow">Creator Collective</span>
+            <h3 class="product-card-title">Creucast</h3>
+            <p class="product-card-desc">Monthly content days. Crew for each other, on a 6-month commitment.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <%- include('partials/signup') %>
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/cursor') %>
+  <%- include('partials/nav') %>
+
+  <!-- Hero -->
+  <section class="audit-hero">
+    <div class="audit-hero-content reveal">
+      <span class="cs-hero-eyebrow">Open Call</span>
+      <h1 class="cs-hero-title">Casting Calls</h1>
+      <p class="audit-hero-sub">Roles we're currently looking to fill for upcoming Braxton Studios productions.</p>
+    </div>
+  </section>
+
+  <!-- Facts -->
+  <div class="pitch-facts" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="pitch-fact">
+      <span class="pitch-fact-label">Role</span>
+      <span class="pitch-fact-value">University Student</span>
+    </div>
+    <div class="pitch-fact">
+      <span class="pitch-fact-label">Location</span>
+      <span class="pitch-fact-value">Glasgow / Edinburgh</span>
+    </div>
+    <div class="pitch-fact">
+      <span class="pitch-fact-label">Shoot Date</span>
+      <span class="pitch-fact-value">Fri 2 or Sat 3 Oct</span>
+    </div>
+  </div>
+
+  <!-- Listing -->
+  <section class="pitch-section">
+    <div class="pitch-section-inner reveal">
+      <span class="pitch-eyebrow">The Role</span>
+      <h2 class="pitch-heading">University Student: YouTube Short, Brand Open Call</h2>
+      <div class="pitch-body">
+        <p>We're looking for a current university student (18+) to feature in a YouTube short-form video, produced for a brand open call.</p>
+        <p>The shoot is a half day on Friday 2nd or Saturday 3rd October, based in Glasgow/Edinburgh and surrounding areas. It's a simple setup: studying at a desk, working on a laptop, and a few lines delivered to camera.</p>
+        <p>No acting experience needed, just someone natural and comfortable on camera. Proof of student status (e.g. enrolment card) required.</p>
+      </div>
+
+      <div style="margin-top:40px">
+        <span class="pitch-eyebrow">What's On Offer</span>
+        <div class="pitch-body">
+          <p>A share of the fee if the video is selected, the finished video for your own portfolio and socials, and experience on a professionally shot and graded production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interlude -->
+  <div class="pitch-interlude" style="background-image: url('/images/uni tower.jpg'); background-position: center 55%;"></div>
+
+  <!-- CTA -->
+  <section class="pitch-cta">
+    <div class="pitch-cta-inner reveal">
+      <h2 class="pitch-cta-heading">Think You're Right For This?</h2>
+      <p class="pitch-cta-text">Get in touch with a bit about yourself and proof of student status. If you're interested, send a short intro video (10 seconds is plenty) telling us who you are and what you study.</p>
+      <a href="mailto:<%= contactEmail %>?subject=Casting%20Call%20-%20University%20Student%20Short" class="pitch-cta-btn">Apply Now</a>
+    </div>
+  </section>
+
+  <%- include('partials/signup') %>
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>
