@@ -199,23 +199,27 @@ document.querySelectorAll('.creucast-faq-question').forEach(btn => {
 
     if (!items.length) {
       itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
-      subtotalEl.textContent = '£0.00';
+      subtotalEl.textContent = (window.BSCurrency ? window.BSCurrency.SYMBOLS[window.BSCurrency.getCurrency()] : '£') + '0.00';
       return;
     }
 
-    itemsEl.innerHTML = items.map((item) => `
+    itemsEl.innerHTML = items.map((item) => {
+      const sym = (window.BSCurrency && window.BSCurrency.SYMBOLS[item.currency]) || '£';
+      return `
       <div class="cart-item">
         <img class="cart-item-img" src="${item.image}" alt="">
         <div class="cart-item-info">
           <div class="cart-item-name">${item.name}</div>
-          <div class="cart-item-price">£${item.price.toFixed(2)}</div>
+          <div class="cart-item-price">${sym}${item.price.toFixed(2)}</div>
         </div>
         <button type="button" class="cart-item-remove" data-remove="${item.id}">Remove</button>
       </div>
-    `).join('');
+    `;
+    }).join('');
 
     const subtotal = items.reduce((sum, i) => sum + i.price, 0);
-    subtotalEl.textContent = '£' + subtotal.toFixed(2);
+    const subtotalSym = (window.BSCurrency && window.BSCurrency.SYMBOLS[window.BSCurrency.getCurrency()]) || '£';
+    subtotalEl.textContent = subtotalSym + subtotal.toFixed(2);
 
     itemsEl.querySelectorAll('[data-remove]').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -255,7 +259,10 @@ document.querySelectorAll('.creucast-faq-question').forEach(btn => {
         const res = await fetch('/api/create-checkout-session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ items: items.map((i) => ({ id: i.id })) })
+          body: JSON.stringify({
+            items: items.map((i) => ({ id: i.id })),
+            currency: window.BSCurrency ? window.BSCurrency.getCurrency() : 'GBP'
+          })
         });
         const data = await res.json();
         if (res.ok && data.url) {
@@ -285,7 +292,8 @@ document.querySelectorAll('.creucast-faq-question').forEach(btn => {
           name: btn.dataset.name,
           price: parseFloat(btn.dataset.price),
           image: btn.dataset.image,
-          checkout: btn.dataset.checkout
+          checkout: btn.dataset.checkout,
+          currency: window.BSCurrency ? window.BSCurrency.getCurrency() : 'GBP'
         });
         saveCart(items);
         render();
@@ -297,6 +305,94 @@ document.querySelectorAll('.creucast-faq-question').forEach(btn => {
   });
 
   render();
+  window.BSCart = { render, getCart, saveCart };
+})();
+
+// ── CURRENCY ──
+(function () {
+  const CURRENCY_KEY = 'bs-currency';
+  const SYMBOLS = { GBP: '£', USD: '$', EUR: '€', SGD: 'S$' };
+  const PRODUCT_PRICES = {
+    'iphone-field-kit': {
+      GBP: { price: 11.99, checkout: 'https://buy.stripe.com/28EaEZ76I9rt84nbeR6AM01' },
+      USD: { price: 15.99, checkout: 'https://buy.stripe.com/cNi8wR76I47984n6YB6AM02' },
+      EUR: { price: 13.99, checkout: 'https://buy.stripe.com/28E3cx0Ik4792K396J6AM03' },
+      SGD: { price: 19.99, checkout: 'https://buy.stripe.com/aFadRbdv6dHJ4Sb3Mp6AM04' }
+    },
+    'youtube-audit': {
+      GBP: { price: 29.00, checkout: 'https://buy.stripe.com/5kQdRbfDedHJckDbeR6AM00' },
+      USD: { price: 36.99, checkout: 'https://buy.stripe.com/fZucN79eQ9rtdoH4Qt6AM05' },
+      EUR: { price: 33.99, checkout: 'https://buy.stripe.com/fZu00l3Uw9rtbgzgzb6AM06' },
+      SGD: { price: 48.99, checkout: 'https://buy.stripe.com/8x2aEZ4YAcDFgATciV6AM07' }
+    }
+  };
+
+  function getCurrency() {
+    try { return localStorage.getItem(CURRENCY_KEY) || 'GBP'; } catch (e) { return 'GBP'; }
+  }
+  function setCurrency(code) {
+    try { localStorage.setItem(CURRENCY_KEY, code); } catch (e) {}
+  }
+
+  window.BSCurrency = { getCurrency, setCurrency, SYMBOLS, PRODUCT_PRICES };
+
+  function applyCurrency(code) {
+    document.querySelectorAll('[data-cart-add]').forEach((btn) => {
+      const variant = PRODUCT_PRICES[btn.dataset.id] && PRODUCT_PRICES[btn.dataset.id][code];
+      if (!variant) return;
+      btn.dataset.price = variant.price.toFixed(2);
+      btn.dataset.checkout = variant.checkout;
+    });
+    document.querySelectorAll('[data-price-display]').forEach((el) => {
+      const variant = PRODUCT_PRICES[el.dataset.priceDisplay] && PRODUCT_PRICES[el.dataset.priceDisplay][code];
+      if (!variant) return;
+      el.textContent = SYMBOLS[code] + variant.price.toFixed(2);
+    });
+    document.querySelectorAll('[data-direct-link]').forEach((a) => {
+      const variant = PRODUCT_PRICES[a.dataset.directLink] && PRODUCT_PRICES[a.dataset.directLink][code];
+      if (!variant) return;
+      a.href = variant.checkout;
+    });
+
+    try {
+      const cart = JSON.parse(localStorage.getItem('bs-cart')) || [];
+      const updated = cart.map((item) => {
+        const variant = PRODUCT_PRICES[item.id] && PRODUCT_PRICES[item.id][code];
+        if (!variant) return item;
+        return Object.assign({}, item, { price: variant.price, checkout: variant.checkout, currency: code });
+      });
+      localStorage.setItem('bs-cart', JSON.stringify(updated));
+    } catch (e) {}
+
+    const label = document.getElementById('currencyLabel');
+    if (label) label.textContent = code;
+    document.querySelectorAll('.currency-option').forEach((opt) => {
+      opt.classList.toggle('active', opt.dataset.currency === code);
+    });
+
+    if (window.BSCart) window.BSCart.render();
+  }
+
+  applyCurrency(getCurrency());
+
+  const btn = document.getElementById('currencyBtn');
+  const menu = document.getElementById('currencyMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+    document.addEventListener('click', () => menu.classList.remove('open'));
+    menu.querySelectorAll('.currency-option').forEach((opt) => {
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const code = opt.dataset.currency;
+        setCurrency(code);
+        applyCurrency(code);
+        menu.classList.remove('open');
+      });
+    });
+  }
 })();
 
 // ── HAMBURGER MENU ──

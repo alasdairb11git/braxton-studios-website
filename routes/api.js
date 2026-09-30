@@ -16,11 +16,17 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// Server-side price lookup — never trust a price/amount sent from the client
+// Server-side price lookup — never trust a price/amount sent from the client.
+// Amounts are in minor units (pence/cents).
 const CART_PRICES = {
-  'youtube-audit': 'price_1T8oGZRlZROjUc9liV3rUfAD',
-  'iphone-field-kit': 'price_1UBwjWRlZROjUc9lRYoD3ZgU'
+  'youtube-audit': { GBP: 2900, USD: 3699, EUR: 3399, SGD: 4899 },
+  'iphone-field-kit': { GBP: 1199, USD: 1599, EUR: 1399, SGD: 1999 }
 };
+const CART_PRODUCT_NAMES = {
+  'youtube-audit': 'YouTube Channel Audit',
+  'iphone-field-kit': 'iPhone Field Kit'
+};
+const SUPPORTED_CURRENCIES = ['GBP', 'USD', 'EUR', 'SGD'];
 
 // POST /api/create-checkout-session
 router.post('/create-checkout-session', async (req, res) => {
@@ -28,18 +34,26 @@ router.post('/create-checkout-session', async (req, res) => {
     return res.status(500).json({ error: 'Checkout is not configured. Please try again later.' });
   }
 
-  const { items } = req.body;
+  const { items, currency } = req.body;
   if (!Array.isArray(items) || !items.length) {
     return res.status(400).json({ error: 'Your cart is empty.' });
   }
+  const cur = SUPPORTED_CURRENCIES.includes(currency) ? currency : 'GBP';
 
   const line_items = [];
   for (const item of items) {
-    const priceId = CART_PRICES[item.id];
-    if (!priceId) {
+    const amount = CART_PRICES[item.id] && CART_PRICES[item.id][cur];
+    if (!amount) {
       return res.status(400).json({ error: 'One of the items in your cart is no longer available.' });
     }
-    line_items.push({ price: priceId, quantity: 1 });
+    line_items.push({
+      price_data: {
+        currency: cur.toLowerCase(),
+        unit_amount: amount,
+        product_data: { name: CART_PRODUCT_NAMES[item.id] }
+      },
+      quantity: 1
+    });
   }
 
   try {

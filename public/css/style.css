@@ -5472,6 +5472,11 @@ body.fk-page {
   border: 1px solid rgba(103, 205, 195, 0.2);
 }
 .floating-header-logo img { height: 30px; display: block; }
+.floating-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 .floating-header-cart {
   position: static;
   background: none;
@@ -5482,6 +5487,60 @@ body.fk-page {
   padding: 0;
   cursor: pointer;
 }
+
+.currency-switch { position: relative; }
+.currency-switch-btn {
+  background: none;
+  border: none;
+  color: #f0ede8;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.currency-switch-btn::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  opacity: 0.6;
+}
+.currency-switch-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: rgba(8, 16, 14, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(103,205,195,0.25);
+  border-radius: 12px;
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  min-width: 110px;
+  z-index: 50;
+}
+.currency-switch-menu.open { display: flex; }
+.currency-option {
+  background: none;
+  border: none;
+  color: #f0ede8;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  padding: 9px 10px;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.currency-option:hover { background: rgba(240,237,232,0.08); }
+.currency-option.active { background: rgba(103,205,195,0.15); color: #67CDC3; }
 
 .fk-bg-gradient {
   position: fixed;

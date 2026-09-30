@@ -2,11 +2,24 @@
   <a href="/" class="floating-header-logo">
     <img src="/images/BS_transparent_2026.png" alt="Braxton Studios">
   </a>
-  <button type="button" class="nav-cart-btn floating-header-cart" id="cartTrigger" aria-label="Open cart">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-      <path d="M6 8H18L17 20H7L6 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <path d="M9 8V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V8" stroke="currentColor" stroke-width="1.6"/>
-    </svg>
-    <span class="nav-cart-count" id="cartCount">0</span>
-  </button>
+  <div class="floating-header-right">
+    <div class="currency-switch" id="currencySwitch">
+      <button type="button" class="currency-switch-btn" id="currencyBtn" aria-haspopup="true" aria-expanded="false">
+        <span id="currencyLabel">GBP</span>
+      </button>
+      <div class="currency-switch-menu" id="currencyMenu">
+        <button type="button" class="currency-option active" data-currency="GBP">GBP &pound;</button>
+        <button type="button" class="currency-option" data-currency="USD">USD $</button>
+        <button type="button" class="currency-option" data-currency="EUR">EUR &euro;</button>
+        <button type="button" class="currency-option" data-currency="SGD">SGD S$</button>
+      </div>
+    </div>
+    <button type="button" class="nav-cart-btn floating-header-cart" id="cartTrigger" aria-label="Open cart">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+        <path d="M6 8H18L17 20H7L6 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M9 8V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V8" stroke="currentColor" stroke-width="1.6"/>
+      </svg>
+      <span class="nav-cart-count" id="cartCount">0</span>
+    </button>
+  </div>
 </header>
