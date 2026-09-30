@@ -4789,6 +4789,11 @@ body.light .services-hero { background: #141414; }
   background-size: cover;
   background-position: center;
 }
+.pitch-hero-gradient {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(103,205,195,0.25), transparent 55%),
+    linear-gradient(165deg, #123c34 0%, #0a251f 55%, #050a09 100%);
+}
 .pitch-hero-photo-overlay {
   position: absolute;
   inset: 0;
@@ -5023,6 +5028,76 @@ body.light .services-hero { background: #141414; }
 .pitch-cta-btn:hover {
   background: var(--teal);
   color: var(--black);
+}
+
+/* ── CASTING HUB ── */
+.casting-hub-section {
+  background: var(--white);
+  color: var(--black);
+  padding: 100px 24px 120px;
+}
+.casting-hub-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.casting-hub-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(10,10,10,0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.casting-hub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(10,10,10,0.1);
+  border-color: rgba(10,10,10,0.2);
+}
+.casting-hub-card-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.casting-hub-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.casting-hub-card:hover .casting-hub-card-img img {
+  transform: scale(1.04);
+}
+.casting-hub-card-content {
+  padding: 28px 28px 32px;
+}
+.casting-hub-card-eyebrow {
+  display: block;
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+.casting-hub-card-title {
+  font-family: 'Ethnocentric', 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--black);
+}
+.casting-hub-card-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(10,10,10,0.6);
+}
+@media (max-width: 700px) {
+  .casting-hub-inner { grid-template-columns: 1fr; gap: 24px; }
+  .casting-hub-section { padding: 70px 20px 80px; }
 }
 
 body.light .pitch-fact-label { color: rgba(10,10,10,0.5); }
