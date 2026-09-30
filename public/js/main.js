@@ -27,13 +27,14 @@ const THEME_KEY = 'bs-theme';
 let isLight = document.body.classList.contains('light');
 
 function updateToggleIcon() {
+  if (!toggleKnob) return;
   toggleKnob.innerHTML = isLight
     ? '🌙'
     : "<img src='/images/logo-toggle.jpg' style='width:16px;height:16px;border-radius:50%;object-fit:cover;'>";
 }
 updateToggleIcon();
 
-themeToggle.addEventListener('click', () => {
+if (themeToggle) themeToggle.addEventListener('click', () => {
   isLight = !isLight;
   document.body.classList.toggle('light', isLight);
   try { localStorage.setItem(THEME_KEY, isLight ? 'light' : 'dark'); } catch(e) {}

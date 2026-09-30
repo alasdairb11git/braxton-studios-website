@@ -3,9 +3,13 @@
 <head>
   <%- include('partials/head') %>
 </head>
-<body>
-  <%- include('partials/cursor') %>
-  <%- include('partials/nav') %>
+<body class="products-teal-page">
+  <div class="products-bg-layer products-bg-default active"></div>
+  <div class="products-bg-layer products-bg-teal"></div>
+  <div class="products-bg-layer products-bg-red"></div>
+
+  <%- include('partials/minimal-header') %>
+  <%- include('partials/cart') %>
 
   <!-- Hero -->
   <section class="audit-hero">
@@ -19,37 +23,47 @@
   <!-- Product Grid -->
   <section class="products-grid-section">
     <div class="products-grid-inner">
-      <a href="/luts" class="product-card-link reveal">
-        <div class="product-card product-card-has-img">
-          <div class="product-card-img">
-            <img src="/images/field-kit-cover-wide.jpg" alt="iPhone Field Kit">
-          </div>
-          <div class="product-card-content">
-            <span class="product-card-eyebrow">LUT Pack</span>
-            <h3 class="product-card-title">iPhone Field Kit</h3>
-            <p class="product-card-desc">Five cinematic looks built and tested on iPhone.</p>
-            <span class="product-card-price">&pound;11.99</span>
-          </div>
+      <a href="/luts" class="product-float-link reveal" data-bg-tint="teal">
+        <div class="product-float-media">
+          <img src="/images/mobile product.png" alt="iPhone Field Kit" class="product-float-img">
+          <div class="product-float-screen"></div>
+        </div>
+        <div class="product-float-content">
+          <span class="product-card-eyebrow">LUT Pack</span>
+          <h3 class="product-card-title">iPhone Field Kit</h3>
+          <p class="product-card-desc">Five cinematic looks built and tested on iPhone.</p>
         </div>
       </a>
-      <a href="/youtube-audit" class="product-card-link reveal reveal-delay-1">
-        <div class="product-card product-card-has-img">
-          <div class="product-card-img">
-            <img src="/images/YT_Template_Cover.jpg" alt="YouTube Channel Audit">
-          </div>
-          <div class="product-card-content">
-            <span class="product-card-eyebrow">PDF Template</span>
-            <h3 class="product-card-title">YouTube Channel Audit</h3>
-            <p class="product-card-desc">8 sections. 60+ checkpoints. Score system. 30/60/90 day action plan.</p>
-            <span class="product-card-price">&pound;29.00</span>
-          </div>
+      <a href="/youtube-audit" class="product-float-link reveal reveal-delay-1" data-bg-tint="red">
+        <div class="product-float-media product-float-media-sm">
+          <img src="/images/play button .png" alt="YouTube Channel Audit" class="product-float-img">
+          <div class="product-float-screen product-float-screen-round"></div>
+        </div>
+        <div class="product-float-content">
+          <span class="product-card-eyebrow">PDF Template</span>
+          <h3 class="product-card-title">YouTube Channel Audit</h3>
+          <p class="product-card-desc">8 sections. 60+ checkpoints. Score system. 30/60/90 day action plan.</p>
         </div>
       </a>
     </div>
   </section>
 
-  <%- include('partials/signup') %>
-  <%- include('partials/footer') %>
   <%- include('partials/scripts') %>
+  <script>
+    (function () {
+      const layers = {
+        default: document.querySelector('.products-bg-default'),
+        teal: document.querySelector('.products-bg-teal'),
+        red: document.querySelector('.products-bg-red')
+      };
+      function setActive(key) {
+        Object.keys(layers).forEach((k) => layers[k].classList.toggle('active', k === key));
+      }
+      document.querySelectorAll('[data-bg-tint]').forEach((link) => {
+        link.addEventListener('mouseenter', () => setActive(link.dataset.bgTint));
+        link.addEventListener('mouseleave', () => setActive('default'));
+      });
+    })();
+  </script>
 </body>
 </html>
