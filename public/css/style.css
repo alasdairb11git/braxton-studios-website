@@ -5592,6 +5592,13 @@ body.fk-page {
   border: 1px solid rgba(103,205,195,0.25);
   cursor: pointer;
 }
+@media (max-width: 480px) {
+  .fk-ba-toggle {
+    top: 16px;
+    right: 16px;
+    bottom: auto;
+  }
+}
 .fk-ba-option {
   padding: 7px 14px;
   font-family: 'Graphik', 'DM Sans', sans-serif;
