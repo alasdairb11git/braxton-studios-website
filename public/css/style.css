@@ -4794,6 +4794,11 @@ body.light .services-hero { background: #141414; }
     radial-gradient(ellipse at 20% 0%, rgba(103,205,195,0.25), transparent 55%),
     linear-gradient(165deg, #123c34 0%, #0a251f 55%, #050a09 100%);
 }
+.pitch-hero-gradient-blue {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(70,130,220,0.28), transparent 55%),
+    linear-gradient(165deg, #0f2440 0%, #0a1830 55%, #050a14 100%);
+}
 .pitch-hero-photo-overlay {
   position: absolute;
   inset: 0;
