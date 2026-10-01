@@ -4,8 +4,8 @@
   <%- include('partials/head') %>
 </head>
 <body class="products-teal-page">
-  <div class="products-bg-layer products-bg-default active"></div>
-  <div class="products-bg-layer products-bg-teal"></div>
+  <div class="products-bg-layer products-bg-default"></div>
+  <div class="products-bg-layer products-bg-teal active"></div>
   <div class="products-bg-layer products-bg-red"></div>
 
   <%- include('partials/minimal-header') %>
@@ -61,7 +61,7 @@
       }
       document.querySelectorAll('[data-bg-tint]').forEach((link) => {
         link.addEventListener('mouseenter', () => setActive(link.dataset.bgTint));
-        link.addEventListener('mouseleave', () => setActive('default'));
+        link.addEventListener('mouseleave', () => setActive('teal'));
       });
     })();
   </script>

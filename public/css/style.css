@@ -5550,6 +5550,11 @@ body.fk-page {
     radial-gradient(ellipse at 20% 0%, rgba(103,205,195,0.22), transparent 55%),
     linear-gradient(165deg, #0e211d 0%, #081512 55%, #050a09 100%);
 }
+.fk-bg-gradient-red {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(230,70,55,0.25), transparent 55%),
+    linear-gradient(165deg, #241010 0%, #150808 55%, #0a0505 100%);
+}
 
 .fk-layout {
   min-height: 100vh;
