@@ -544,7 +544,8 @@ router.get('/casting', (req, res) => {
     pageTitle: 'Casting Calls — Braxton Studios',
     pageDescription: 'Two ways to work with Braxton Studios: join Creucast, our creator collective, or apply to an open casting call for an upcoming production.',
     ogImage: '/images/irix_braxton studios.JPG',
-    schema: breadcrumb('Casting Calls', '/casting')
+    schema: breadcrumb('Casting Calls', '/casting'),
+    noindex: true
   });
 });
 
@@ -555,7 +556,8 @@ router.get('/casting/university-student', (req, res) => {
     pageTitle: 'Casting Call: University Student — Braxton Studios',
     pageDescription: 'Open casting call: a current university student (18+) for a YouTube short-form video, shot in Glasgow/Edinburgh.',
     ogImage: '/images/irix_braxton studios.JPG',
-    schema: breadcrumb('University Student', '/casting/university-student')
+    schema: breadcrumb('University Student', '/casting/university-student'),
+    noindex: true
   });
 });
 
@@ -653,8 +655,8 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/stories/techscaler', priority: '0.7', changefreq: 'yearly' },
     { loc: '/contact', priority: '0.7', changefreq: 'yearly' },
     { loc: '/creucast', priority: '0.6', changefreq: 'weekly' },
-    { loc: '/casting', priority: '0.6', changefreq: 'weekly' },
-    { loc: '/casting/university-student', priority: '0.6', changefreq: 'weekly' },
+    // { loc: '/casting', priority: '0.6', changefreq: 'weekly' },
+    // { loc: '/casting/university-student', priority: '0.6', changefreq: 'weekly' },
     { loc: '/faqs', priority: '0.4', changefreq: 'yearly' },
     { loc: '/privacy-policy', priority: '0.2', changefreq: 'yearly' },
     { loc: '/cookie-policy', priority: '0.2', changefreq: 'yearly' },
