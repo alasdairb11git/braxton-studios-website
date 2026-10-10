@@ -726,6 +726,9 @@ body.light .nav-logo-light { display: block; }
   letter-spacing: 0.01em;
   color: var(--white);
 }
+@media (max-width: 600px) {
+  .cs-hero-title-showcases { font-size: clamp(24px, 7.6vw, 30px); }
+}
 .cs-hero-sub {
   font-size: 13px;
   letter-spacing: 0.2em;
@@ -3598,7 +3601,7 @@ body.light .nav-cart-btn:hover { border-color: var(--teal); }
 
   /* About */
   .about-inner { padding: 80px 24px; }
-  .about-heading { font-size: clamp(22px, 7vw, 32px); word-break: break-word; }
+  .about-heading { font-size: min(32px, calc((100vw - 48px) / 13.5)); word-break: break-word; }
   .about-stats { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
   .about-contact-link { font-size: 14px; word-break: break-all; }
   .stat-num { font-size: 28px; }
@@ -5809,4 +5812,29 @@ body.fk-page {
     align-self: center;
     padding: 0;
   }
+}
+
+/* Moderniz is taller than the previous display font, so multi-line headings need more leading */
+.cs-hero-title,
+.cs-content-heading,
+.cs-day-title,
+.ft-gallery-heading,
+.ft-hero-title,
+.fn-hero-name,
+.fn-vision-heading,
+.fn-cta-heading,
+.story-stat-num,
+.contact-title,
+.legal-title,
+.pitch-hero-title,
+.pitch-heading,
+.fk-title,
+.about-heading {
+  line-height: 1.15;
+}
+
+@media (max-width: 600px) {
+  .cs-hero .cs-hero-title { font-size: clamp(24px, 7.4vw, 28px); }
+  .cs-hero .cs-hero-sub { font-size: 11px; letter-spacing: 0.14em; }
+  .cs-content-heading { font-size: min(32px, calc((100vw - 56px) / 11.5)); }
 }
