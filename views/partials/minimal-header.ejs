@@ -1,7 +1,15 @@
 <header class="floating-header">
-  <a href="/" class="floating-header-logo">
-    <img src="/images/BS_transparent_2026.png" alt="Braxton Studios">
-  </a>
+  <div class="floating-header-left">
+    <a href="/" class="floating-header-logo">
+      <img src="/images/BS_transparent_2026.png" alt="Braxton Studios">
+    </a>
+    <% if (typeof canonicalPath === 'undefined' || canonicalPath !== '/products') { %>
+    <a href="/products" class="floating-header-back" aria-label="All products">
+      <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1L1 6l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="fhb-long">All products</span><span class="fhb-short">Products</span>
+    </a>
+    <% } %>
+  </div>
   <div class="floating-header-right">
     <div class="currency-switch" id="currencySwitch">
       <button type="button" class="currency-switch-btn" id="currencyBtn" aria-haspopup="true" aria-expanded="false">

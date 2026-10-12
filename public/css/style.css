@@ -5497,6 +5497,34 @@ body.fk-page {
   border: 1px solid rgba(103, 205, 195, 0.2);
 }
 .floating-header-logo img { height: 30px; display: block; }
+.floating-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.floating-header-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding-left: 14px;
+  border-left: 1px solid rgba(240,237,232,0.22);
+  font-family: 'Graphik', 'DM Sans', sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.8);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+.floating-header-back:hover { color: #67CDC3; }
+.floating-header-back .fhb-short { display: none; }
+@media (max-width: 420px) {
+  .floating-header-back .fhb-long { display: none; }
+  .floating-header-back .fhb-short { display: inline; }
+}
+@media (max-width: 339px) {
+  .floating-header-back .fhb-short { display: none; }
+}
 .floating-header-right {
   display: flex;
   align-items: center;
