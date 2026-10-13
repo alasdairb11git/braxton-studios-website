@@ -537,6 +537,17 @@ router.get('/contact', (req, res) => {
   });
 });
 
+router.get('/forthside', (req, res) => {
+  res.render('forthside', {
+    ...defaults,
+    canonicalPath: '/forthside',
+    pageTitle: 'Braxton at Forthside — Concept — Braxton Studios',
+    pageDescription: 'A concept for a creator and YouTube production base at the former MOD Forthside site in Stirling.',
+    ogImage: '/forthside-concept/film-holding.jpg',
+    noindex: true
+  });
+});
+
 router.get('/casting', (req, res) => {
   res.render('casting', {
     ...defaults,
