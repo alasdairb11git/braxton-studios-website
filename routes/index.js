@@ -52,7 +52,7 @@ const siteNavigationSchema = {
       position: 1,
       name: 'Showcases',
       description: 'Campaigns, brand studies, and creative direction by Braxton Studios.',
-      url: 'https://braxtonstudios.com/campaigns'
+      url: 'https://braxtonstudios.com/showcases'
     },
     {
       '@type': 'SiteNavigationElement',
@@ -206,14 +206,19 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/campaigns', (req, res) => {
+// Old /campaigns URLs now live under /showcases; keep them working with permanent redirects
+router.get('/campaigns', (req, res) => res.redirect(301, '/showcases'));
+router.get('/campaigns/archerfield-showcase', (req, res) => res.redirect(301, '/showcases/archerfield'));
+router.get('/campaigns/:slug', (req, res) => res.redirect(301, '/showcases/' + encodeURIComponent(req.params.slug)));
+
+router.get('/showcases', (req, res) => {
   res.render('campaigns', {
     ...defaults,
-    canonicalPath: '/campaigns',
-    pageTitle: 'Showcases — Braxton Studios',
+    canonicalPath: '/showcases',
+    pageTitle: 'Showcases: Braxton Studios',
     pageDescription: 'Selected work by Braxton Studios. Campaigns, brand studies, and creative direction.',
     ogImage: '/images/bba-podcast.jpg',
-    schema: breadcrumb('Showcases', '/campaigns')
+    schema: breadcrumb('Showcases', '/showcases')
   });
 });
 
@@ -251,32 +256,32 @@ router.get('/services', (req, res) => {
   });
 });
 
-router.get('/campaigns/building-brand-advocacy', (req, res) => {
+router.get('/showcases/building-brand-advocacy', (req, res) => {
   res.render('case-study-bba', {
     ...defaults,
-    canonicalPath: '/campaigns/building-brand-advocacy',
-    pageTitle: 'Building Brand Advocacy — Braxton Studios',
-    pageDescription: 'Braxton Studios produced the Building Brand Advocacy podcast for Archive House Agency. Post-production, editing, and YouTube strategy for a premium podcast series.',
+    canonicalPath: '/showcases/building-brand-advocacy',
+    pageTitle: 'Building Brand Advocacy: Braxton Studios',
+    pageDescription: 'Braxton Studios edited 3 long-form episodes of the Building Brand Advocacy podcast for Archive House Agency and cut short-form clips from them.',
     ogImage: '/images/bba-podcast.jpg'
   });
 });
 
-router.get('/campaigns/adum', (req, res) => {
+router.get('/showcases/adum', (req, res) => {
   res.render('case-study-adum', {
     ...defaults,
-    canonicalPath: '/campaigns/adum',
-    pageTitle: 'Adum — Braxton Studios',
-    pageDescription: 'Braxton Studios worked with London-based artist Adum to produce short-form content across TikTok, Instagram, and YouTube. 700K+ views on TikTok, 25K+ likes on Instagram.',
+    canonicalPath: '/showcases/adum',
+    pageTitle: 'Adum: Braxton Studios',
+    pageDescription: 'Braxton Studios handled cinematography and editing of short-form content for London-based artist Adum across TikTok, Instagram and YouTube. 700K+ views on TikTok, 25K+ likes on Instagram.',
     ogImage: '/images/adum.jpg'
   });
 });
 
-router.get('/campaigns/archerfield-showcase', (req, res) => {
+router.get('/showcases/archerfield', (req, res) => {
   res.render('case-study-archerfield', {
     ...defaults,
-    canonicalPath: '/campaigns/archerfield-showcase',
-    pageTitle: 'Archerfield — Braxton Studios',
-    pageDescription: 'An independent brand study led by Alasdair Braxton exploring creative direction, DV directing, and cinematography across the Archerfield estate.',
+    canonicalPath: '/showcases/archerfield',
+    pageTitle: 'Archerfield: Braxton Studios',
+    pageDescription: 'A trial project led by Alasdair Braxton exploring creative direction, DV directing and cinematography across the Archerfield estate.',
     ogImage: '/images/archerfield clean up.jpeg'
   });
 });
@@ -645,16 +650,16 @@ router.get('/terms-and-conditions', (req, res) => {
 router.get('/sitemap.xml', (req, res) => {
   const pages = [
     { loc: '/', priority: '1.0', changefreq: 'weekly' },
-    { loc: '/campaigns', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/showcases', priority: '0.8', changefreq: 'monthly' },
     { loc: '/films', priority: '0.8', changefreq: 'monthly' },
     { loc: '/stories', priority: '0.8', changefreq: 'weekly' },
     { loc: '/products', priority: '0.7', changefreq: 'monthly' },
     // { loc: '/services', priority: '0.8', changefreq: 'monthly' },
     { loc: '/youtube-audit', priority: '0.8', changefreq: 'monthly' },
     { loc: '/luts', priority: '0.6', changefreq: 'monthly' },
-    { loc: '/campaigns/building-brand-advocacy', priority: '0.6', changefreq: 'yearly' },
-    { loc: '/campaigns/adum', priority: '0.6', changefreq: 'yearly' },
-    { loc: '/campaigns/archerfield-showcase', priority: '0.6', changefreq: 'yearly' },
+    { loc: '/showcases/building-brand-advocacy', priority: '0.6', changefreq: 'yearly' },
+    { loc: '/showcases/adum', priority: '0.6', changefreq: 'yearly' },
+    { loc: '/showcases/archerfield', priority: '0.6', changefreq: 'yearly' },
     { loc: '/films/the-flatwarming', priority: '0.6', changefreq: 'yearly' },
     { loc: '/films/tedrad', priority: '0.6', changefreq: 'monthly' },
     { loc: '/about/alasdair-braxton', priority: '0.5', changefreq: 'yearly' },

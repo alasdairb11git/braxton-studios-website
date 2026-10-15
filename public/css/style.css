@@ -5866,3 +5866,25 @@ body.fk-page {
   .cs-hero .cs-hero-sub { font-size: 11px; letter-spacing: 0.14em; }
   .cs-content-heading { font-size: min(32px, calc((100vw - 56px) / 11.5)); }
 }
+
+/* Case study hero meta (date and role) and stats context line */
+.cs-meta { margin: 24px 0 0; display: grid; gap: 8px; max-width: 620px; }
+.cs-meta div { display: flex; gap: 16px; align-items: baseline; }
+.cs-meta dt { flex: 0 0 48px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); }
+.cs-meta dd { margin: 0; font-size: 14px; line-height: 1.5; color: #f0ede8; }
+.cs-stats-note { padding: 0 48px 28px; margin: 0; font-size: 13px; color: var(--grey); }
+@media (max-width: 900px) {
+  .cs-stats-note { padding: 4px 24px 24px; }
+}
+@media (max-width: 600px) {
+  .cs-meta div { flex-direction: column; gap: 2px; }
+  .cs-meta dt { flex: none; }
+}
+
+/* Case study heroes grow with their content so the title never sits under the nav */
+.cs-hero { height: auto; min-height: max(480px, 70vh); }
+.cs-hero-content { padding-top: 150px; }
+@media (max-width: 900px) {
+  .cs-hero { height: auto; min-height: max(360px, 50vh); }
+  .cs-hero-content { padding-top: 120px; }
+}
