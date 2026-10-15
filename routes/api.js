@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// Server-side price lookup — never trust a price/amount sent from the client.
+// Server-side price lookup: never trust a price/amount sent from the client.
 // Amounts are in minor units (pence/cents).
 const CART_PRICES = {
   'youtube-audit': { GBP: 2900, USD: 3699, EUR: 3399, SGD: 4899 },
@@ -119,7 +119,7 @@ router.post('/creucast-apply', async (req, res) => {
     await transporter.sendMail({
       from: `"Braxton Studios Website" <${process.env.ZOHO_EMAIL || 'info@braxtonstudios.com'}>`,
       to: 'info@braxtonstudios.com',
-      subject: `Creucast Application${fullName ? ' — ' + fullName : ''}`,
+      subject: `Creucast Application${fullName ? ': ' + fullName : ''}`,
       text: `Full Name: ${fullName || 'N/A'}
 YouTube Channel: ${youtubeLink}
 Instagram/TikTok: ${socialHandle}

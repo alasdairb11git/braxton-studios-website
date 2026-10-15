@@ -9,13 +9,13 @@ const PORT = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Static files — long cache for videos/images (rarely change, biggest bandwidth cost),
+// Static files: long cache for videos/images (rarely change, biggest bandwidth cost),
 // default (short) cache for everything else so active edits show up right away
 app.use('/videos', express.static(path.join(__dirname, 'public/videos'), { maxAge: '30d' }));
 app.use('/images', express.static(path.join(__dirname, 'public/images'), { maxAge: '7d' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Stripe webhook needs raw body — must come BEFORE express.json()
+// Stripe webhook needs raw body: must come BEFORE express.json()
 app.post('/api/webhook/stripe', express.raw({ type: 'application/json' }), require('./routes/webhook'));
 
 // JSON parsing for everything else
@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', require('./routes/index'));
 app.use('/api', require('./routes/api'));
 
-// 404 fallback — serve homepage
+// 404 fallback: serve homepage
 app.use((req, res) => {
   res.status(404).render('index', {
     contactEmail: process.env.CONTACT_EMAIL || 'info@braxtonstudios.com',

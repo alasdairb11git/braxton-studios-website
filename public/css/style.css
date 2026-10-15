@@ -1712,7 +1712,7 @@ body.light .nav-logo-light { display: block; }
   transform: scale(1.03);
 }
 
-/* Stills grid — portrait-friendly, centers uneven last row */
+/* Stills grid: portrait-friendly, centers uneven last row */
 .cs-stills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -2051,9 +2051,10 @@ footer {
   position: relative;
 }
 .legal-content ul li::before {
-  content: '—';
-  position: absolute; left: 0;
-  color: var(--teal);
+  content: '';
+  position: absolute; left: 0; top: 0.95em;
+  width: 10px; height: 1px;
+  background: var(--teal);
 }
 .legal-link {
   color: var(--teal);
@@ -4308,7 +4309,7 @@ body.light .services-hero { background: #141414; }
 }
 .services-cta:hover { opacity: 0.85; }
 
-/* Tier cards — all on dark, differentiated by shade */
+/* Tier cards: all on dark, differentiated by shade */
 .services-tiers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -4399,10 +4400,10 @@ body.light .services-hero { background: #141414; }
   border-color: rgba(240,237,232,0.35);
 }
 
-/* Foundation — base dark */
+/* Foundation: base dark */
 .services-tier-foundation { background: rgba(240,237,232,0.02); }
 
-/* Growth — subtle lift with teal accent */
+/* Growth: subtle lift with teal accent */
 .services-tier-growth {
   background: rgba(240,237,232,0.04);
   border-color: rgba(103,205,195,0.2);
@@ -4415,7 +4416,7 @@ body.light .services-hero { background: #141414; }
 }
 .services-tier-growth .services-tier-cta:hover { opacity: 0.85; }
 
-/* Partnership — premium elevated */
+/* Partnership: premium elevated */
 .services-tier-premium {
   background: #222;
   border-color: rgba(240,237,232,0.1);
@@ -5869,8 +5870,8 @@ body.fk-page {
 
 /* Case study hero meta (date and role) and stats context line */
 .cs-meta { margin: 24px 0 0; display: grid; gap: 8px; max-width: 620px; }
-.cs-meta div { display: flex; gap: 16px; align-items: baseline; }
-.cs-meta dt { flex: 0 0 48px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); }
+.cs-meta div { display: flex; gap: 10px; align-items: baseline; }
+.cs-meta dt { flex: 0 0 40px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); }
 .cs-meta dd { margin: 0; font-size: 14px; line-height: 1.5; color: #f0ede8; }
 .cs-stats-note { padding: 0 48px 28px; margin: 0; font-size: 13px; color: var(--grey); }
 @media (max-width: 900px) {

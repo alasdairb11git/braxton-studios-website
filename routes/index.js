@@ -88,11 +88,11 @@ const siteNavigationSchema = {
 const faqs = [
   {
     q: 'What services does Braxton Studios offer?',
-    a: "We're a digital entertainment studio — we produce end-to-end YouTube content, brand and business campaigns, original short films, podcasts, and short-form content for TikTok and Instagram. Whatever the platform, we handle strategy, filming, editing, and delivery in-house."
+    a: "We're a digital entertainment studio. We produce end-to-end YouTube content, brand and business campaigns, original short films, podcasts, and short-form content for TikTok and Instagram. Whatever the platform, we handle strategy, filming, editing, and delivery in-house."
   },
   {
     q: 'Who do you work with?',
-    a: "We work with creators, brands, and businesses who want cinematic content backed by real strategy — whether that's a YouTube channel, a brand campaign, or an original production. Whether you're launching a new channel, scaling an existing one, or producing a one-off campaign, we can help."
+    a: "We work with creators, brands, and businesses who want cinematic content backed by real strategy, whether that's a YouTube channel, a brand campaign, or an original production. Whether you're launching a new channel, scaling an existing one, or producing a one-off campaign, we can help."
   },
   {
     q: 'Where are you based?',
@@ -100,7 +100,7 @@ const faqs = [
   },
   {
     q: 'Do you offer YouTube strategy as a standalone service?',
-    a: 'Yes. We can provide data-driven YouTube strategy consultations covering content planning, audience growth, SEO optimisation, and algorithm-friendly formatting — even if you have your own production team in place.'
+    a: 'Yes. We can provide data-driven YouTube strategy consultations covering content planning, audience growth, SEO optimisation, and algorithm-friendly formatting, even if you have your own production team in place.'
   },
   {
     q: 'What kind of results can I expect?',
@@ -108,7 +108,7 @@ const faqs = [
   },
   {
     q: 'Do you produce short films and original content?',
-    a: "Absolutely. We believe in leading by example. Our original productions — like The Flatwarming and the upcoming Tedrad — showcase the same cinematic quality we bring to our client work. It's how we prove what's possible."
+    a: "Absolutely. We believe in leading by example. Our original productions, like The Flatwarming and the upcoming Tedrad, showcase the same cinematic quality we bring to our client work. It's how we prove what's possible."
   },
   {
     q: 'How do I get started?',
@@ -135,7 +135,7 @@ function breadcrumb(name, path) {
   };
 }
 
-// All stories sorted by date (newest first) — homepage shows the 3 most recent
+// All stories sorted by date (newest first): homepage shows the 3 most recent
 const allStories = [
   {
     href: '/stories/ls-productions',
@@ -176,7 +176,7 @@ const allStories = [
   {
     href: '/stories/shiny-list',
     img: '/images/kenmore-6-2.jpg',
-    alt: 'Two Hearts — Shiny List Award',
+    alt: 'Two Hearts: Shiny List Award',
     imgClass: 'story-img-twohearts',
     category: 'Films',
     title: "Alasdair Braxton's 'Two Hearts' Secures Shiny List Award",
@@ -186,7 +186,7 @@ const allStories = [
   {
     href: '/stories/flatwarming-screening',
     img: '/images/flatwarming-18.jpg',
-    alt: "The Flatwarming — Beautiful Sunday's Film Club",
+    alt: "The Flatwarming: Beautiful Sunday's Film Club",
     category: 'Films',
     title: "'The Flatwarming' Lands Screening at Beautiful Sunday's Film Club",
     date: 'September 2025',
@@ -198,7 +198,7 @@ router.get('/', (req, res) => {
   res.render('index', {
     ...defaults,
     canonicalPath: '/',
-    pageTitle: 'Braxton Studios — Scotland\'s Digital Entertainment Studio',
+    pageTitle: 'Braxton Studios: Scotland\'s Digital Entertainment Studio',
     pageDescription: 'Braxton Studios is a specialist YouTube production company based in Scotland. We pair cinematic production with data-driven strategy for creators, brands, and businesses.',
     ogImage: '/images/favicon.jpg',
     schemas: [businessSchema, websiteSchema, siteNavigationSchema],
@@ -212,7 +212,7 @@ router.get('/campaigns/archerfield-showcase', (req, res) => res.redirect(301, '/
 router.get('/campaigns/:slug', (req, res) => res.redirect(301, '/showcases/' + encodeURIComponent(req.params.slug)));
 
 router.get('/showcases', (req, res) => {
-  res.render('campaigns', {
+  res.render('showcases', {
     ...defaults,
     canonicalPath: '/showcases',
     pageTitle: 'Showcases: Braxton Studios',
@@ -226,7 +226,7 @@ router.get('/films', (req, res) => {
   res.render('films', {
     ...defaults,
     canonicalPath: '/films',
-    pageTitle: 'Films — Braxton Studios',
+    pageTitle: 'Films: Braxton Studios',
     pageDescription: 'Films by Braxton Studios. Short films, feature films, and cinematic storytelling.',
     ogImage: '/images/the-flatwarming.jpg',
     schema: breadcrumb('Films', '/films')
@@ -237,7 +237,7 @@ router.get('/stories', (req, res) => {
   res.render('stories', {
     ...defaults,
     canonicalPath: '/stories',
-    pageTitle: 'Stories — Braxton Studios',
+    pageTitle: 'Stories: Braxton Studios',
     pageDescription: 'The latest news and stories from Braxton Studios.',
     ogImage: '/images/arran_bs_mobile.jpg',
     schema: breadcrumb('Stories', '/stories')
@@ -248,7 +248,7 @@ router.get('/services', (req, res) => {
   res.render('services', {
     ...defaults,
     canonicalPath: '/services',
-    pageTitle: 'Services — Braxton Studios',
+    pageTitle: 'Services: Braxton Studios',
     pageDescription: 'Video production and YouTube strategy services from Braxton Studios. Cinema-grade production paired with data-driven channel growth across three flexible tiers.',
     ogImage: '/images/favicon.jpg',
     schema: breadcrumb('Services', '/services'),
@@ -281,7 +281,7 @@ router.get('/showcases/archerfield', (req, res) => {
     ...defaults,
     canonicalPath: '/showcases/archerfield',
     pageTitle: 'Archerfield: Braxton Studios',
-    pageDescription: 'A trial project led by Alasdair Braxton exploring creative direction, DV directing and cinematography across the Archerfield estate.',
+    pageDescription: 'A paid trial for Archerfield: short-form reels across the estate, with creative direction, cinematography and editing by Braxton Studios.',
     ogImage: '/images/archerfield clean up.jpeg'
   });
 });
@@ -290,7 +290,7 @@ router.get('/about/alasdair-braxton', (req, res) => {
   res.render('founder-ab', {
     ...defaults,
     canonicalPath: '/about/alasdair-braxton',
-    pageTitle: 'Alasdair Braxton — Founder, Braxton Studios',
+    pageTitle: 'Alasdair Braxton: Founder, Braxton Studios',
     pageDescription: 'Alasdair Braxton is the founder of Braxton Studios, a filmmaker and producer building a creator-led media network from Scotland.',
     ogImage: '/images/ab-easdale.jpg'
   });
@@ -300,7 +300,7 @@ router.get('/films/tedrad', (req, res) => {
   res.render('crew-call-tedrad', {
     ...defaults,
     canonicalPath: '/films/tedrad',
-    pageTitle: 'Tedrad — In Development — Braxton Studios',
+    pageTitle: 'Tedrad, In Development: Braxton Studios',
     pageDescription: 'Tedrad is a short film in development by Braxton Studios, filming in Ayrshire and Glasgow, April–May 2026.',
     ogImage: '/images/favicon.jpg'
   });
@@ -310,7 +310,7 @@ router.get('/films/the-flatwarming', (req, res) => {
   res.render('the-flatwarming', {
     ...defaults,
     canonicalPath: '/films/the-flatwarming',
-    pageTitle: 'The Flatwarming — Braxton Studios',
+    pageTitle: 'The Flatwarming: Braxton Studios',
     pageDescription: 'The Flatwarming is a 13-minute short film created by Stephanie Elizabeth and produced by Braxton Studios. Shot on location in Cambuslang, Glasgow.',
     ogImage: '/images/the-flatwarming.jpg'
   });
@@ -320,7 +320,7 @@ router.get('/products', (req, res) => {
   res.render('products', {
     ...defaults,
     canonicalPath: '/products',
-    pageTitle: 'Products — Braxton Studios',
+    pageTitle: 'Products: Braxton Studios',
     pageDescription: 'Tools and resources built from real production experience. YouTube audit templates, LUT packs, and more from Braxton Studios.',
     ogImage: '/images/favicon.jpg',
     schema: breadcrumb('Products', '/products')
@@ -331,7 +331,7 @@ router.get('/youtube-audit', (req, res) => {
   res.render('youtube-audit', {
     ...defaults,
     canonicalPath: '/youtube-audit',
-    pageTitle: 'YouTube Channel Audit — Braxton Studios',
+    pageTitle: 'YouTube Channel Audit: Braxton Studios',
     pageDescription: 'The Braxton Studios YouTube Channel Audit Template. A complete 8-section framework with 60+ checkpoints, score system, and 30/60/90 day action plan. Built by a studio with 2M+ organic views. £29.',
     ogImage: '/images/YT_Template_Cover.jpg'
   });
@@ -341,7 +341,7 @@ router.get('/luts', (req, res) => {
   res.render('luts', {
     ...defaults,
     canonicalPath: '/luts',
-    pageTitle: 'iPhone Field Kit — Braxton Studios',
+    pageTitle: 'iPhone Field Kit: Braxton Studios',
     pageDescription: 'Five cinematic LUTs (.cube) built for a flat, log-style starting point. Works on iPhone photos in DaVinci Resolve 21+ and Photomator, built with Apple Log footage in mind too. Preview build from Braxton Studios.',
     ogImage: '/images/field-kit-cover-wide.jpg'
   });
@@ -350,7 +350,7 @@ router.get('/luts', (req, res) => {
 router.get('/the-transfer', (req, res) => {
   res.render('the-transfer', {
     ...defaults,
-    pageTitle: 'The Transfer — Braxton Studios',
+    pageTitle: 'The Transfer: Braxton Studios',
     pageDescription: 'The Transfer. A private partnership document by Braxton Studios.',
     ogImage: '/images/favicon.jpg',
     authorized: false,
@@ -363,7 +363,7 @@ router.post('/the-transfer', (req, res) => {
   const correct = password === (process.env.TRANSFER_PASSWORD || 'transfer2026');
   res.render('the-transfer', {
     ...defaults,
-    pageTitle: 'The Transfer — Braxton Studios',
+    pageTitle: 'The Transfer: Braxton Studios',
     pageDescription: 'The Transfer. A private partnership document by Braxton Studios.',
     ogImage: '/images/favicon.jpg',
     authorized: correct,
@@ -375,7 +375,7 @@ router.get('/projects/wings-of-the-fallen', (req, res) => {
   res.render('wings-of-the-fallen', {
     ...defaults,
     canonicalPath: '/projects/wings-of-the-fallen',
-    pageTitle: 'Wings of the Fallen — Braxton Studios',
+    pageTitle: 'Wings of the Fallen: Braxton Studios',
     pageDescription: 'Wings of the Fallen. A short film written by Alasdair Braxton. Private project page for investors.',
     ogImage: '/images/favicon.jpg',
     noindex: true
@@ -386,7 +386,7 @@ router.get('/projects/ripples-of-easdale', (req, res) => {
   res.render('ripples-of-easdale', {
     ...defaults,
     canonicalPath: '/projects/ripples-of-easdale',
-    pageTitle: 'Ripples of Easdale — Braxton Studios',
+    pageTitle: 'Ripples of Easdale: Braxton Studios',
     pageDescription: 'Ripples of Easdale. A feature film in development by Braxton Studios. Private project page for investors.',
     ogImage: '/images/favicon.jpg',
     noindex: true
@@ -421,7 +421,7 @@ router.get('/stories/kings-trust', (req, res) => {
     ...defaults,
     canonicalPath: '/stories/kings-trust',
     ogType: 'article',
-    pageTitle: 'A New Chapter with The King\'s Trust — Braxton Studios',
+    pageTitle: 'A New Chapter with The King\'s Trust: Braxton Studios',
     pageDescription: 'Braxton Studios is proud to be in development with the King\'s Trust, scaling operations and supporting established clients and partners in 2026.',
     ogImage: '/images/arran_bs_mobile.jpg',
     schema: {
@@ -444,7 +444,7 @@ router.get('/stories/shiny-list', (req, res) => {
     ...defaults,
     canonicalPath: '/stories/shiny-list',
     ogType: 'article',
-    pageTitle: 'Two Hearts Secures Shiny List Award — Braxton Studios',
+    pageTitle: 'Two Hearts Secures Shiny List Award: Braxton Studios',
     pageDescription: 'Alasdair Braxton\'s short film Two Hearts has been officially recognised on the prestigious Shiny List, celebrating emerging directorial talent.',
     ogImage: '/images/kenmore-6-2.jpg',
     schema: {
@@ -467,7 +467,7 @@ router.get('/stories/flatwarming-screening', (req, res) => {
     ...defaults,
     canonicalPath: '/stories/flatwarming-screening',
     ogType: 'article',
-    pageTitle: 'The Flatwarming Screening at Beautiful Sunday\'s Film Club — Braxton Studios',
+    pageTitle: 'The Flatwarming Screening at Beautiful Sunday\'s Film Club: Braxton Studios',
     pageDescription: 'The Flatwarming secures an intimate screening at Beautiful Sunday\'s Film Club at the historic Old Toll Bar in Glasgow.',
     ogImage: '/images/flatwarming-18.jpg',
     schema: {
@@ -490,7 +490,7 @@ router.get('/stories/ls-productions', (req, res) => {
     ...defaults,
     canonicalPath: '/stories/ls-productions',
     ogType: 'article',
-    pageTitle: 'Braxton Studios Named a Trusted LS Productions Supplier — Braxton Studios',
+    pageTitle: 'Braxton Studios Named a Trusted LS Productions Supplier: Braxton Studios',
     pageDescription: 'Braxton Studios has been accepted into LS Productions\' database of trusted suppliers, providing video production and YouTube strategy services across its network.',
     ogImage: '/images/edinburgh.jpg',
     schema: {
@@ -513,7 +513,7 @@ router.get('/stories/techscaler', (req, res) => {
     ...defaults,
     canonicalPath: '/stories/techscaler',
     ogType: 'article',
-    pageTitle: 'Braxton Studios Enters Techscaler\'s Early Stage Programme — Braxton Studios',
+    pageTitle: 'Braxton Studios Enters Techscaler\'s Early Stage Programme: Braxton Studios',
     pageDescription: 'Braxton Studios has been accepted into Techscaler, Scotland\'s national tech scaling programme, focusing on customer discovery, product development, and investment readiness.',
     ogImage: '/images/Glasgow night xmas markets-3.jpeg',
     schema: {
@@ -535,7 +535,7 @@ router.get('/contact', (req, res) => {
   res.render('contact', {
     ...defaults,
     canonicalPath: '/contact',
-    pageTitle: 'Contact — Braxton Studios',
+    pageTitle: 'Contact: Braxton Studios',
     pageDescription: 'Get in touch with Braxton Studios. Tell us about your project and we\'ll get back to you within 24 hours.',
     ogImage: '/images/favicon.jpg',
     schema: breadcrumb('Contact', '/contact')
@@ -546,7 +546,7 @@ router.get('/forthside', (req, res) => {
   res.render('forthside', {
     ...defaults,
     canonicalPath: '/forthside',
-    pageTitle: 'Braxton at Forthside — Concept — Braxton Studios',
+    pageTitle: 'Braxton at Forthside, Concept: Braxton Studios',
     pageDescription: 'A concept for a creator and YouTube production base at the former MOD Forthside site in Stirling.',
     ogImage: '/forthside-concept/film-holding.jpg',
     noindex: true
@@ -557,7 +557,7 @@ router.get('/casting', (req, res) => {
   res.render('casting', {
     ...defaults,
     canonicalPath: '/casting',
-    pageTitle: 'Casting Calls — Braxton Studios',
+    pageTitle: 'Casting Calls: Braxton Studios',
     pageDescription: 'Two ways to work with Braxton Studios: join Creucast, our creator collective, or apply to an open casting call for an upcoming production.',
     ogImage: '/images/irix_braxton studios.JPG',
     schema: breadcrumb('Casting Calls', '/casting'),
@@ -569,7 +569,7 @@ router.get('/casting/university-student', (req, res) => {
   res.render('casting-university-student', {
     ...defaults,
     canonicalPath: '/casting/university-student',
-    pageTitle: 'Casting Call: University Student — Braxton Studios',
+    pageTitle: 'Casting Call: University Student: Braxton Studios',
     pageDescription: 'Open casting call: a current university student (18+) for a YouTube short-form video, shot in Glasgow/Edinburgh.',
     ogImage: '/images/irix_braxton studios.JPG',
     schema: breadcrumb('University Student', '/casting/university-student'),
@@ -581,7 +581,7 @@ router.get('/creucast', (req, res) => {
   res.render('creucast', {
     ...defaults,
     canonicalPath: '/creucast',
-    pageTitle: 'Creucast — Join the Creator Collective — Braxton Studios',
+    pageTitle: 'Creucast, Join the Creator Collective: Braxton Studios',
     pageDescription: 'Creucast is a Scotland-based creator collective from Braxton Studios. 8 creators, monthly content days, crew for each other. 4 spots left.',
     ogImage: '/images/creucast.jpg',
     schema: breadcrumb('Creucast', '/creucast')
@@ -592,7 +592,7 @@ router.get('/creucast/apply', (req, res) => {
   res.render('creucast-apply', {
     ...defaults,
     canonicalPath: '/creucast/apply',
-    pageTitle: 'Apply — Creucast — Braxton Studios',
+    pageTitle: 'Apply, Creucast: Braxton Studios',
     pageDescription: 'Apply to join Creucast, a Scotland-based creator collective from Braxton Studios.',
     ogImage: '/images/creucast.jpg'
   });
@@ -602,7 +602,7 @@ router.get('/faqs', (req, res) => {
   res.render('faqs', {
     ...defaults,
     canonicalPath: '/faqs',
-    pageTitle: 'FAQs — Braxton Studios',
+    pageTitle: 'FAQs: Braxton Studios',
     pageDescription: "Frequently asked questions about Braxton Studios, Scotland's digital entertainment studio. Learn about our YouTube production, brand campaigns, original content, pricing, and how to work with us.",
     faqs,
     schema: {
@@ -624,7 +624,7 @@ router.get('/privacy-policy', (req, res) => {
   res.render('privacy-policy', {
     ...defaults,
     canonicalPath: '/privacy-policy',
-    pageTitle: 'Privacy Policy — Braxton Studios',
+    pageTitle: 'Privacy Policy: Braxton Studios',
     pageDescription: 'Braxton Studios privacy policy. How we collect, use, and protect your personal information.'
   });
 });
@@ -633,7 +633,7 @@ router.get('/cookie-policy', (req, res) => {
   res.render('cookie-policy', {
     ...defaults,
     canonicalPath: '/cookie-policy',
-    pageTitle: 'Cookie Policy — Braxton Studios',
+    pageTitle: 'Cookie Policy: Braxton Studios',
     pageDescription: 'Braxton Studios cookie policy. How we use cookies and similar technologies on our website.'
   });
 });
@@ -642,7 +642,7 @@ router.get('/terms-and-conditions', (req, res) => {
   res.render('terms-and-conditions', {
     ...defaults,
     canonicalPath: '/terms-and-conditions',
-    pageTitle: 'Terms & Conditions — Braxton Studios',
+    pageTitle: 'Terms & Conditions: Braxton Studios',
     pageDescription: 'Braxton Studios terms and conditions, covering website use, digital product purchases, and refunds.'
   });
 });

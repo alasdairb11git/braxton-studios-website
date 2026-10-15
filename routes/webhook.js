@@ -31,7 +31,7 @@ const DELIVERABLES = {
 
 async function handleStripeWebhook(req, res) {
   if (!stripe) {
-    console.error('Stripe not configured — missing STRIPE_SECRET_KEY');
+    console.error('Stripe not configured, missing STRIPE_SECRET_KEY');
     return res.status(500).send('Stripe not configured');
   }
 
@@ -76,7 +76,7 @@ async function handleStripeWebhook(req, res) {
       await transporter.sendMail({
         from: `"Braxton Studios" <${process.env.ZOHO_EMAIL || 'info@braxtonstudios.com'}>`,
         to: customerEmail,
-        subject: `Your order from Braxton Studios — ${nameList}`,
+        subject: `Your order from Braxton Studios: ${nameList}`,
         text: `Thanks for your purchase!\n\nYour ${nameList} ${names.length > 1 ? 'are' : 'is'} attached to this email.\n\nIf you have any questions, reply to this email and we'll get back to you.\n\nBraxton Studios`,
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 520px; margin: 0 auto; padding: 40px 0;">
