@@ -271,7 +271,7 @@ router.get('/showcases/adum', (req, res) => {
     ...defaults,
     canonicalPath: '/showcases/adum',
     pageTitle: 'Adum: Braxton Studios',
-    pageDescription: 'Braxton Studios handled cinematography and editing of short-form content for London-based artist Adum across TikTok, Instagram and YouTube. 700K+ views on TikTok, 25K+ likes on Instagram.',
+    pageDescription: 'Braxton Studios handled production and cinematography of short-form content for London-based artist Adum. 1.2M+ views across TikTok, Instagram and YouTube, including 700K+ on TikTok.',
     ogImage: '/images/adum.jpg'
   });
 });
