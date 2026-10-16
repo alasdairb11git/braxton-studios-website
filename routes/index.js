@@ -164,15 +164,16 @@ const allStories = [
     date: '27 March 2026',
     sortDate: new Date('2026-03-27')
   },
-  {
-    href: '/stories/kings-trust',
-    img: '/images/arran_bs_mobile.jpg',
-    alt: "Braxton Studios x The King's Trust",
-    category: 'Business',
-    title: "The Latest from Braxton Studios: A New Chapter with The King's Trust",
-    date: '10 March 2026',
-    sortDate: new Date('2026-03-10')
-  },
+  // Hidden for now: King's Trust story (route kept for preview, noindex)
+  // {
+  //   href: '/stories/kings-trust',
+  //   img: '/images/arran_bs_mobile.jpg',
+  //   alt: "Braxton Studios x The King's Trust",
+  //   category: 'Business',
+  //   title: "The Latest from Braxton Studios: A New Chapter with The King's Trust",
+  //   date: '10 March 2026',
+  //   sortDate: new Date('2026-03-10')
+  // },
   {
     href: '/stories/shiny-list',
     img: '/images/kenmore-6-2.jpg',
@@ -424,6 +425,7 @@ router.get('/stories/kings-trust', (req, res) => {
     pageTitle: 'A New Chapter with The King\'s Trust: Braxton Studios',
     pageDescription: 'Braxton Studios is proud to be in development with the King\'s Trust, scaling operations and supporting established clients and partners in 2026.',
     ogImage: '/images/arran_bs_mobile.jpg',
+    noindex: true,
     schema: {
       '@context': 'https://schema.org',
       '@type': 'NewsArticle',
@@ -665,7 +667,7 @@ router.get('/sitemap.xml', (req, res) => {
     { loc: '/about/alasdair-braxton', priority: '0.5', changefreq: 'yearly' },
     { loc: '/stories/ls-productions', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/cannes-2026', priority: '0.7', changefreq: 'yearly' },
-    { loc: '/stories/kings-trust', priority: '0.7', changefreq: 'yearly' },
+    // { loc: '/stories/kings-trust', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/shiny-list', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/flatwarming-screening', priority: '0.7', changefreq: 'yearly' },
     { loc: '/stories/techscaler', priority: '0.7', changefreq: 'yearly' },
@@ -701,11 +703,6 @@ router.get('/news-sitemap.xml', (req, res) => {
       loc: '/stories/cannes-2026',
       title: 'Unpacking Cannes Lions 2026: Braxton Studios Debrief',
       date: '2026-06-26T00:00:00+00:00'
-    },
-    {
-      loc: '/stories/kings-trust',
-      title: 'The Latest from Braxton Studios: A New Chapter with The King\'s Trust',
-      date: '2026-03-10T00:00:00+00:00'
     },
     {
       loc: '/stories/shiny-list',
